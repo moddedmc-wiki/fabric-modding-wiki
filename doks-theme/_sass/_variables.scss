@@ -1,0 +1,112 @@
+/**
+ * Variables (_variables.scss)
+ */
+
+/* ----- Colors ----- */
+// General
+$color-white: #000 !default;
+$color-black: rgb(68, 68, 68) !default;
+$color-dark: rgb(214, 214, 214) !default;
+$color-dark-blue: #e1d2b5 !default;
+$color-yellow: rgb(27, 29, 28) !default;
+
+.section {
+    background-color: $color-yellow;
+}
+
+// Base
+$color-h2-border: #303030 !default;
+$color-horizontal-rule: #363636 !default;
+$color-list-prefix: #555555 !default;
+$color-definition-list: #4e4e4e !default;
+$color-table-border: #353535 !default;
+$color-table-header-border: #353535 !default;
+$color-table-header-bg: #353535 !default;
+
+// Code
+$color-code: darken($color-dark-blue, 25%) !default;
+$color-code-bg: #222020 !default;
+$color-pre: #dbdbdb !default;
+$color-pre-border: #282f38 !default;
+
+// Section
+$color-section-grey: #272727 !default;
+
+// Callouts
+$color-callout: #333333 !default;
+$color-callout-success: #292c29 !default;
+$color-callout-info: #30343a !default;
+$color-callout-warning: #3b3930 !default;
+$color-callout-danger: #493634 !default;
+
+// Footer
+$color-footer-bg: #2e2c2c !default;
+$color-footer-copyright: #ececec !default;
+
+// Social list
+$color-social-item: #bdbdbd !default;
+
+// Themes
+$color-theme-green: #F0FAE6 !default;
+$color-theme-blue: #282a2c !default;
+$color-theme-purple: #FDE8F8 !default;
+$color-theme-red: #FFECE6 !default;
+$color-theme-yellow: #FCFDE8 !default;
+
+/* ----- Font families ----- */
+$font-family-primary: 'Noto Sans', sans-serif !default;
+$font-family-secondary: 'Montserrat', sans-serif !default;
+$font-family-monospace: 'Source Code Pro', monospace !default;
+
+/* ----- Font sizes ----- */
+// Base
+$font-size-base: 1em !default;
+
+// Headings
+$font-size-h1: 2.5em !default;
+$font-size-h2: 2em !default;
+$font-size-h3: 1.75em !default;
+$font-size-h4: 1.5em !default;
+$font-size-h5: 1.25em !default;
+$font-size-h6: 1em !default;
+
+// Other
+$font-size-small: 0.75em !default;
+
+/* ----- Line heights ----- */
+// Base
+$line-height-base: 1.8em !default;
+
+// Headings
+$line-height-headings: 1.5em !default;
+
+/* ----- Z Indexes ----- */
+$z-index-offcanvas: 2 !default;
+$z-index-offcanvas-toggle: 3 !default;
+
+/* ----- Media queries breakpoints ----- */
+// Mobile first
+$screen-xs-min: 480px !default; // Extra small screens, Phones
+$screen-sm-min: 768px !default; // Small screens, Tablets
+$screen-md-min: 992px !default; // Medium screens, Desktop
+$screen-lg-min: 1200px !default; // Large screens, Wide desktops
+
+// Desktop first
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+/* ----- Grid system ----- */
+// Columns
+$grid-columns: 12 !default;
+
+// Gutter
+$grid-gutter-width: 30px !default;
+
+// Container
+$container-tablet: (720px + $grid-gutter-width) !default;
+$container-sm: $container-tablet !default;
+$container-desktop: (940px + $grid-gutter-width) !default;
+$container-md: $container-desktop !default;
+$container-large-desktop: (1140px + $grid-gutter-width) !default;
+$container-lg: $container-large-desktop !default;

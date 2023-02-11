@@ -1,0 +1,53 @@
+/**
+ * Callout (components/_callout.scss)
+ */
+
+/* ----- General ----- */
+.callout {
+	border: 2px solid darken($color-callout, 4%);
+	background-color: $color-callout;
+	padding: .9375rem 1.25rem .625rem 1.25rem;
+	margin: 0 0 1.25rem 0;
+
+	@media (min-width: $screen-sm-min) {
+		padding: 1.25rem 1.875rem .9375rem 1.875rem;
+	}
+
+	p {
+		font-size: .9375em;
+		line-height: 1.8em;
+		margin-bottom: .625rem;
+	}
+
+	strong {
+		display: block;
+		color: white;
+		font-family: $font-family-secondary;
+		font-size: 1.133em;
+		font-weight: bolder;
+		margin-bottom: .625rem;
+	}
+}
+
+/* ----- Variations ----- */
+.callout {
+	&--success {
+		background-color: $color-callout-success;
+		border-color: darken($color-callout-success, 6%);
+	}
+
+	&--info {
+		background-color: $color-callout-info;
+		border-color: darken($color-callout-info, 4%);
+	}
+
+	&--warning {
+		background-color: $color-callout-warning;
+		border-color: darken($color-callout-warning, 10%);
+	}
+
+	&--danger {
+		background-color: $color-callout-danger;
+		border-color: darken($color-callout-danger, 4%);
+	}
+}

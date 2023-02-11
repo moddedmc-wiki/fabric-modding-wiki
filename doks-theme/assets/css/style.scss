@@ -1,0 +1,89 @@
+---
+# This ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+/**
+ * Style (style.scss)
+ */
+
+/* ----- Charset ----- */
+@charset 'utf-8';
+
+/* ----- Variables ----- */
+@import 'variables';
+
+/* ----- Tools ----- */
+@import 'tools/prefixer';
+@import 'tools/clearfix';
+@import 'tools/grid-framework';
+@import 'tools/grid';
+@import 'tools/hyperlinks';
+@import 'tools/lists';
+@import 'tools/responsive-visibility';
+
+/* ----- Base ----- */
+@import 'generic/normalize';
+@import 'generic/base';
+@import 'generic/code';
+
+/* ----- Utilities ----- */
+@import 'utilities/alignment';
+@import 'utilities/visibility';
+
+/* ----- Objects ----- */
+@import 'objects/buttons';
+@import 'objects/content';
+@import 'objects/error-404';
+@import 'objects/grid';
+@import 'objects/icons';
+@import 'objects/section';
+
+/* ----- Components ----- */
+@import 'components/callout';
+@import 'components/example';
+@import 'components/hero-subheader';
+@import 'components/micro-nav';
+@import 'components/nav-grid';
+@import 'components/page-nav';
+@import 'components/sections-list';
+@import 'components/site-footer';
+@import 'components/site-header';
+@import 'components/social-list';
+@import 'components/title-anchor-link';
+
+/* ----- Themes ----- */
+@import 'themes/green';
+@import 'themes/red';
+@import 'themes/yellow';
+@import 'themes/purple';
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.content > p > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border-style: solid;
+    background-image: /* tint image */
+                      linear-gradient(to right, rgba(192, 192, 192, 0.75), rgba(192, 192, 192, 0.75)),
+                      /* checkered effect */
+                      linear-gradient(to right, darken($color-pre-border, 75%) 50%, white 50%),
+                      linear-gradient(to bottom, darken($color-pre-border, 75%) 50%,white 50%);
+    background-blend-mode: normal, difference, normal;
+    background-size: 10% 10%;
+    border-color: $color-pre-border;
+}
