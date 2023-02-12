@@ -22,6 +22,8 @@ Please write pages in American Standard English. If you feel it is nessecary, yo
     <p>Expect your reader to be new to the modding scene, mark any content that isn't intended for beginners using callouts.</p>
 </div>
 
+When adding images, please name them in order of when they're listed on the page, eg: `index_0.png` for the first image. The page file should have it's own folder and be called `index.md`
+
 ## Code
 
 Please use yarn at all times when editing the wiki.

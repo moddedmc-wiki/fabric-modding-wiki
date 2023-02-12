@@ -25,7 +25,7 @@ grid_navigation:
     - title: Creating your first mod.
       excerpt: Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.
       cta: Read more
-      url: 'https://open-franchise.github.io/about/'    
+      url: '/first-mod/' 
     - title: Adding Items
       excerpt: Learn how to register your own custom items; food, tools, armor and weapons.
       cta: Read more
@@ -41,7 +41,7 @@ grid_navigation:
     - title: Roadmap
       excerpt: Interested in what is coming to the wiki? Checkout the roadmap here.
       cta: Read more
-      url: 'https://open-franchise.github.io/information/'   
+      url: '/roadmap/'   
 ---
 
 ## Maximising your use of this wiki.

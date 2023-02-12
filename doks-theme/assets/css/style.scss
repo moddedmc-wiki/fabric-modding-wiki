@@ -72,7 +72,7 @@ kbd {
     white-space: nowrap;
 }
 
-.content > p > img {
+.content > p > img:not(.mermaid) {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -86,4 +86,8 @@ kbd {
     background-blend-mode: normal, difference, normal;
     background-size: 10% 10%;
     border-color: $color-pre-border;
+}
+
+.mermaid {
+    background-color: transparent;
 }

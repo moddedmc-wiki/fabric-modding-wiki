@@ -2,13 +2,13 @@
 layout: default
 title: Creating Your First Item
 description: Learn how to register a simple item and how to texture, model and name it.
-permalink: /items/
+permalink: /items/first-item
 page_nav:
     prev:
-        content: Home
-        url: /
+        content: Contents
+        url: /items/
     next:
-        content: Food Items
+        content: Edible Items
         url: /items/food
 ---
 
@@ -112,7 +112,7 @@ However, it's missing the following:
 
 - Item Model
 - Texture
-- Name
+- Translation (name)
 
 ## Naming the item.
 
@@ -139,7 +139,7 @@ For the example, the texture is called `poop.png`; I just used the poop emoji as
 ![](/docs/items/creating-first-item/index_1.png)
 
 <div align="center">
-    <a target="_blank" href="/docs/items/index_1_small.png">Download Texture</a>
+    <a target="_blank" href="/docs/items/creating-first-item/index_1_small.png">Download Texture</a>
 </div>
 <br>
 
@@ -168,8 +168,6 @@ If you now reload the game (<kbd>F3</kbd> + <kbd>T</kbd>) you can now see your i
 <br>
 
 ## Next Steps
-
-Here are some challenges you could try to attempt:
 
 - Why don't you try add another item?
 - What happens if you register an item with the same ID as another?

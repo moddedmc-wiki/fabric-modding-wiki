@@ -13,7 +13,7 @@ tt {
 	padding: .125rem .375rem .1875rem .375rem;
 }
 
-pre {
+pre:not(figure > pre), figure {
 	overflow: auto;
 	border-left: 8px solid $color-pre-border;
 	margin: 0 0 1.25rem 0;
@@ -29,7 +29,7 @@ pre {
 
 /* ----- Highlight ----- */
 .highlight .hll { background-color: #49483e }
-pre.highlight { background: #212733; color: $color-pre; padding: 1.5625rem; }
+pre.highlight, figure.highlight { background: #212733; color: $color-pre; padding: 1.5625rem; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */
