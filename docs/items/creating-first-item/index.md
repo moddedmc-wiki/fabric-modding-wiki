@@ -106,7 +106,7 @@ public static void initialize() {
 
 Loading into the game, you can see that our item has been registered, and is in the Ingredients item group:
 
-![](/docs/items/index_0.png)
+![](/docs/items/creating-first-item/index_0.png)
 
 However, it's missing the following:
 
