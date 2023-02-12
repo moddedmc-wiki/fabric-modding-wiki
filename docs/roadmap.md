@@ -7,8 +7,4 @@ permalink: /roadmap
 
 Please contact `itsmineblock11#1878` on Discord if you want to take up a task.
 
-## Items
-
-- Armor
-- Recipes
-- Interactive Items
+*The roadmap is coming soon.*

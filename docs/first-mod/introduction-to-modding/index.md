@@ -14,6 +14,8 @@ page_nav:
 
 Before you can even start creating your mod - you have to understand a few concepts that may be mentioned quite a lot throughout the pages of this wiki.
 
+These concepts will be extended upon in their individual pages.
+
 Obviously, these pages expect you have knowledge of basic java - [please have a read on the home page if you don't.](/#maximising-your-use-of-this-wiki)
 
 ## What is Fabric?
