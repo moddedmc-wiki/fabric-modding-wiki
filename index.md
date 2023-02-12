@@ -33,11 +33,11 @@ grid_navigation:
     - title: Adding Blocks
       excerpt: Learn how to create and register your own custom blocks and block entities.
       cta: Read more
-      url: 'https://open-franchise.github.io/purpose'
+      url: 
     - title: Events
       excerpt: Master Fabric API's event system, to encourage mod compatability and reduce the amount of mixins you write.
       cta: Read more
-      url: 'https://open-franchise.github.io/structure/'
+      url: 
     - title: Roadmap
       excerpt: Interested in what is coming to the wiki? Checkout the roadmap here.
       cta: Read more
