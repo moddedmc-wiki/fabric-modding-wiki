@@ -2,14 +2,14 @@
 title: Creating Your First Project
 description: This page will guide you through the setup process of your first project using Minecraft Development and IntelliJ IDEA.
 layout: default
-permalink: /first-mod/setup
+permalink: /introduction/setup
 page_nav:
     prev:
         content: Introduction To Modding
-        url: /first-mod/
-    # next:
-    #     content: Armor
-    #     url: /items/armor
+        url: /introduction/welcome
+    next:
+        content: Mixins
+        url: /introduction/mixins
 ---
 
 This page assumes you have IntelliJ IDEA installed and the [Minecraft Development Plugin](https://plugins.jetbrains.com/plugin/8327-minecraft-development) installed as well.

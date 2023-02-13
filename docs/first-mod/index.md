@@ -2,10 +2,10 @@
 layout: homepage
 keywords:
 
-permalink: /items/
+permalink: /introduction
 
-title: Adding Items
-description: Learn how to register your own custom items; food, tools, armor and weapons.
+title: Creating Your First Mod
+description: These pages will introduce you to the Fabric toolchain, and modding as a whole.
 
 buttons:
     # - content: About
@@ -21,41 +21,39 @@ author:
     description: We're looking for contributors - if you are experienced with the Fabric Toolchain, you are more than welcome to look at our roadmap and create a pull request.
 
 grid_navigation:
-    - header: Basics Of Items
-    - title: Creating Your First Item
-      excerpt: Learn how to register a simple item and how to texture, model and name it.
+    - title: Introduction To Modding
+      excerpt: Familiarize yourself with key concepts in Minecraft, and understand the Fabric Toolchain.
       cta: Read more
-      url: '/items/first-item' 
-    - title: Edible Items
+      url: '/introduction/welcome' 
+    - title: Creating Your First Project
       excerpt: This page will guide you through the setup process of your first project using Minecraft Development and IntelliJ IDEA.
       cta: Read more
-      url: '/items/food'
-    - title: Tools
+      url: '/introduction/setup'
+    - title: Mixins
       excerpt: Learn how to harness the power of mixins to add content to your mod.
       cta: Read more
-      url: '/items/tools'
-    - title: Armor
+      url: '/introduction/mixins'
+    - title: Access Wideners
       excerpt: Learn how to use access wideners to access parts of Minecraft's code that isn't usually accessible.
       cta: Read more
-      url: '/items/armor'
-    - title: Custom Item Groups
+      url: '/introduction/access-wideners'
+    - title: Wrapping It Up
       excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
       cta: Read more
-      url: '/items/item-groups'   
-    - title: Interactive Items
-      excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
-      cta: Read more
-      url: '/items/interactive-items' 
-    - header: Advanced Topics
+      url: '/introduction/end'   
 ---
-
-*Advanced Topics are currently being written.*
 
 ## Information
 
-These pages assume you have a basic knowledge of modding.
+These pages are great if you haven't created mods for Minecraft before - they will teach you how to create a project and utilize the many tools available, from Mixins to Access Wideners. 
 
-If you do not have a basic understanding of key concepts, you should follow the [Creating Your First Mod](/introduction/) guides first before continuing to these pages.
+However, they also assume you already have a general knowledge of key java concepts, such as generics and object oriented programming.
+
+If you are completely new to programming with Java, you should first take some Java lessons:
+
+- [Codecademy: Learn Java](https://www.codecademy.com/learn/learn-java)
+- [W3Schools: Java Tutorial](https://www.w3schools.com/java/)
+- [learnjavaonline.com](https://www.learnjavaonline.org/)
 
 All content on this wiki uses Yarn mappings - if you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
 

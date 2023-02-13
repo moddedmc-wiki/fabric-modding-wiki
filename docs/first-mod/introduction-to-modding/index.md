@@ -2,14 +2,14 @@
 title: Introduction to Modding
 description: A general rundown on what modding is - and how Fabric allows you to achieve it.
 layout: default
-permalink: /first-mod
+permalink: /introduction/welcome
 page_nav:
     prev:
         content: Home
-        url: /
+        url: /introduction/
     next:
         content: Creating Your First Project
-        url: /first-mod/setup
+        url: /introduction/setup
 ---
 
 Before you can even start creating your mod - you have to understand a few concepts that may be mentioned quite a lot throughout the pages of this wiki.

@@ -25,11 +25,11 @@ grid_navigation:
     - title: Creating your first mod.
       excerpt: Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.
       cta: Read more
-      url: '/first-mod/' 
+      url: '/introduction' 
     - title: Adding Items
       excerpt: Learn how to register your own custom items; food, tools, armor and weapons.
       cta: Read more
-      url: '/items/'
+      url: '/items'
     - title: Adding Blocks
       excerpt: Learn how to create and register your own custom blocks and block entities.
       cta: Read more
@@ -41,7 +41,7 @@ grid_navigation:
     - title: Roadmap
       excerpt: Interested in what is coming to the wiki? Checkout the roadmap here.
       cta: Read more
-      url: '/roadmap/'   
+      url: '/roadmap'   
 ---
 
 ## Maximising your use of this wiki.
@@ -54,9 +54,7 @@ If you are completely new to programming with Java, you should first take some J
 - [W3Schools: Java Tutorial](https://www.w3schools.com/java/)
 - [learnjavaonline.com](https://www.learnjavaonline.org/)
 
-If you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
-
-
+All content on this wiki uses Yarn mappings - if you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
 
 ## Coming from Forge?
 

@@ -70,6 +70,13 @@
 								</div>
 								<div class="row">
 									{% for item in page.grid_navigation %}
+										{% if item.header %}
+										</div>
+										<div class="content">
+											<h2 id="{{ item.header | downcase | replace: " ", "-" }}"><a href="#{{ item.header | downcase | replace: " ", "-" | url_encode }}" class="title-anchor-link">#</a> {{item.header}}</h2>
+										</div>
+										<div class="row">
+										{% else %}
 										<div class="col-sm-6 col-lg-4">
 											<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ item.url }}" class="nav-grid__item">
 												<div class="nav-grid__content" data-mh>
@@ -82,6 +89,7 @@
 												</p>
 											</a><!-- /.nav-grid__item -->
 										</div><!-- /.col -->
+										{% endif %}
 									{% endfor %}
 								</div><!-- /.row -->
 								<div class="content">
