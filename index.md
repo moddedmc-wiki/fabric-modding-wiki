@@ -33,15 +33,15 @@ grid_navigation:
     - title: Adding Blocks
       excerpt: Learn how to create and register your own custom blocks and block entities.
       cta: Read more
-      url: 
+      url: '/blocks'
     - title: Events
       excerpt: Master Fabric API's event system, to encourage mod compatability and reduce the amount of mixins you write.
       cta: Read more
-      url: 
-    - title: Roadmap
-      excerpt: Interested in what is coming to the wiki? Checkout the roadmap here.
+      url: '/events'
+    - title: Documentation
+      excerpt: These pages aren't nessecarily in order - they explain how certain features of the game works.
       cta: Read more
-      url: '/roadmap'   
+      url: '/documentation' 
 ---
 
 ## Maximising your use of this wiki.
