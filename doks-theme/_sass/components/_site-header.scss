@@ -4,169 +4,208 @@
 
 /* ----- General ----- */
 .site-header {
-	position: absolute;
-	width: 100%;
-	height: 5.625rem;
-	border-bottom: 1px solid rgba($color-dark-blue, .15);
+  position: absolute;
+  width: 100%;
+  height: 5.625rem;
+  border-bottom: 1px solid rgba($color-dark-blue, 0.15);
 }
 
 /* ----- Navigation ----- */
 .site-header__logo {
-	@include link-reset;
-	display: block;
-	float: left;
-	color: $color-dark-blue;
-	font-family: $font-family-secondary;
-	font-weight: bold;
-	font-size: 5vmin;
-	line-height: 5.625rem;
+  @include link-reset;
+  display: block;
+  float: left;
+  color: $color-dark-blue;
+  font-family: $font-family-secondary;
+  font-weight: bold;
+  font-size: 3.3vmin;
+  line-height: 5.625rem;
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-dark-blue;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-dark-blue;
+  }
 
-	img {
-		vertical-align: middle;
-	}
+  img {
+    vertical-align: middle;
+  }
+}
+
+.tooltipSearchSuggestions {
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  min-height: 0;
+  border-radius: 10px;
+  z-index: 500;
+  overflow: none;
 }
 
 /* ----- Navigation ----- */
 .site-header__nav {
-	@include list-horizontal;
-	@include clearfix;
-	float: right;
-	margin-bottom: 0;
+  @include list-horizontal;
+  @include clearfix;
+  float: right;
+  margin-bottom: 0;
 
-	li {
-		+ li {
-			margin-left: 2.5rem;
-		}
-	}
+  li {
+    + li:not(&[id="results-container"]) {
+      margin-left: 2.5rem;
+    }
 
-	a {
-		@include link-reset;
-		display: block;
-		font-size: .875em;
-		font-weight: 500;
-		font-family: $font-family-secondary;
-		line-height: calc(5.625rem - 1px);
-		text-transform: uppercase;
-		border-bottom: 1px solid;
-		border-color: transparent;
-		transition: border-color .2s;
+    #search-input {
+      @include link-reset;
 
-		&:hover,
-		&:focus,
-		&:active {
-			border-color: $color-dark-blue;
-		}
-	}
+      font-size: 0.875em;
+      font-weight: 500;
+      font-family: $font-family-secondary;
+      line-height: calc(5.625rem - 1px);
+      text-transform: uppercase;
+      border-bottom: 1px solid;
+      background-color: transparent;
+      outline: none;
+      box-sizing: border-box;
+	  margin-bottom: 2px;
+      border-color: transparent;
+      transition: border-color 0.2s;
+      color: $color-dark;
+      ::placeholder,
+      :-ms-input-placeholder,
+      ::-ms-input-placeholder {
+        color: $color-dark;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+
+  a:not(#results-container > li > a) {
+    @include link-reset;
+    display: block;
+    font-size: 0.875em;
+    font-weight: 500;
+    font-family: $font-family-secondary;
+    line-height: calc(5.625rem - 1px);
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+    border-color: transparent;
+    transition: border-color 0.2s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $color-dark-blue;
+    }
+  }
 }
 
 /* ----- Offcanvas ----- */
 .offcanvas {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	background-color: $color-white;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	opacity: 0;
-	visibility: hidden;
-	@include translate(0, -1.875rem);
-	transition: transform .2s, opacity .2s, visibility .2s;
-	z-index: $z-index-offcanvas;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: $color-white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  @include translate(0, -1.875rem);
+  transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
+  z-index: $z-index-offcanvas;
 
-	.offcanvas-expanded & {
-		opacity: 1;
-		visibility: visible;
-		@include translate(0, 0);
-	}
+  .offcanvas-expanded & {
+    opacity: 1;
+    visibility: visible;
+    @include translate(0, 0);
+  }
 }
 
 /* ----- Offcanvas navigation ----- */
 .offcanvas__nav {
-	height: 100%;
-	overflow: scroll;
-	padding-top: 5rem;
-	padding-bottom: 5rem;
-	-webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow: scroll;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  -webkit-overflow-scrolling: touch;
 
-	li {
-		padding: 0;
+  li {
+    padding: 0;
 
-		&::before {
-			display: none;
-		}
+    &::before {
+      display: none;
+    }
 
-		+ li {
-			margin-top: 1.25rem;
-		}
-	}
+    + li {
+      margin-top: 1.25rem;
+    }
+  }
 
-	a {
-		@include link-reset;
-		color: $color-dark-blue;
-		font-family: $font-family-secondary;
-		text-transform: uppercase;
-	}
+  a {
+    @include link-reset;
+    color: $color-dark-blue;
+    font-family: $font-family-secondary;
+    text-transform: uppercase;
+  }
 }
 
 /* ----- Offcanvas toggle ----- */
 .offcanvas-toggle {
-	height: calc(5.625rem - 1px);
-	width: 5.625rem;
-	cursor: pointer;
-	position: fixed;
-	right: 0;
-	top: 0;
-	@include translate3d(0, 0, 0);
-	z-index: $z-index-offcanvas-toggle;
+  height: calc(5.625rem - 1px);
+  width: 5.625rem;
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include translate3d(0, 0, 0);
+  z-index: $z-index-offcanvas-toggle;
 
-	span {
-		display: block;
-		height: 2px;
-		width: 1.875rem;
-		background-color: $color-dark-blue;
-		position: absolute;
-		left: 1.875rem;
-		transition: top .2s, transform .2s, opacity .2s;
+  span {
+    display: block;
+    height: 2px;
+    width: 1.875rem;
+    background-color: $color-dark-blue;
+    position: absolute;
+    left: 1.875rem;
+    transition: top 0.2s, transform 0.2s, opacity 0.2s;
 
-		&:first-child {
-			top: 2.125rem;
-		}
+    &:first-child {
+      top: 2.125rem;
+    }
 
-		&:nth-child(2) {
-			top: 2.6875rem;
-		}
+    &:nth-child(2) {
+      top: 2.6875rem;
+    }
 
-		&:last-child {
-			top: 3.25rem;
-		}
-	}
+    &:last-child {
+      top: 3.25rem;
+    }
+  }
 
-	.offcanvas-expanded & {
-		span {
-			&:first-child,
-			&:last-child {
-				top: 2.6875rem;
-			}
+  .offcanvas-expanded & {
+    span {
+      &:first-child,
+      &:last-child {
+        top: 2.6875rem;
+      }
 
-			&:first-child {
-				@include rotate(45);
-			}
+      &:first-child {
+        @include rotate(45);
+      }
 
-			&:last-child {
-				@include rotate(-45);
-			}
+      &:last-child {
+        @include rotate(-45);
+      }
 
-			&:nth-child(2) {
-				opacity: 0;
-			}
-		}
-	}
+      &:nth-child(2) {
+        opacity: 0;
+      }
+    }
+  }
 }
