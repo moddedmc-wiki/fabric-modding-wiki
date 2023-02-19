@@ -25,11 +25,11 @@ grid_navigation:
     #   excerpt: Familiarize yourself with key concepts in Minecraft, and understand the Fabric Toolchain.
     #   cta: Read more
     #   url: '/introduction/welcome'  
+    - title: Codecs
+      excerpt: An advanced guide to using Mojang's Codec system for serializing and deserializing java objects.
+      cta: Read more
+      url: '/documentation/codecs'
 ---
-
-<div class="callout callout--danger" style="margin-top: -10%;">
-    <p><strong>Coming soon.</strong> Currently, there are no documentation pages yet - they're currently being written by members of the community.<br>You are welcome to PR documentation pages, checkout the contributing page for more information.</p>
-</div>
 
 ## Information
 
