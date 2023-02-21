@@ -126,7 +126,7 @@ Codec<List<BlockPos>> listCodec = BlockPos.CODEC.listOf();
 ```
 
 It should be noted that codecs created in this way will always deserialize to an `ImmutableList`. If you need a mutable
-list instead, you can make use of [xmap](#functionally-equivalent-types-and-xmap) to convert to one during
+list instead, you can make use of [xmap](#mutually-convertible-types-and-you) to convert to one during
 deserialization.
 
 ### Merging Codecs for Record-like Classes
@@ -148,7 +148,7 @@ public static final Codec<CoolBeansClass> CODEC = RecordCodecBuilder.create(inst
 ```
 
 Each line in the group specifies a codec, a field name, and a getter method. The `Codec#fieldOf` call is used to convert
-the codec into a [map codec](#mapcodec-not-to-be-confused-with-codecmap), and the `forGetter` call specifies the getter 
+the codec into a [map codec](#mapcodec-not-to-be-confused-with-codecltmapgt), and the `forGetter` call specifies the getter 
 method used to retrieve the value of the field from an instance of the class. Meanwhile, the `apply` call specifies the 
 constructor used to create new instances. Note that the order of the fields in the group should be the same as the order 
 of the arguments in the constructor.
@@ -255,11 +255,40 @@ attempt to use the second one. If the second one also fails, the error of the *s
 
 #### Maps
 
+For processing maps with arbitrary keys, such as `HashMap`s, `Codec.unboundedMap` can be used. This returns a
+`Codec<Map<K, V>>` for a given `Codec<K>` and `Codec<V>`. The resulting codec will serialize to a json object or 
+whatever equivalent is available for the current dynamic ops.
 
+Due to limitations of json and nbt, the key codec used must serialize to a string. This includes codecs for types that
+aren't strings themselves, but do serialize to them, such as `Identifier.CODEC`. See the example below:
 
-#### Mutually Convertible Types and xmap
+```java
+// Create a codec for a map of identifiers to integers
+Codec<Map<Identifier, Integer>> mapCodec = Codec.unboundedMap(Identifier.CODEC, Codec.INT);
 
-// TODO
+// Use it to serialize data
+DataResult<JsonElement> result = mapCodec.encodeStart(JsonOps.INSTANCE, Map.of(
+    new Identifier("example", "number"), 23,
+    new Identifier("example", "the_cooler_number"), 42
+));
+```
+
+This will output this json:
+
+```json
+{
+  "example:number": 23,
+  "example:the_cooler_number": 42
+}
+```
+
+As you can see, this works because `Identifier.CODEC` serializes directly to a string value. A similar effect can be 
+achieved for simple objects that don't serialize to strings by using [xmap & friends](#mutually-convertible-types-and-you) to 
+convert them.
+
+### Mutually Convertible Types and You
+
+Say we have // TODO
 
 ## References
 
