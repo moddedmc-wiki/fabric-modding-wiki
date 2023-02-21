@@ -3,6 +3,8 @@ layout: default
 title: Custom Item Groups
 description: Now that you've added many items - they should probably be put together.
 permalink: /items/item-groups
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Armor

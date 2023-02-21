@@ -3,6 +3,8 @@ title: Introduction to Modding
 description: A general rundown on what modding is - and how Fabric allows you to achieve it.
 layout: default
 permalink: /introduction/welcome
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Home

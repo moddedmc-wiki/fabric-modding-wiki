@@ -3,6 +3,8 @@ layout: default
 title: Armor
 description: Learn how to create your own armor sets.
 permalink: /items/armor
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Tools

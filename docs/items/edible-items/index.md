@@ -3,6 +3,8 @@ layout: default
 title: Edible Items
 description: Learn how to add a FoodComponent to an item to make it edible, and configure it.
 permalink: /items/food
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Creating Your First Item
