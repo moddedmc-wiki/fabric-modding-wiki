@@ -195,23 +195,76 @@ MapCodec<BlockPos> optionalCodec = BlockPos.CODEC.optionalFieldOf("pos", BlockPo
 Do note that optional fields will silently ignore any errors that may occur during deserialization. This means that if
 the field is present, but the value is invalid, the field will always be deserialized as the default value.
 
-### Unit
+### Constants, Constraints, and Composition
 
-`Codec#unit` can be used to create a codec that always deserializes to a constant value, regardless of the input. When
+#### Unit
+
+`Codec.unit` can be used to create a codec that always deserializes to a constant value, regardless of the input. When
 serializing, it will do nothing.
 
 ```java
 Codec<Integer> theMeaningOfCodec = Codec.unit(42);
 ```
 
-### Functionally Equivalent Types and xmap
+#### Numeric Ranges
+
+`Codec.intRange` and its pals, `Codec.floatRange` and `Codec.doubleRange` can be used to create a codec that only 
+accepts number values within a specified **inclusive** range. This applies to both serialization and deserialization.
+
+```java
+// Can't be more than 2
+Codec<Integer> amountOfFriendsYouHave = Codec.intRange(0, 2);
+```
+
+#### Pair
+
+`Codec.pair` merges two codecs, `Codec<A>` and `Codec<B>`, into a `Codec<Pair<A, B>>`. Keep in mind it only works 
+properly with codecs that serialize to a specific field, such as 
+[converted `MapCodec`s](#mapcodec-not-to-be-confused-with-codecltmapgt) or 
+[record codecs](#merging-codecs-for-record-like-classes). 
+The resulting codec will serialize to a map combining the fields of both codecs used.
+
+For example, running this code:
+
+```java
+// Create two seperate boxed codecs
+MapCodec<Integer> firstCodec = Codec.INT.fieldOf("i_am_number").codec();
+MapCodec<Boolean> secondCodec = Codec.BOOL.fieldOf("this_statement_is_false").codec();
+
+// Merge them into a pair codec
+Codec<Pair<Integer, Boolean>> pairCodec = Codec.pair(firstCodec, secondCodec);
+
+// Use it to serialize data
+DataResult<JsonElement> result = pairCodec.encodeStart(JsonOps.INSTANCE, Pair.of(23, true)).
+```
+
+Will output this json:
+
+```json
+{
+  "i_am_number": 23,
+  "this_statement_is_false": true
+}
+```
+
+#### Either
+
+`Codec.either` combines two codecs, `Codec<A>` and `Codec<B>`, into a `Codec<Either<A, B>>`. The resulting codec will,
+during both *serialization and deserialization*, attempt to use the first codec, and *only if that fails*, 
+attempt to use the second one. If the second one also fails, the error of the *second* codec will be returned.
+
+#### Maps
+
+
+
+#### Mutually Convertible Types and xmap
 
 // TODO
 
 ## References
 
 - A much more comprehensive documentation of codecs and related APIs can be found at the
-  [Unofficial DFU JavaDoc](https://kvverti.github.io/Documented-DataFixerUpper/snapshot/com/mojang/serialization/Codec.html)
+  [Unofficial DFU JavaDoc](https://kvverti.github.io/Documented-DataFixerUpper/snapshot/com/mojang/serialization/Codec.html).
 - The general structure of this guide was heavily inspired by the
   [Forge Community Wiki's page on codecs](https://forge.gemwire.uk/wiki/Codecs), a more Forge-specific take on the same
   topic.
