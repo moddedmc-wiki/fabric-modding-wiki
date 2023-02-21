@@ -3,6 +3,8 @@ layout: default
 title: Tools
 description: Learn how to create your own tools and set their durability and mining levels.
 permalink: /items/tools
+authors:
+  - "mineblock11"
 page_nav:
     prev:
         content: Edible Items

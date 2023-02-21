@@ -6,7 +6,9 @@
 @mixin list-horizontal {
 	li {
 		float: left;
-		padding: 0;
+		// this might be important, dunno. seems to work without it though.
+		// having it uncommented breaks navbar elements on certain browsers.
+		//padding: 0;
 		margin-bottom: 0;
 
 		&::before {

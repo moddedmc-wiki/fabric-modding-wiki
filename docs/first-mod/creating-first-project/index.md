@@ -3,6 +3,8 @@ title: Creating Your First Project
 description: This page will guide you through the setup process of your first project using Minecraft Development and IntelliJ IDEA.
 layout: default
 permalink: /introduction/setup
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Introduction To Modding

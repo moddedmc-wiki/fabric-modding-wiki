@@ -1,4 +1,4 @@
-( function( $ ) {
+( async function( $ ) {
 	'use strict';
 
 	// Reduce
@@ -117,6 +117,7 @@
 			}
 
 			$ul.append( $li );
+		
 		}
 
 		return $ul;
@@ -124,8 +125,8 @@
 
 	if ( headings.length ) {
 		headings = reduceLevels( headings );
-
-		generateList( headings, true ).appendTo( '.js-sections' );
+		
+	    generateList( headings, true ).prependTo( '.js-sections' );
 	}
 
 	// Smooth anchor scrolling
@@ -138,6 +139,7 @@
 
 		return false;
 	} );
+
 
 	var handleSectionsListSize = function() {
 		$( '.sections-list' ).css( 'width', $( '.sections-list-wrapper' ).width() );

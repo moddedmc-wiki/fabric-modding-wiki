@@ -3,6 +3,8 @@ title: Mixins
 description: Mixins are a key aspect of modding, and are highly useful once mastered.
 layout: default
 permalink: /introduction/mixins
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Creating Your First Project

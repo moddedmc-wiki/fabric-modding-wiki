@@ -3,6 +3,8 @@ layout: default
 title: Creating Your First Item
 description: Learn how to register a simple item and how to texture, model and name it.
 permalink: /items/first-item
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Contents

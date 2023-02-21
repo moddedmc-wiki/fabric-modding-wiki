@@ -91,3 +91,12 @@ kbd {
 .mermaid {
     background-color: transparent;
 }
+
+.author-image {
+    border-radius: 50%;
+    transition: transform .2s;
+}
+
+.author-image:hover {
+    transform: scale(1.05);
+}

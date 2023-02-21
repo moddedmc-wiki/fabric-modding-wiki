@@ -3,6 +3,8 @@ layout: default
 title: Access Wideners
 description: Learn how to access parts of Minecraft's code you're not meant to.
 permalink: /introduction/access-wideners
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Mixins

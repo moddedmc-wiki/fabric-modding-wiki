@@ -3,6 +3,8 @@ layout: default
 title: Interactive Items
 description: Learn how to create an item that has uses the built-in vanilla events.
 permalink: /items/interactive-items
+authors:
+    - "mineblock11"
 page_nav:
     prev:
         content: Custom Item Groups
