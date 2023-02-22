@@ -71,3 +71,7 @@ If you need extra help or certain concepts further clarified, you can ask in the
 ## Thank you.
 
 Thank you for using the wiki! It means alot to me (mineblock11) and any contributors that have made significant contributions to the wiki.
+
+## Legal
+
+All legal notices [can be found here.](/legal)

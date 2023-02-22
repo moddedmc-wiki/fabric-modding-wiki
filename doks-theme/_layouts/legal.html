@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% include site-head.html %}
+</head>
+
+<body class="{{ site.doks.color_theme }}">
+	<div class="margin-lower-legal">
+		{% include site-header.html %}
+	</div>
+	<div class="section section--darker-theme-color-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content legal">
+						{{ content }}
+					</div><!-- /.nav-grid -->
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div><!-- /.section -->
+	{% include site-footer.html %}
+</body>
+
+</html>
