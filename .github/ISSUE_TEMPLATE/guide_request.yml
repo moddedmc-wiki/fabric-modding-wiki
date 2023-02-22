@@ -1,0 +1,34 @@
+name: Guide Request
+description: Request a guide to be added to the community wiki.
+title: "Guide - "
+labels: ["Guide"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for creating a guide request.
+        Please ensure the topic in question can not be classed as documentation!
+        Documentation does not teach people - it simply exists as a reference on usage.
+  - type: textarea
+    id: topic
+    attributes:
+      label: What do you want to see added?
+      description: |
+        Please describe the topic in question.
+        
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+      placeholder: Tell us about the topic!
+      value: "I would like to see a guide created about adding..."
+    validations:
+      required: true
+  - type: dropdown
+    id: multitopic
+    attributes:
+      label: Would this topic span multiple pages?
+      multiple: false
+      options:
+        - Yes
+        - No
+        - Not Sure
+    validations:
+      required: true
