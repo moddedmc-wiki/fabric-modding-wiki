@@ -1,6 +1,8 @@
 ---
 title: Codecs 
-description: An advanced guide to using Mojang's Codec system for serializing and deserializing java objects. 
+description: An advanced guide to using Mojang's Codec system for serializing and deserializing java objects.
+authors:
+  - "enjarai"
 layout: default 
 permalink: /documentation/codecs 
 page_nav:
