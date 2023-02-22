@@ -2,10 +2,10 @@
 layout: homepage
 keywords:
 
-permalink: /items/
+permalink: /blocks/
 
-title: Adding Items
-description: Learn how to register your own custom items; food, tools, armor and weapons.
+title: Adding Blocks
+description: Learn how to register your own custom blocks with logic via block entities.
 
 buttons:
     # - content: About
@@ -21,31 +21,31 @@ author:
     description: We're looking for contributors - if you are experienced with the Fabric Toolchain, you are more than welcome to look at our roadmap and create a pull request.
 
 grid_navigation:
-    - header: Basics Of Items
-    - title: Creating Your First Item
-      excerpt: Learn how to register a simple item and how to texture, model and name it.
+    - header: Basics Of Blocks
+    - title: Creating Your First Block
+      excerpt: Learn how to register a simple block and block item, texture and model it.
       cta: Read more
-      url: '/items/first-item' 
-    - title: Edible Items
-      excerpt: This page will guide you through the setup process of your first project using Minecraft Development and IntelliJ IDEA.
+      url: '/blocks/first-block' 
+    - title: Block States
+      excerpt: This page will explain blockstates, and why they are so useful.
       cta: Read more
-      url: '/items/food'
-    - title: Tools
-      excerpt: Learn how to harness the power of mixins to add content to your mod.
+      url: '/blocks/blockstates'
+    - title: Custom Blocks
+      excerpt: This page will guide you through the creation of a custom block class - and why you should consider using a custom block class.
       cta: Read more
-      url: '/items/tools'
-    - title: Armor
-      excerpt: Learn how to use access wideners to access parts of Minecraft's code that isn't usually accessible.
+      url: '/blocks/custom-block'
+    - title: Block Entites
+      excerpt: Learn how to create a block entity, and when you should and shouldn't use it.
       cta: Read more
-      url: '/items/armor'
-    - title: Custom Item Groups
-      excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
+      url: '/blocks/block-entities'
+    - title: Block Inventory
+      excerpt: Learn how to store items in blocks using the Inventory class.
       cta: Read more
-      url: '/items/item-groups'   
-    - title: Interactive Items
-      excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
+      url: '/blocks/block-inventory'
+    - title: Screen Handlers
+      excerpt: This page will explain screen handlers, and how to use them to allow players to edit an inventory or view information on a block entity.
+      url: '/blocks/screen-handlers'
       cta: Read more
-      url: '/items/interactive-items' 
     - header: Advanced Topics
 ---
 
