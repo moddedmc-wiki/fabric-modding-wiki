@@ -27,8 +27,8 @@ body:
       label: Would this topic span multiple pages?
       multiple: false
       options:
-        - Yes
-        - No
-        - Not Sure
+        - 'Yes'
+        - 'No'
+        - 'Not Sure'
     validations:
       required: true
