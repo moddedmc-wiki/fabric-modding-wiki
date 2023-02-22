@@ -67,8 +67,8 @@ LOGGER.info("Deserialized BlockPos: {}", pos);
 As mentioned earlier, Mojang has already defined codecs for several vanilla and standard Java classes, including but not
 limited to `BlockPos`, `BlockState`, `ItemStack`, `Identifier`, `Text`, and regex `Pattern`s. Codecs for Mojang's own
 classes are usually found as static fields named `CODEC` on the class itself, while most others are kept in the `Codecs`
-class. It should also be noted that all vanilla registries directly implement the `Codec` interface, for example, you
-can use `Registries.BLOCK` as a `Codec<Block>`.
+class. It should also be noted that all vanilla registries contain a `getCodec()` method, for example, you
+can use `Registries.BLOCK.getCodec()` to get a `Codec<Block>` which serializes to the block id and back.
 
 The codec api itself also contains some codecs for primitive types, such as `Codec.INT` and `Codec.STRING`. These are
 available as statics on the `Codec` class, and are usually used as the base for more complex codecs, as explained below.
@@ -114,8 +114,8 @@ need one for each field:
 - a `Codec<List<BlockPos>>`
 
 We can get the first one from the aforementioned primitive codecs in the `Codec` class, specifically `Codec.INT`. While
-the second one can be obtained from the `Registries.ITEM` registry, which directly implements `Codec<Item>`. We don't
-have a default codec for `List<BlockPos>`, but we can make one from `BlockPos.CODEC`.
+the second one can be obtained from the `Registries.ITEM` registry, which has a `getCodec()` method that returns a 
+`Codec<Item>`. We don't have a default codec for `List<BlockPos>`, but we can make one from `BlockPos.CODEC`.
 
 ### Lists
 
@@ -141,7 +141,7 @@ Let's take a look at how to create a codec for our `CoolBeansClass`:
 ```java
 public static final Codec<CoolBeansClass> CODEC = RecordCodecBuilder.create(instance -> instance.group(
     Codec.INT.fieldOf("beans_amount").forGetter(CoolBeansClass::getBeansAmount),
-    Registries.ITEM.fieldOf("bean_type").forGetter(CoolBeansClass::getBeanType),
+    Registries.ITEM.getCodec().fieldOf("bean_type").forGetter(CoolBeansClass::getBeanType),
     BlockPos.CODEC.listOf().fieldOf("bean_positions").forGetter(CoolBeansClass::getBeanPositions)
     // Up to 16 fields can be declared here
 ).apply(instance, CoolBeansClass::new));
@@ -288,7 +288,149 @@ convert them.
 
 ### Mutually Convertible Types and You
 
-Say we have // TODO
+#### xmap
+
+Say we have two classes that can be converted to each other, but don't have a parent-child relationship. For example,
+a vanilla `BlockPos` and `Vec3d`. If we have a codec for one, we can use `Codec#xmap` to create a codec for the other by
+specifying a conversion function for each direction.
+
+`BlockPos` already has a codec, but let's pretend it doesn't. We can create one for it by basing it on the
+codec for `Vec3d` like this:
+
+```java
+Codec<BlockPos> blockPosCodec = Vec3d.CODEC.xmap(
+    // Convert Vec3d to BlockPos
+    vec -> new BlockPos(vec.x, vec.y, vec.z),
+    // Convert BlockPos to Vec3d
+    pos -> new Vec3d(pos.getX(), pos.getY(), pos.getZ())
+);
+
+// It'd be cleaner to use method references to helper functions to transform 
+// between the two, but this is just an example
+```
+
+#### flatComapMap, comapFlatMap, and flatXMap
+
+`Codec#flatComapMap`, `Codec#comapFlatMap` and `flatXMap` are similar to xmap, but they allow one or both of the 
+conversion functions to return a DataResult. This is useful in practice because a specific object instance may not 
+always be valid for conversion. 
+
+Take for example vanilla `Identifier`s. Not all strings are valid identifiers, so using xmap would mean throwing ugly 
+exceptions when the conversion fails. However, its codec is actually a `comapFlatMap` on `Codec.STRING`, nicely
+illustrating how to use it:
+
+```java
+public class Identifier {
+    public static final Codec<Identifier> CODEC = Codec.STRING.comapFlatMap(
+        Identifier::validate, Identifier::toString
+    );
+
+    // ...
+
+    public static DataResult<Identifier> validate(String id) {
+        try {
+            return DataResult.success(new Identifier(id));
+        } catch (InvalidIdentifierException e) {
+            return DataResult.error("Not a valid resource location: " + id + " " + e.getMessage());
+        }
+    }
+    
+    // ...
+}
+```
+
+While these methods are really helpful, their names are a bit confusing, so here's a table to help you remember which 
+one to use:
+
+| Method                  | A -> B always valid? | B -> A always valid? |
+|-------------------------|----------------------|----------------------|
+| `Codec<A>#xmap`         | Yes                  | Yes                  |
+| `Codec<A>#comapFlatMap` | No                   | Yes                  |
+| `Codec<A>#flatComapMap` | Yes                  | No                   |
+| `Codec<A>#flatXMap`     | No                   | No                   |
+
+### Registry Dispatch
+
+`Codec#dispatch` let us define a registry of codecs and dispatch to a specific one based on the value of a 
+field in the serialized data. This is very useful when deserializing objects that have different fields depending on
+their type, but still represent the same thing.
+
+For example, say we have an abstract `Bean` class with two subclasses: `StringyBean` and `CountingBean`. To serialize
+these with a registry dispatch, we'll need a few things:
+
+- Separate codecs for every type of bean.
+- A `BeanType` interface or class that represents the type of bean, and can return the codec for it.
+- A function on `Bean` to retrieve its `BeanType`.
+- A map or registry to map `Identifier`s to `BeanType`s.
+- A `Codec<BeanType>` based on this registry. If you used a `net.minecraft.registry.Registry`, one can be easily made 
+  using `Registry#getCodec`.
+
+With all of this, we can create a registry dispatch codec for beans:
+
+```java
+class Bean {
+    // ...
+    public BeanType getType() {
+        // ...
+    }
+}
+
+class BeanType {
+    // ...
+    
+    public Codec<? extends Bean> getCodec();
+}
+
+class StringyBean extends Bean {
+    public static final Codec<StringyBean> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+        Codec.STRING.fieldOf("stringy_string").forGetter(StringyBean::getStringyString)
+    ).apply(instance, StringyBean::new));
+
+    public final String stringyString;
+
+    // ...
+}
+
+class CountingBean extends Bean {
+    public static final Codec<CountingBean> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+        Codec.INT.fieldOf("counting_number").forGetter(CountingBean::getCountingNumber)
+    ).apply(instance, CountingBean::new));
+
+    public final int countingNumber;
+
+    // ...
+}
+
+// Create a registry to map identifiers to bean types
+Registry<BeanType> beanTypeRegistry = new SimpleRegistry<>(new Identifier("example", "bean_types"), Lifecycle.stable());
+
+// Register the bean types
+beanTypeRegistry.register(new Identifier("example", "stringy_bean"), new BeanType(StringyBean.CODEC));
+beanTypeRegistry.register(new Identifier("example", "counting_bean"), new BeanType(CountingBean.CODEC));
+
+// Create a codec for bean types
+Codec<BeanType> beanTypeCodec = beanTypeRegistry.getCodec();
+
+// And here's our registry dispatch codec for beans! 
+// The first argument is the field name for the bean type
+Codec<Bean> beanCodec = beanTypeCodec.dispatch("type", Bean::getType, BeanType::getCodec);
+```
+
+This will serialize beans to json like this, grabbing only fields that are relevant to its type:
+
+```json
+{
+  "type": "example:stringy_bean",
+  "stringy_string": "This bean is stringy!"
+}
+```
+
+```json
+{
+  "type": "example:counting_bean",
+  "counting_number": 42
+}
+```
 
 ## References
 
