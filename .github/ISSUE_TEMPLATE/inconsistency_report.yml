@@ -1,0 +1,29 @@
+name: Inconsistency Report
+description: File a report about an inconsistency on a wiki page. (Typos/Incorrect facts ect.)
+title: "Inconsistency - "
+labels: ["Bug/Inconsistency"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for creating an inconsistency report.
+        Please ensure that the issue in question is a bug with the site itself.
+        If you found any issues with the wiki itself, eg: broken css, please file a **bug report** instead.
+  - type: textarea
+    id: what-is-it
+    attributes:
+      label: What is the inconsistency?
+      description: Please describe the inconsistency in question - explain what you think it should be - or why it is wrong.
+      placeholder: Tell us what is wrong!
+      value: "This should say X, instead of Y!"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more context about the inconsistency.
+
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+    validations:
+      required: false
