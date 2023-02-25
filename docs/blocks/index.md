@@ -39,7 +39,7 @@ grid_navigation:
       cta: Read more
       url: '/blocks/block-entities'
     - title: Block Inventory
-      excerpt: Learn how to store items in blocks using the Inventory class.
+      excerpt: Learn how to store items in blocks using the Inventory class and block entities.
       cta: Read more
       url: '/blocks/block-inventory'
     - title: Screen Handlers
