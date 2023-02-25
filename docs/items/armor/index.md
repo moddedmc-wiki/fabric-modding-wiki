@@ -27,7 +27,8 @@ The armor material tells the game what protection and durability the armor item 
 You'll need to create a class that inherits `ArmorMaterial` - and add the following fields.
 
 ```java
-public class GuideArmorMaterial extends ArmorMaterial {
+// I'll be creatng guide-ite armor, to pair with the tools I created in the previous page.
+public class GuiditeArmorMaterial extends ArmorMaterial {
     // Base durability values for all the slots.
     // Boots, Leggings, Chestplate, Helmet
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
@@ -47,7 +48,7 @@ public class GuideArmorMaterial extends ArmorMaterial {
         PROTECTION_LEGGINGS,
         PROTECTION_CHESTPLATE,
         PROTECTION_HELMET
-    }
+    };
 }
 ```
 
@@ -94,10 +95,10 @@ The following methods will have to be implemented as well - these methods tell t
   **Example**
 
   ```java
-	@Override
-	public int getEnchantability() {
-		return 5;
-	}
+    @Override
+    public int getEnchantability() {
+      return 5;
+    }
   ```
 
 - #### Equip Sound - `getEquipsound()`
@@ -108,10 +109,10 @@ The following methods will have to be implemented as well - these methods tell t
 
   ```java
     @Override
-	public SoundEvent getEquipSound() {
-        // Example for Iron Armor
-		return SoundEvents.ITEM_ARMOR_EQUIP_IRON;
-	}
+    public SoundEvent getEquipSound() {
+      // Example for Iron Armor
+      return SoundEvents.ITEM_ARMOR_EQUIP_IRON;
+    }
   ```
 
 - #### Repair Ingredient - `getRepairIngredient()`
@@ -121,25 +122,141 @@ The following methods will have to be implemented as well - these methods tell t
   **Example**
 
   ```java
-  	@Override
-	public Ingredient getRepairIngredient() {
-		return Ingredient.ofItems(Items.IRON_INGOT, Items.DIRT, ...);
-	}
+    @Override
+    public Ingredient getRepairIngredient() {
+        return Ingredient.ofItems(ModItems.POOP);
+    }
   ```
 
 - #### Name - `getName()`
   
   The name of the armor material - must be lowercase.
 
+  **Example**
+
   ```java
-  	@Override
-	public String getName() {
-		return "iron";
-	}
+    @Override
+    public String getName() {
+      return "guidite";
+    }
   ```
 
 - #### Toughness - `getToughness()`
   
   How much protection should be given for high-damage attacks?
 
+  For reference, everything except diamond (`2.0F`) and netherite (`4.0F`) have a toughness of zero.
+
+  **Example**
+
+  ```java
+    @Override
+    public float getToughness() {
+      return 2.0F;
+    }
+  ```
+
+- #### Knockback Resistance - `getKnockbackResistance()`
   
+  How much knockback resistance should the armor give the entity?
+
+  **Example**
+
+  ```java
+    @Override
+    public float getKnockbackResistance() {
+        // I do not want Guidite Armor to give knockback resistance.
+        return 0;
+    }
+  ```
+
+## Creating an instance of the ArmorMaterial
+
+To use the armor material with the armor items, you'll need to create an instance of it - similar to a tool material:
+
+```java
+public static final GuiditeArmorMaterial INSTANCE = new GuiditeArmorMaterial();
+```
+
+You can place this instance in the armor material class itself.
+
+## Creating the Armor Items
+
+Now that you've created an instance of the material, you can create the armor items in your `ModItems` class:
+
+Obviously, an armor set doesn't need every slot type to be satisfied, you can have a set with just boots, or leggings etc. - the vanilla turtle shell helmet is a good example of an armor set with missing slots.
+
+```java
+public static final Item GUIDITE_HELMET = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings()), "guidite_helmet");
+public static final Item GUIDITE_BOOTS = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings(), "guidite_boots");
+// ... chestplate, leggings, etc.
+```
+
+You will also need to add the items to an item group if you want them to be accessible from the creative inventory.
+
+As with all items, you should create translation keys for them as well.
+
+## Texturing and Modelling
+
+You will need to create two sets of textures:
+
+- Textures and models for the items themselves.
+- The actual armor texture that is visible when an entity wears the armor.
+
+### Item Textures And Model
+
+These textures are no different to other items - you must create the textures, and create a generic generated item model - which was covered in the [Creating Your First Item](/items/first-item) guide.
+
+For the sake of it, I have supplied example armor item textures you can use, and an example model json:
+
+![](/docs/items/armor/index_0.png)
+
+<div align="center">
+  <a target="_blank" href="/docs/items/armor/example_armor_item_textures.zip">Download Textures</a>
+</div>
+
+```json
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mod_id:item/guidite_helmet"
+  }
+}
+```
+
+As you can see, in-game the armor items should have suitable models:
+
+![](/docs/items/armor/index_1.png)
+
+## Armor Textures And Model
+
+When an entity wears your armor, currently the missing texture will appear:
+
+![](/docs/items/armor/index_2.png)
+
+
+This is because all armor textures are hardcoded by vanilla, to create our own, we'll have to place the texture in the vanilla armor texture folder.
+
+There are two layers for the armor texture, both must be present.
+
+Since the armor material name in our case is `guidite`, the locations of the textures will be:
+
+- `assets/minecraft/textures/models/armor/guidite_layer_1.png`
+- `assets/minecraft/textures/models/armor/guidite_layer_2.png`
+
+<div align="center">
+  <a target="_blank" href="/docs/items/armor/example_armor_layer_textures.zip">Download Example Armor Layer Textures</a>
+</div>
+<br>
+
+The first layer contains textures for the helmet and chestplate, whilst the second layer contains textures for leggings and boots.
+
+When these textures are present, you should be able to see your armor on entities that wear it:
+
+![](/docs/items/armor/index_3.png)
+
+## Next Steps
+
+- Why don't you try make another armor material?
+- Can you make it so when the player is wearing the armor, a status effect is applied?
+- Try testing out the durability of your armor, and repair it in an anvil using the specified repair ingredient.
