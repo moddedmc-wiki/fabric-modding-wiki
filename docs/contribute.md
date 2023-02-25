@@ -47,6 +47,47 @@ Code blocks support the major programming languages.
 System.out.println("For example, this is Java.")
 ```
 
+## Page Metadata
+
+All pages must have the following metadata:
+
+```yml
+---
+title: Title
+description: Page Description
+permalink: /url/to/the/page
+authors:
+    - "Your github username here"
+layout: default
+---
+```
+
+Metadata must be wrapped in a triple dash block.
+
+If you are creating multiple pages that are in chronological order, you can use the `page_nav` property to provide navigation to users.
+
+**Example:**
+
+```yml
+page_nav:
+    prev:
+        content: Mixins
+        url: /introduction/mixins
+    next:
+        content: Wrapping It Up
+        url: /introduction/ending
+```
+
+<a href="/introduction/mixins" class="btn btn--dark btn--rounded btn--w-icon btn--w-icon-left">
+	<i class="icon icon--arrow-left"></i>
+	Mixins
+</a>
+<a href="/introduction/ending" class="btn btn--dark btn--rounded btn--w-icon">
+	<i class="icon icon--arrow-right"></i>
+	Wrapping It Up
+</a>
+
+
 ## Long-Term Contributors
 
 If you want to become a long-term contributor/maintainer of the wiki, please shoot mineblock11 a DM on discord.
