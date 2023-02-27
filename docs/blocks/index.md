@@ -33,7 +33,7 @@ grid_navigation:
     - title: Custom Blocks
       excerpt: This page will guide you through the creation of a custom block class - and why you should consider using a custom block class.
       cta: Read more
-      url: '/blocks/custom-block'
+      url: '/blocks/custom-blocks'
     - title: Block Entites
       excerpt: Learn how to create a block entity, and when you should and shouldn't use it.
       cta: Read more
