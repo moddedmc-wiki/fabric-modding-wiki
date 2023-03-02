@@ -90,8 +90,9 @@ Since that looks good, let's try to rotate it instead.
 Assuming you know what a quaternion is, we can use them to rotate our drawn content. Lucky for us, minecraft has an utility to help with quaternions: `RotationAxis`.
 
 We'll be using `RotationAxis.POSITIVE_Z` to rotate the image clockwise on the screen. The reason we're using `POSITIVE_Z`, is because `RotationAxis` generates quaternions based on the axis we rotate around, which is the Z axis in our case:
-<sup>* note that this illustration is slightly incorrect, +Z would be facing downwards instead of up</sup>
+
 ![](/docs/rendering/matrices/index_5.png)
+<sup>* note that this illustration is slightly incorrect, +Z would be facing downwards instead of up</sup>
 
 By calling `multiply(RotationAxis.POSITIVE_Z.rotationDegrees(45))`, we can effectively rotate the entire drawn content by 45 degrees clockwise, but something goes horribly wrong:
 ![](/docs/rendering/matrices/index_2.png)
