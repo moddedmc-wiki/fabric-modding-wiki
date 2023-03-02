@@ -16,7 +16,7 @@ page_nav:
 
 ## What are block states?
 
-A block state is a piece of data attached to a singular block in the Minecraft world containing information on the block - some examples of information vanilla stores in block states:
+A block state is a piece of data attached to a singular block in the Minecraft world containing information on the block in the form of properties - some examples of properties vanilla stores in block states:
 
 - Rotation: Mostly used for logs and other natural blocks.
 - Activated: Heavily used in redstone devices, and blocks such as the furnace or smoker.
@@ -103,4 +103,104 @@ As always, you'll need to create a translation for your block, and an item model
 <div class="callout callout--danger">
     <p><strong>Note</strong>This section assumes you have completed the <a href="/blocks/custom-blocks">Custom Blocks</a> guide.</p>
 </div>
+
+Custom block states are great if your block has unique properties - sometimes you may find that your block can re-use vanilla properties.
+
+This example will create a unique boolean property called `activated` - when a player right clicks on the block, the block will go from `activated=false` to `activated=true` - changing it's texture accordingly.
+
+### Creating the property
+
+Firstly, you'll need to create the property itself - since this is a boolean, we'll use the `BooleanProperty#of` method.
+
+```java
+public class PrismarineLampBlock extends Block {
+    public static final BooleanProperty ACTIVATED = BooleanProperty.of("activated");
+    
+    // ...
+}
+```
+
+Next, we have to append the property to the blockstate manager in the `appendProperties` method. You'll need to override the method to access the builder:
+
+```java
+@Override
+protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+  builder.add(ACTIVATED);
+}
+```
+
+You'll also have to set a default state for the `activated` property in the constructor of your custom block.
+
+```java
+public PrismarineLampBlock(...) {
+  // ... super() etc.
+
+  setDefaultState(getDefaultState().with(ACTIVATED, false));
+}
+```
+
+### Using the property
+
+This example flips the boolean `activated` property when the player interacts with the block. We can override the `onUse` method for this:
+
+```java
+@Override
+public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+  // Ignore the interaction if it was run on the client.
+  if (world.isClient) {
+    return ActionResult.SUCCESS;
+  }
+        
+  // Get the current value of the "activated" property
+  boolean activated = state.get(ACTIVATED);
+        
+  // Flip the value of activated and save the new blockstate.
+  world.setBlockState(pos, state.with(ACTIVATED, !activated));
+
+  return ActionResult.SUCCESS;
+}
+```
+
+### Visualizing the property
+
+Since you created a new property, you will have to update the blockstate file for the block to account for that property.
+
+If you have multiple properties on a block, you'll have to account for all possible combinations, eg: `activated` and `axis` would lead to `6` combinations (two possible values for `activated` and three possible values for `axis`) 
+
+Since this block only has two possible variants - due to the fact it only has one property, `activated` - the blockstate JSON will look something like this:
+
+```jsonc
+{
+  "variants": {
+    "activated=false": { 
+      "model": "mod_id:block/prismarine_lamp" 
+    },
+    "activated=true": { 
+      "model": "mod_id:block/prismarine_lamp_activated" 
+    }
+  }
+}
+```
+
+![](/docs/blocks/blockstates/index_2.webp)
+
+<hr />
+
+Since the example block is a lamp, we also need to make it emit light when the activated property is true - this can be done through the block settings passed to the constructor:
+
+```java
+AbstractBlock.Settings.of(...)
+  .luminance((state) -> {
+    // Get the value of the "activated" property.
+    boolean activated = state.get(ACTIVATED);
+
+    // Return a light level if activated = true
+    return activated ? 15 : 0;
+  });
+```
+
+## Next Steps
+
+- Why don't you try and implement the same using [Block Entities](/blocks/block-entities)
+- Try make a block that uses the `FacingBlock` class - this class uses the `facing` property.
 
