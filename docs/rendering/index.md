@@ -25,6 +25,10 @@ grid_navigation:
       excerpt: Transforming rendered content using Matrices and MatrixStack
       cta: Read more
       url: '/rendering/matrices' 
+    - title: Rendering in the world
+      excerpt: Rendering content in all 3 dimensions instead of on the HUD
+      cta: Read more
+      url: '/rendering/world'
 ---
 
 ## Information
