@@ -11,8 +11,8 @@ page_nav:
         content: Creating Your First Project
         url: /introduction/setup
     next:
-        content: Shadowing
-        url: /introduction/shadow
+        content: More Mixins
+        url: /introduction/more-mixins
 ---
 
 <div class="callout callout--danger" style="margin-top: -10%;">
@@ -131,4 +131,4 @@ It's best not to mess with any of the options except the `package` and the follo
 
 - Why don't you create a mixin that injects into the `TAIL` of the `TitleScreen#init` method?
 - [Try creating a mixin that injects into a constructor.](#special-injection-places)
-- [What if you want to access a field from a target class?](shadow)
+- [What if you want to access a field from a target class?](/introduction/more-mixins#accessing-fields-and-methods-from-your-target-class)
