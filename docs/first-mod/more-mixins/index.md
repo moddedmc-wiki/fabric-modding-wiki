@@ -5,13 +5,6 @@ layout: default
 permalink: /introduction/more-mixins
 authors:
     - "friendly-banana"
-page_nav:
-  prev:
-      content: Mixins
-      url: /introduction/mixins
-  next:
-      content: Access Wideners
-      url: /introduction/access-wideners
 ---
 
 ## General

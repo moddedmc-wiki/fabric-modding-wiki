@@ -11,8 +11,8 @@ page_nav:
         content: Creating Your First Project
         url: /introduction/setup
     next:
-        content: More Mixins
-        url: /introduction/more-mixins
+        content: Access Wideners
+        url: /introduction/access-wideners
 ---
 
 <div class="callout callout--danger" style="margin-top: -10%;">
