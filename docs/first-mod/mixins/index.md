@@ -5,13 +5,14 @@ layout: default
 permalink: /introduction/mixins
 authors:
     - "mineblock11"
+    - "friendly-banana"
 page_nav:
     prev:
         content: Creating Your First Project
         url: /introduction/setup
     next:
-        content: Access Wideners
-        url: /introduction/access-wideners
+        content: Shadowing
+        url: /introduction/shadow
 ---
 
 <div class="callout callout--danger" style="margin-top: -10%;">
@@ -80,17 +81,22 @@ There are **many** stages you can inject into, but the most commonly used ones a
 
 The `at = @At(stage)` part of the `@Inject` annotation is used 
 
+#### Special Injection Places
+
+-   `<init>`: A method call to your code is injected into the constructor of a class. The stage for `@At` must not be `HEAD`. Otherwise, your game will crash because the call to the super's constructor has to be the first thing.
+-   `<clinit>`: A method call to your code is injected into the static initializer of a class. The static initializer is the `static { ... }` block you may have seen in Minecraft's code.
+
 ### Method References
 
-This is where the Minecraft Development plugin comes in **very** handy.
+The `method` parameter of the `@Inject` annotation contains a string reference to the method. This is where the Minecraft Development plugin comes in **very** handy. You can just start typing the name of your target method and use auto-completion.
 
-The `method` parameter of the `@Inject` annotation contains a string reference to the method
+If you really wanted you could find all the details in the [Oracle docs](https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.2) but that isn't necessary normally.
 
 ### Cancellable Toggle
 
 You can actually cancel the method entirely by setting `cancellable = true` in the `@Inject` annotation. This will enable the `CallbackInfo#cancel` methods.
 
-Cancelling methods can be potentially destructive - please be careful with it's usage and think about how it may affect other mods.
+Cancelling methods can be potentially destructive - please be careful with its usage and think about how it may affect other mods.
 
 ## Registering Mixins
 
@@ -123,6 +129,6 @@ It's best not to mess with any of the options except the `package` and the follo
 
 ## Next Steps
 
-- Why dont you create a mixin that injects into the `TAIL` of the `TitleScreen#init` method?
-- Try create a mixin that injects into a constructor.
-- What if you want to access a field from a target class?
+- Why don't you create a mixin that injects into the `TAIL` of the `TitleScreen#init` method?
+- [Try creating a mixin that injects into a constructor.](#special-injection-places)
+- [What if you want to access a field from a target class?](shadow)
