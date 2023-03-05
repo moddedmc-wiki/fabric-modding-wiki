@@ -33,10 +33,6 @@ grid_navigation:
       excerpt: Learn how to harness the power of mixins to add content to your mod.
       cta: Read more
       url: '/introduction/mixins'
-    - title: More Mixins
-      excerpt:  Master Minecraft's code by using the full power of mixins.
-      cta: Read more
-      url: '/introduction/more-mixins'
     - title: Access Wideners
       excerpt: Learn how to use access wideners to access parts of Minecraft's code that isn't usually accessible.
       cta: Read more
@@ -45,6 +41,11 @@ grid_navigation:
       excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
       cta: Read more
       url: '/introduction/end'   
+    - header: Advanced
+    - title: More Mixins
+      excerpt:  Master Minecraft's code by using the full power of mixins.
+      cta: Read more
+      url: '/introduction/more-mixins'
 ---
 
 ## Information
