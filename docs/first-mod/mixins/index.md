@@ -5,6 +5,7 @@ layout: default
 permalink: /introduction/mixins
 authors:
     - "mineblock11"
+    - "friendly-banana"
 page_nav:
     prev:
         content: Creating Your First Project
@@ -69,6 +70,13 @@ The `@Inject` annotation takes in the following:
 - `method`: A string reference to a method.
 - `at`: The injection stage - where to inject a call to your method.
 - `cancellable`: Declare if the method should be cancellable.
+- `slice`: Limit the area where your mixin can apply
+
+### Method References
+
+The `method` parameter of the `@Inject` annotation contains a string reference to the method. This is where the Minecraft Development plugin comes in **very** handy. You can just start typing the name of your target method and use auto-completion.
+
+If you really wanted you could find all the details in the [Oracle docs](https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.2) but that isn't necessary normally.
 
 ### Injection Stages
 
@@ -78,19 +86,34 @@ There are **many** stages you can inject into, but the most commonly used ones a
 -   `RETURN`: A method call to your code is injected before every return statement.
 -   `TAIL`: A method call to your code is injected before the **final** return statement.
 
-The `at = @At(stage)` part of the `@Inject` annotation is used 
+The `at = @At(stage)` part of the `@Inject` annotation is used.
 
-### Method References
+#### Special Injection Places
 
-This is where the Minecraft Development plugin comes in **very** handy.
-
-The `method` parameter of the `@Inject` annotation contains a string reference to the method
+-   `<init>`: A method call to your code is injected into the constructor of a class. The stage for `@At` must not be `HEAD`. Otherwise, your game will crash because the call to the super's constructor has to be the first thing.
+-   `<clinit>`: A method call to your code is injected into the static initializer of a class. The static initializer is the `static { ... }` block you may have seen in Minecraft's code.
 
 ### Cancellable Toggle
 
 You can actually cancel the method entirely by setting `cancellable = true` in the `@Inject` annotation. This will enable the `CallbackInfo#cancel` methods.
 
-Cancelling methods can be potentially destructive - please be careful with it's usage and think about how it may affect other mods.
+Cancelling methods can be potentially destructive - please be careful with its usage and think about how it may affect other mods.
+
+### Slicing
+A `@Slice` allows you to limit the area where Mixin will search in for applicable targets. It takes two `@At` annotations,`from` and `to`.
+
+#### Example:
+
+Take the following code:
+
+```java
+foo();
+bar()
+foo2();
+bar()
+```
+A mixin with an `at` target of `bar` would match both calls to `bar`.
+After adding a `@Slice` from `foo` to `foo2` the mixin would only match the first bar.
 
 ## Registering Mixins
 
@@ -123,6 +146,6 @@ It's best not to mess with any of the options except the `package` and the follo
 
 ## Next Steps
 
-- Why dont you create a mixin that injects into the `TAIL` of the `TitleScreen#init` method?
-- Try create a mixin that injects into a constructor.
-- What if you want to access a field from a target class?
+- Why don't you create a mixin that injects into the `TAIL` of the `TitleScreen#init` method?
+- [Try creating a mixin that injects into a constructor.](#special-injection-places)
+- [What if you want to access a field from a target class?](/introduction/more-mixins#accessing-fields-and-methods-from-your-target-class)

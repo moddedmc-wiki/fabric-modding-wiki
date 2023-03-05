@@ -41,6 +41,11 @@ grid_navigation:
       excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
       cta: Read more
       url: '/introduction/end'   
+    - header: Advanced
+    - title: More Mixins
+      excerpt:  Master Minecraft's code by using the full power of mixins.
+      cta: Read more
+      url: '/introduction/more-mixins'
 ---
 
 ## Information
