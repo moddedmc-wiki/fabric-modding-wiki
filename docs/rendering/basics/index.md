@@ -58,7 +58,7 @@ The VertexFormat specifies which elements we specify in our data buffer, and how
 - **`POSITION`**: Just a Position
 - **`POSITION_COLOR`**: Position, a solid Color
 - **`LINES`**: Position, Color, Normal
-- **``POSITION_COLOR_LIGHT`**: Position, Color, Light
+- **`POSITION_COLOR_LIGHT`**: Position, Color, Light
 - **`POSITION_TEXTURE`**: Position, UV
 - **`POSITION_COLOR_TEXTURE`**: Position, Color, UV
 - **`POSITION_TEXTURE_COLOR`**: Position, UV, Color
