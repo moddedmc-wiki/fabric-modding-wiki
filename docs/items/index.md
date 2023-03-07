@@ -49,7 +49,7 @@ grid_navigation:
     - header: Advanced Topics
 ---
 
-*Advanced Topics are currently being written.*
+***Advanced Topics are currently being written.***
 
 ## Information
 

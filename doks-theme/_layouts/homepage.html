@@ -68,9 +68,14 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="nav-grid nav-grid--out">
-								<div class="callout callout--error">
+								<div class="callout">
 									<p><strong>This wiki is for 1.19.3</strong>Please note that code in these pages may not work on later or earlier versions of the game.</p>
 								</div>
+								{% if page.wip %}
+								<div class="callout callout--warning">
+									<p><strong>This section is currently under construction.</strong>The following pages have been completed, however there are some pages missing that are currently being written.</p>
+								</div>
+								{% endif %}
 								<div class="row">
 									{% for item in page.grid_navigation %}
 										{% if item.header %}

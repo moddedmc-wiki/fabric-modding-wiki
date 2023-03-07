@@ -66,14 +66,14 @@ public static final Item POOP = register(
 
 However, when you go in-game, you can see that our item doesn't exist! This is because you don't statically initialize the class.
 
-To do this, you can add a public static initialize method to your class and call it from your `ModEntrypoint` class. Currently, this method doesn't need anything inside of it.
+To do this, you can add a public static initialize method to your class and call it from your `ModInitializer` class. Currently, this method doesn't need anything inside of it.
 
 ```java
 public static void initialize() {}
 ```
 
 ```java
-public class MyModEntrypoint implements ModEntrypoint {
+public class MyMod implements ModInitializer {
     @Override
     public void onInitialize() {
         // Statically initialize the class.
@@ -82,7 +82,7 @@ public class MyModEntrypoint implements ModEntrypoint {
 }
 ```
 
-Calling a method on a class statically initializes it if it hasn't been used before - this means that all `static` fields are evaluated.
+Calling a method on a class statically initializes it if it hasn't been used before - this means that all `final` fields are evaluated.
 
 ## Adding the item to an item group.
 
