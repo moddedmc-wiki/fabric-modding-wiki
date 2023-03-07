@@ -27,7 +27,7 @@ The armor material tells the game what protection and durability the armor item 
 You'll need to create a class that inherits `ArmorMaterial` - and add the following fields.
 
 ```java
-// I'll be creatng guide-ite armor, to pair with the tools I created in the previous page.
+// I'll be creating guide-ite armor, to pair with the tools I created in the previous page.
 public class GuiditeArmorMaterial extends ArmorMaterial {
     // Base durability values for all the slots.
     // Boots, Leggings, Chestplate, Helmet

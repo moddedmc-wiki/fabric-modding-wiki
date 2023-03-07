@@ -38,6 +38,10 @@ grid_navigation:
       excerpt: Master Fabric API's event system, to encourage mod compatability and reduce the amount of mixins you write.
       cta: Read more
       url: '/events'
+    - title: Rendering
+      excerpt: Rendering within the world, on the hud and general techniques used.
+      cta: Read more
+      url: '/rendering'
     - title: Documentation
       excerpt: These pages aren't nessecarily in order - they explain how certain features of the game works.
       cta: Read more
