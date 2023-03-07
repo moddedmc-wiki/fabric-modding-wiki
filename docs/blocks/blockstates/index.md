@@ -100,9 +100,9 @@ As always, you'll need to create a translation for your block, and an item model
 
 ## Custom Block States
 
-<div class="callout callout--danger">
+<!-- <div class="callout callout--danger">
     <p><strong>Note</strong>This section assumes you have completed the <a href="/blocks/custom-blocks">Custom Blocks</a> guide.</p>
-</div>
+</div> -->
 
 Custom block states are great if your block has unique properties - sometimes you may find that your block can re-use vanilla properties.
 
@@ -110,7 +110,7 @@ This example will create a unique boolean property called `activated` - when a p
 
 ### Creating the property
 
-Firstly, you'll need to create the property itself - since this is a boolean, we'll use the `BooleanProperty#of` method.
+Firstly, you'll need to create the property itself - since this is a boolean, we'll use the `BooleanProperty.of` method.
 
 ```java
 public class PrismarineLampBlock extends Block {
