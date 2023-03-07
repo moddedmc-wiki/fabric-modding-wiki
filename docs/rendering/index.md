@@ -1,7 +1,7 @@
 ---
 layout: homepage
 title: Rendering
-description: Learn how to render content in the minecraft window.
+description: Learn how to render objects in world-space and screen-space using Minecraft's rendering system and familiarize yourself with general techniques.
 permalink: /rendering
 
 buttons:
@@ -11,6 +11,11 @@ buttons:
       content: Homepage
       url: '/'
       external_url: false
+
+author:
+    title: Contribute
+    title_url: '/contributing'
+    description: We're looking for contributors - if you are experienced with the Fabric Toolchain, you are more than welcome to look at our roadmap and create a pull request.
 
 authors:
     - "0x3C50"

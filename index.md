@@ -35,11 +35,11 @@ grid_navigation:
       cta: Read more
       url: '/blocks'
     - title: Events
-      excerpt: Master Fabric API's event system, to encourage mod compatability and reduce the amount of mixins you write.
+      excerpt: Use Fabric API's event system to encourage mod compatability and reduce the amount of mixins you write.
       cta: Read more
       url: '/events'
     - title: Rendering
-      excerpt: Rendering within the world, on the hud and general techniques used.
+      excerpt: Learn how to render objects in world-space and screen-space using Minecraft's rendering system and familiarize yourself with general techniques.
       cta: Read more
       url: '/rendering'
     - title: Documentation
