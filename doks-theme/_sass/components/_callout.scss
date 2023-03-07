@@ -50,4 +50,8 @@
 		background-color: $color-callout-danger;
 		border-color: darken($color-callout-danger, 4%);
 	}
+	&--wip {
+		background-color: $color-callout-success;
+		border-color: darken($color-callout-success, 6%);
+	}
 }

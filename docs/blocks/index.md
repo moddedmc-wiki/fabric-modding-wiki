@@ -15,6 +15,8 @@ buttons:
       url: '/'
       external_url: false
 
+wip: true
+
 author:
     title: Contribute
     title_url: '/contributing'
