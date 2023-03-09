@@ -44,7 +44,9 @@ You can create scripts and use raw HTML in your pages - however, pages that use 
 Code blocks support the major programming languages.
 
 ```java
+
 System.out.println("For example, this is Java.")
+
 ```
 
 ## Page Metadata
