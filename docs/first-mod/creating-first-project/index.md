@@ -32,7 +32,7 @@ Once you've filled in all the inputs, download the zip and extract it into a fol
 
 ## Breakdown
 
-Once unzipped, you can have a look around - most specifically take a look in `fabric.mod.json` found in `src/main/resources/`
+Once unzipped (Should'nt be unzipped in to a path containing non-ASCII characters), you can have a look around - most specifically take a look in `fabric.mod.json` found in `src/main/resources/`
 
 It should look similar to the following - I've commented all the fields and what they mean, I recommend you read them.
 
