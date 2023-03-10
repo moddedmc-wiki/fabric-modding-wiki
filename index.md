@@ -34,6 +34,10 @@ grid_navigation:
       excerpt: Learn how to create and register your own custom blocks and block entities.
       cta: Read more
       url: '/blocks'
+    - title: Adding Sounds
+      excerpt: Learn how to use sounds and register your own custom SoundEvents.
+      cta: Read more
+      url: '/sounds'
     - title: Events
       excerpt: Use Fabric API's event system to encourage mod compatability and reduce the amount of mixins you write.
       cta: Read more
