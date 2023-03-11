@@ -10,7 +10,7 @@ description: These pages will introduce you to the Fabric toolchain, and modding
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: home
+    - icon: fa-solid fa-home
       content: Homepage
       url: '/'
       external_url: false

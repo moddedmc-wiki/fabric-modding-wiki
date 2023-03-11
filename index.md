@@ -9,10 +9,14 @@ description: An open source guide-book for creating mods using Fabric.
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: github
+    - icon: fa-brands fa-github
       content: GitHub
       url: 'https://github.com/mineblock11/fabric-community-wiki'
       external_url: true
+    - icon: fa-brands fa-discord
+      content: Discord
+      url: 'https://discord.gg/5tmestARuU'
+      external_url: true 
 
 # Author box
 author:
