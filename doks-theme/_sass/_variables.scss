@@ -10,10 +10,6 @@ $color-dark: rgb(214, 214, 214) !default;
 $color-dark-blue: #e1d2b5 !default;
 $color-yellow: rgb(27, 29, 28) !default;
 
-.section {
-    background-color: $color-yellow;
-}
-
 // Base
 $color-h2-border: #303030 !default;
 $color-horizontal-rule: #363636 !default;
@@ -82,7 +78,7 @@ $line-height-headings: 1.5em !default;
 
 /* ----- Z Indexes ----- */
 $z-index-offcanvas: 2 !default;
-$z-index-offcanvas-toggle: 3 !default;
+$z-index-offcanvas-toggle: 12 !default;
 
 /* ----- Media queries breakpoints ----- */
 // Mobile first

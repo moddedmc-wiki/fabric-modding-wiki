@@ -107,7 +107,7 @@
 			$li = $( '<li></li>' );
 			$li.append(
 				'<a href="#' + list[ i ].$el.attr( 'id' ) + '">' +
-					list[ i ].$el.text().replace( /^#\ /, '' ) +
+					list[ i ].$el.text().replace( /^#\ /, '' ) /**+ (list[i].childrens.length > 0 ? '<i class="icon-sidelist fa-solid fa-chevron-down"></i>' : '')**/ +
 				'</a>'
 			);
 

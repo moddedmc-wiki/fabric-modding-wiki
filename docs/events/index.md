@@ -10,7 +10,7 @@ description: Use Fabric API's event system to encourage mod compatability and re
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: home
+    - icon: fa-solid fa-home
       content: Homepage
       url: '/'
       external_url: false

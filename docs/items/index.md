@@ -10,7 +10,7 @@ description: Learn how to register your own custom items; food, tools, armor and
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: home
+    - icon: fa-solid fa-home
       content: Homepage
       url: '/'
       external_url: false

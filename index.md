@@ -6,13 +6,6 @@ keywords:
 # Hero section
 title: Fabric Community Wiki
 description: An open source guide-book for creating mods using Fabric.
-buttons:
-    # - content: About
-    #   url: '/about/'
-    - icon: github
-      content: GitHub
-      url: 'https://github.com/mineblock11/fabric-community-wiki'
-      external_url: true
 
 # Author box
 author:

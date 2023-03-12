@@ -36,7 +36,6 @@
 @import 'objects/content';
 @import 'objects/error-404';
 @import 'objects/grid';
-@import 'objects/icons';
 @import 'objects/section';
 
 /* ----- Components ----- */
@@ -103,4 +102,13 @@ kbd {
 
 .legal {
     margin-top: 6.25rem;
+}
+
+.icon {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 }

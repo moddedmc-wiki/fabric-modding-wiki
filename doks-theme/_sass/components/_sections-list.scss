@@ -45,7 +45,6 @@
 
 				&::after {
 					@extend .icon;
-					content: '\e91d';
 					color: #3d3d3d;
 					display: inline-block;
 					font-size: 1.25rem;
@@ -53,6 +52,11 @@
 					right: 0;
 					top: .3125rem;
 					transition: color .2s;
+				}
+
+				a {
+					display: flex;
+					justify-content: space-between;
 				}
 
 				> ul {

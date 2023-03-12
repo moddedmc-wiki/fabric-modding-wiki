@@ -4,9 +4,9 @@
 
 /* ----- General ----- */
 .site-header {
-  position: absolute;
   width: 100%;
   height: 5.625rem;
+  background-color: $color-yellow;
   border-bottom: 1px solid rgba($color-dark-blue, 0.15);
 }
 
@@ -121,9 +121,7 @@
   height: calc(5.625rem - 1px);
   width: 5.625rem;
   cursor: pointer;
-  position: fixed;
-  right: 0;
-  top: 0;
+  float: right;
   @include translate3d(0, 0, 0);
   z-index: $z-index-offcanvas-toggle;
 
