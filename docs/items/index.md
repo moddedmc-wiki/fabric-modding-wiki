@@ -27,23 +27,23 @@ grid_navigation:
       cta: Read more
       url: '/items/first-item' 
     - title: Edible Items
-      excerpt: This page will guide you through the setup process of your first project using Minecraft Development and IntelliJ IDEA.
+      excerpt: Learn how to add a FoodComponent to an item to make it edible, and configure it.
       cta: Read more
       url: '/items/food'
     - title: Tools
-      excerpt: Learn how to harness the power of mixins to add content to your mod.
+      excerpt: Learn how to create your own tools and set their durability and mining levels.
       cta: Read more
       url: '/items/tools'
     - title: Armor
-      excerpt: Learn how to use access wideners to access parts of Minecraft's code that isn't usually accessible.
+      excerpt: Learn how to create your own armor sets.
       cta: Read more
       url: '/items/armor'
     - title: Custom Item Groups
-      excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
+      excerpt: Now that you've added many items - they should probably be put together in a custom item group.
       cta: Read more
       url: '/items/item-groups'   
     - title: Interactive Items
-      excerpt: Now that you've learned the key concepts, why dont you attempt some of these ideas or follow other sections of this wiki?
+      excerpt: Learn how to create an item that has uses the built-in vanilla events.
       cta: Read more
       url: '/items/interactive-items' 
     - header: Advanced Topics
