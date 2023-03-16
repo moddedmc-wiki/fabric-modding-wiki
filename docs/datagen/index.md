@@ -2,8 +2,13 @@
 title: Data Generation
 description: 
 permalink: /datagen/
-    - "JoostMSoftware"
 layout: default
+
+author:
+    title: Contribute
+    title_url: '/contributing'
+    description: We're looking for contributors - if you are experienced with the Fabric Toolchain, you are more than welcome to look at our roadmap and create a pull request.
+
 ---
 
 ## Getting started with Data Generation
@@ -106,4 +111,4 @@ There should be a new folder in ``src/main`` called ``generated``. For now it'll
 
 These ``providers`` are currently implemented in the Fabric API and have a working and up to date tutorial.
 
-- [Advancements Generation](/docs/data-gen/providers/advancements-generations)
+- [Advancements Generation](/docs/datagen/providers/advancements-generations)
