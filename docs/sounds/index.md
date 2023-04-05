@@ -29,14 +29,19 @@ grid_navigation:
       cta: Read more
       url: '/sounds/using-sound'
     - title: Register a custom SoundEvent
-      excerpt: Learn how to register your own SoundEvent.
+      excerpt: Learn how to implement your own sounds.
       cta: Read more
       url: '/sounds/register-custom-sounds'
+    # - title: Register new Music discs
+    #   excerpt: Learn how to implement your own music discs.
+    #   cta: Read more
+    #   url: '/sounds/register-custom-music-discs'
+    # - header: Advanced Topics
     # - title: Custom Sound Instance
     #   excerpt: This page will guide you through the creation of a custom sound instance class - and why you should consider using a sound instance class.
     #   cta: Read more
-    #   url: '/sound/sound-instance'
-    # - header: Advanced Topics
+    #   url: '/sounds/sound-instance'
+    
 ---
 
 <!-- ***Advanced Topics are currently being written.*** -->
