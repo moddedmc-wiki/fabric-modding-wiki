@@ -87,7 +87,7 @@ public class ExampleModSounds {
         return Registry.register(Registries.SOUND_EVENT, new Identifier(ExampleMod.MOD_ID), sound);
     }
     
-    // called in your ModInitializer implementing class
+    // called in the ModInitializer implementing class
     // to initialize the ExampleModSounds class
     public static void initializeSounds() {        
         ExampleMod.LOGGER.info("Registering " + ExampleMod.MOD_ID + " Sounds");
@@ -95,7 +95,7 @@ public class ExampleModSounds {
 }
 ```
 
-This way, the ModInitializer implementing entrypoint class needs to only implement one line to register all custom SoundEvents.
+This way, the `ModInitializer` implementing entrypoint class needs to only implement one line to register all custom SoundEvents.
 
 ```java
 public class ExampleMod implements ModInitializer {		
