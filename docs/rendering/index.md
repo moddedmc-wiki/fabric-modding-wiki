@@ -7,7 +7,7 @@ permalink: /rendering
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: home
+    - icon: fa-solid fa-home
       content: Homepage
       url: '/'
       external_url: false

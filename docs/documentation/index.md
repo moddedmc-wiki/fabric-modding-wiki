@@ -10,7 +10,7 @@ description: These pages aren't nessecarily in order - they explain how certain 
 buttons:
     # - content: About
     #   url: '/about/'
-    - icon: home
+    - icon: fa-solid fa-home
       content: Homepage
       url: '/'
       external_url: false

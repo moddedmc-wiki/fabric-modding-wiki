@@ -22,12 +22,12 @@
 								{% for button in page.buttons %}
 									{% if button.external_url == true %}
 									<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+										{% if button.icon %}<i class="{{ button.icon }}"></i>{% endif %}
 										{{ button.content }}
 									</a>
 									{% else %}
 									<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+										{% if button.icon %}<i class="{{ button.icon }}"></i>{% endif %}
 										{{ button.content }}
 									</a>
 									{% endif %}
@@ -44,12 +44,12 @@
 											{% if button.external_url == true %}
 											<a href="{{ page.author.title_url }}" class="btn btn--read-more">
 												{{ page.author.title }}
-												<i class="icon icon--arrow-right"></i>
+												<i class="icon fa-solid fa-arrow-right"></i>
 											</a>
 											{% else %}
 											<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ page.author.title_url }}" class="btn btn--read-more">
 												{{ page.author.title }}
-												<i class="icon icon--arrow-right"></i>
+												<i class="icon fa-solid fa-arrow-right"></i>
 											</a>
 											{% endif %}
 										</p><!-- /.hero-subheader__author-title -->
@@ -93,7 +93,7 @@
 												</div><!-- /.nav-grid__content -->
 												<p class="nav-grid__btn">
 													{{ item.cta }}
-													<i class="icon icon--arrow-right"></i>
+													<i class="icon fa-solid fa-arrow-right"></i>
 												</p>
 											</a><!-- /.nav-grid__item -->
 										</div><!-- /.col -->

@@ -117,12 +117,12 @@ hr {
 
 /* ----- States ----- */
 ::-moz-selection {
-	background: rgba($color-yellow, .99);
+	background-color: rgba(darken($color-yellow, 5%), .99);
 	color: $color-dark-blue;
 }
 
 ::selection {
-	background: rgba($color-yellow, .99);
+	background-color: rgba(darken($color-yellow, 5%), .99);
 	color: $color-dark-blue;
 }
 
