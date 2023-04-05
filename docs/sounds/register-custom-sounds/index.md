@@ -84,7 +84,7 @@ public class ExampleModSounds {
     // actual registration of all the custom SoundEvents
     static SoundEvent registerSound(String id) {
         SoundEvent sound = SoundEvent.of(new Identifier(ExampleMod.MOD_ID, id));
-        return Registry.register(Registries.SOUND_EVENT, new Identifier(ExampleMod.MOD_ID), sound);
+        return Registry.register(Registries.SOUND_EVENT, new Identifier(ExampleMod.MOD_ID, id), sound);
     }
     
     // called in the ModInitializer implementing class
