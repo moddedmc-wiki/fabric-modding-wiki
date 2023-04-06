@@ -11,17 +11,15 @@ page_nav:
         url: /sounds/using-sound
 ---
 
-
-
 ## Preparing the audio file
 
-Your audio files need to be formatted in a specific way. Ogg is an open container format for Multimedia data, such as audio, and is used in case of Minecraft's sound files. To avoid problems with how Minecraft handles distance of sound the audio data needs to have only a single channel (Mono).
+Your audio files need to be formatted in a specific way. OGG Vorbis is an open container format for multimedia data, such as audio, and is used in case of Minecraft's sound files. To avoid problems with how Minecraft handles distance of sound the audio data needs to have only a single channel (Mono).
 
-Many modern DAWs (Digital Audio Workstation software) can import and export using this file format. In the following example the free and open-source software "Audacity" will be used to bring the audio file into the right shape, however any other DAW should suffice as well.
+Many modern DAWs (Digital Audio Workstation) software can import and export using this file format. In the following example the free and open-source software "Audacity" will be used to bring the audio file into the right shape, however any other DAW should suffice as well.
 
 ![unprepared audio file in Audacity](/docs/sounds/register-custom-sounds/index_0.png)
 
-In this example, a sound of a [whistle](https://freesound.org/people/strongbot/sounds/568995/) is imported into Audacity. It currently is saved as a .wav file and has two audio channels (Stereo). Edit the sound to your liking and make sure to delete one of the channels using the drop-down element at the top of the "track head".
+In this example, a sound of a [whistle](https://freesound.org/people/strongbot/sounds/568995/) is imported into Audacity. It currently is saved as a `.wav` file and has two audio channels (Stereo). Edit the sound to your liking and make sure to delete one of the channels using the drop-down element at the top of the "track head".
 
 ![splitting Stereo track](/docs/sounds/register-custom-sounds/index_1.png)
 
@@ -50,7 +48,7 @@ Continue with creating the `resources/assets/<mod id here>/sounds.json` file if 
 }
 ```
 
-The subtitle entry provides more context for the player. The subtitle name is used in the language .json files in the `resources/assets/<mod id here>/lang` directory and will be displayed if the In-game subtitle setting is turned on and this custom sound is being played.
+The subtitle entry provides more context for the player. The subtitle name is used in the language files in the `resources/assets/<mod id here>/lang` directory and will be displayed if the in-game subtitle setting is turned on and this custom sound is being played.
 
 ## Register the custom sound
 
@@ -112,10 +110,9 @@ public class ExampleMod implements ModInitializer {
 
 ## Using the custom SoundEvent
 
-Use the public `ExampleModSounds` class to access the custom SoundEvent. Get back to the [first page](/sounds/using-sound) if you want to see how to implement sound in your mod.
-
+Use the public `ExampleModSounds` class to access the custom SoundEvent. Head back to the [first page](/sounds/using-sound) if you want to see how to implement sound in your mod.
 
 ## Next Steps
 
 - Start easy with adding two more custom sounds
-- Can you implement one of those for a [custom Block](/blocks/blockstates) and one for an [interactive Item](/items/interactive-items)?
+- Can you implement one of those for a [custom block](/blocks/blockstates) and one for an [interactive item](/items/interactive-items)?

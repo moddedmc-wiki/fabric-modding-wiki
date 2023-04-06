@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Using Your First Sound
-description: Learn how to use an already registered sound.
+description: Learn how to play sound events.
 permalink: /sounds/using-sound
 authors:
     - "jr1811"
@@ -14,8 +14,6 @@ page_nav:
         url: /sounds/register-custom-sounds
 ---
 
-Sounds can be added in, for example, your custom item or block class, to enhance the user experience of your mod.
-
 Minecraft has a big selection of sounds which you can choose from. Check out the `SoundEvents` class to see all, by the base game already registered, sounds.
 
 ## Using sounds in your mod
@@ -27,9 +25,9 @@ In this example, the `useOnEntity()` and `useOnBlock()` method for a custom [int
 ```java
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        // As stated above, don't use the playSound() mothod on the client side.
+        // As stated above, don't use the playSound() mothod on the client side - it wont work!
         if (!entity.getWorld().isClient()) {
-            // Play the sound with LivingEntity.
+            // Play the sound as if it was coming from the entity.
             entity.playSound(SoundEvents.ENTITY_PILLAGER_AMBIENT, 2f, 0.7f);
         }
         return super.useOnEntity(stack, user, entity, hand);
@@ -37,14 +35,15 @@ In this example, the `useOnEntity()` and `useOnBlock()` method for a custom [int
 
 ```
 
-The `playSound()` method is used with the `LivingEntity` object. Only the SoundEvent, the volume and the pitch need to be specified. You can also use the `playSound()`  method from an Instance of `World` where you can get access to more parameters.
+The `playSound()` method is used with the `LivingEntity` object. Only the SoundEvent, the volume and the pitch need to be specified. You can also use the `playSound()`  method from the world instance to have a higher level of control.
 
 ```java
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         // Tipp of the day: Check out "Guard Clauses" to keep your code clean.
         if (!context.getWorld().isClient()) {
-            // Play the sound with World.
+            // Play the sound and specify location, category and who made the sound.
+            // No entity made the sound, so we specify null.
             context.getWorld().playSound(null, context.getBlockPos(), 
                     SoundEvents.BLOCK_COPPER_PLACE, SoundCategory.PLAYERS, 
                     1f, 1f);
@@ -57,7 +56,7 @@ The `playSound()` method is used with the `LivingEntity` object. Only the SoundE
 
 The SoundEvent defines which sound will be played. You can also [register your own SoundEvents](/sounds/register-custom-sounds) to include your own sound.
 
-Minecraft has several audio sliders in the In-game settings. The SoundCategory is used to determine, which slider will adjust your sound's volume.
+Minecraft has several audio sliders in the in-game settings. The `SoundCategory` enum is used to determine which slider will adjust your sound's volume.
 
 ### Volume and Pitch
 

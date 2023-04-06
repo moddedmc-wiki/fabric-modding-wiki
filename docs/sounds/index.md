@@ -5,7 +5,7 @@ keywords:
 permalink: /sounds/
 
 title: Adding Sounds
-description: Learn how to use sounds or register your own custom sounds.
+description: Learn how to utilize Minecraft's sound system.
 
 buttons:
     # - content: About
@@ -15,8 +15,6 @@ buttons:
       url: '/'
       external_url: false
 
-wip: true
-
 author:
     title: Contribute
     title_url: '/contributing'
@@ -25,11 +23,11 @@ author:
 grid_navigation:
     - header: Basics Of Sounds
     - title: Use Your First Sound
-      excerpt: Learn how to use a registered Sound.
+      excerpt: Learn how to play sound.
       cta: Read more
       url: '/sounds/using-sound'
-    - title: Register a custom SoundEvent
-      excerpt: Learn how to implement your own sounds.
+    - title: Registering Custom Sounds
+      excerpt: Learn how to register your own sounds.
       cta: Read more
       url: '/sounds/register-custom-sounds'
     # - title: Register new Music discs
