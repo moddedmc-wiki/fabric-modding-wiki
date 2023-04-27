@@ -1,13 +1,21 @@
 <script setup>
 import { ref } from 'vue'
 
+const { page } = useContent();
+
 const navigation = await fetchContentNavigation();
 
 const articles = ref([]);
 
-navigation[0].children.forEach(async page => {
-    const article = await queryContent(navigation[0]._path.replace('/', '')).where({title: page.title, hide: undefined}).findOne();
-    articles.value.push(article);
+console.log(page.value)
+
+const nav = navigation.filter(nav => nav.title === page.value.title)[0];
+
+nav.children.forEach(async page => {
+    const article = await queryContent(nav._path.replace('/', '')).where({title: page.title}).findOne();
+    if(!article.hide) {
+        articles.value.push(article);
+    }
 });
 
 console.log(articles.value);

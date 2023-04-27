@@ -2,6 +2,7 @@
 title: Creating Your First Mod
 navigation: false
 layout: page
+description: These pages will introduce you to the Fabric toolchain, and modding as a whole.
 ---
 
 ::block-hero
