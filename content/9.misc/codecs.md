@@ -3,7 +3,7 @@ title: Codecs
 description: An advanced guide to using Mojang's Codec system for serializing and deserializing java objects.
 ---
 
-## Codecs
+# Codecs
 
 Codec is a system for easily and functionally serializing java objects, and is included in Mojang's DataFixerUpper (DFU)
 library. In a modding context they are usually used as an alternative to GSON and Jankson when reading and writing
