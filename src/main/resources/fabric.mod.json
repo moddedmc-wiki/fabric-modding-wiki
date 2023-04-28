@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mymod",
+  "version": "${version}",
+  "name": "MyMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/MyMod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "mine.block.mymod.client.MyModClient"
+    ],
+    "main": [
+      "mine.block.mymod.MyMod"
+    ]
+  },
+  "mixins": [
+    "MyMod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}
