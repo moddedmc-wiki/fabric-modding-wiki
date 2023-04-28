@@ -1,32 +1,13 @@
-<script setup>
-import { ref } from 'vue'
-
-const { page } = useContent();
-
-const navigation = await fetchContentNavigation();
-
-const articles = ref([]);
-
-const nav = navigation.filter(nav => nav.title === page.value.title)[0];
-
-nav.children.forEach(async page => {
-    const article = await queryContent(nav._path.replace('/', '')).where({title: page.title}).findOne();
-    if(!article.hide) {
-        articles.value.push(article);
-    }
-});
-</script>
-
 <template>
   <CardGrid>
     <template #title />
-    <Card v-for="page in articles" :key="page.title">
+    <Card v-for="page in orderedArticles" :key="page.title">
       <template #title>
         {{ page.title }}
       </template>
       <template #description>
         {{ page.description }}
-        <br><br>
+        <br /><br />
         <ButtonLink :href="page._path.replace('/_dir', '')">
           Read More →
         </ButtonLink>
@@ -34,3 +15,34 @@ nav.children.forEach(async page => {
     </Card>
   </CardGrid>
 </template>
+
+<script>
+import * as _ from "lodash-es";
+
+export default {
+  data: () => {
+    return {
+      articles: [],
+    };
+  },
+  computed: {
+    orderedArticles: function () {
+      return _.orderBy(this.articles, "_id");
+    },
+  },
+  async beforeMount() {
+    const navigation = await fetchContentNavigation();
+    const { page } = useContent();
+    const nav = navigation.filter((nav) => nav._path === page.value._path)[0];
+
+    nav.children.forEach(async (page) => {
+      const article = await queryContent(nav._path.replace("/", ""))
+        .where({ _path: page._path })
+        .findOne();
+      if (!article.hide) {
+        this.articles.push(article);
+      }
+    });
+  },
+};
+</script>

@@ -1,9 +1,9 @@
 ---
 layout: page
-index: 9
+index: 1
 navigation: false
-title: Miscelaneous Pages
-description: These pages aren't nessecarily in order - they explain how certain features of the game works.
+title: Adding Items
+description: Learn how to register your own custom items; food, tools, armor and weapons.
 ---
 
 ::block-hero
@@ -17,15 +17,19 @@ secondary:
 ---
 
 #title
-Miscelaneous Pages
+Adding Items
 
 #description
-These pages aren't nessecarily in order - they explain how certain features of the game works.
+Learn how to register your own custom items; food, tools, armor and weapons.
 ::
 
 :category-index-contents
 
 ## Information
+
+These pages assume you have a basic knowledge of modding.
+
+If you do not have a basic understanding of key concepts, you should follow the [Creating Your First Mod](/introduction/) guides first before continuing to these pages.
 
 All content on this wiki uses Yarn mappings - if you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
 

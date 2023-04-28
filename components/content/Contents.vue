@@ -7,7 +7,7 @@
   </div>
   <CardGrid>
     <template #title />
-    <Card v-for="article in articles" :key="article.title">
+    <Card v-for="article in orderedArticles" :key="article.title">
       <template #title>
         {{ article.title }}
       </template>
@@ -22,15 +22,33 @@
   </CardGrid>
 </template>
 
-<script setup>
-const navigation = await fetchContentNavigation();
+<script>
+import * as _ from 'lodash-es';
 
-const articles = ref([]);
 
-navigation.forEach(async page => {
-    const article = await queryContent('/').where({title: page.title}).findOne();
-    if(!article.hide) {
-        articles.value.push(article);
+export default {
+  data: () => {
+    return {
+      articles: [],
+    };
+  },
+  computed: {
+    orderedArticles: function() {
+      return _.orderBy(this.articles, 'index');
     }
-});
+  },
+  async beforeMount() {
+    const navigation = await fetchContentNavigation();
+
+    navigation.forEach(async (page) => {
+      const article = await queryContent("/")
+        .where({ _path: page._path })
+        .findOne();
+      if (!article.hide) {
+        console.log(article)
+        this.articles.push(article);
+      }
+    });
+  },
+};
 </script>
