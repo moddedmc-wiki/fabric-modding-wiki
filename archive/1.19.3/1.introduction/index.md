@@ -1,7 +1,9 @@
 ---
-title: Welcome
-navigation: false
 layout: page
+index: 1
+navigation: false
+title: Creating Your First Mod
+description: Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.
 ---
 
 ::block-hero
@@ -15,17 +17,19 @@ secondary:
 ---
 
 #title
-Fabric Community Wiki
+Creating Your First Mod
 
 #description
-An open source guide-book for creating mods using Fabric.
+These pages will introduce you to the Fabric toolchain, and modding as a whole.
 ::
 
-:contents{version="1.19.4"}
+:category-index-contents
 
-## Maximising your use of this wiki.
+## Information
 
-This wiki assumes you already have a general knowledge of key java concepts, such as generics and object oriented programming.
+These pages are great if you haven't created mods for Minecraft before - they will teach you how to create a project and utilize the many tools available, from Mixins to Access Wideners. 
+
+However, they also assume you already have a general knowledge of key java concepts, such as generics and object oriented programming.
 
 If you are completely new to programming with Java, you should first take some Java lessons:
 
@@ -35,22 +39,8 @@ If you are completely new to programming with Java, you should first take some J
 
 All content on this wiki uses Yarn mappings - if you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
 
-## Coming from Forge?
-
-We currently do not have a page that lists the key differences between Forge and Fabric - however, you'll likely see some similarities to modding with Forge when reading through the pages on this wiki.
-
-A page that lists the key differences is planned for the future.
-
 ## Extra help.
 
 If you need extra help or certain concepts further clarified, you can ask in the `#mod-dev-` channels in the Fabric Discord - these channels are places where users give and ask for help with modding, please respect the Fabric Discord's rules.
 
 - [Fabric Discord](https://discord.gg/v6v4pMv)
-
-## Thank you.
-
-Thank you for using the wiki! It means alot to me (mineblock11) and any contributors that have made significant contributions to the wiki.
-
-## Legal
-
-All legal notices [can be found here.](/legal)
