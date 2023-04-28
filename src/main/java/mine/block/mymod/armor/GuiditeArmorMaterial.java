@@ -2,6 +2,7 @@ package mine.block.mymod.armor;
 
 import mine.block.mymod.ModItems;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -34,18 +35,18 @@ public class GuiditeArmorMaterial implements ArmorMaterial {
     };
 
     @Override
-    public int getDurability(EquipmentSlot slot) {
+    public int getDurability(ArmorItem.Type type) {
         // Replace X with a multiplier that you see fit!
         // For reference, diamond uses a multiplier of 33, whilst
         // leather uses 11.
-        return BASE_DURABILITY[slot.getEntitySlotId()] * 22;
+        return BASE_DURABILITY[type.getEquipmentSlot().getEntitySlotId()] * 22;
     }
 
     @Override
-    public int getProtectionAmount(EquipmentSlot slot) {
+    public int getProtection(ArmorItem.Type type) {
         // This will get the protection value for the slot from
         // our array.
-        return PROTECTION_VALUES[slot.getEntitySlotId()];
+        return PROTECTION_VALUES[type.getEquipmentSlot().getEntitySlotId()];
     }
 
     @Override

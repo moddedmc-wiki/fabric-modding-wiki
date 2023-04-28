@@ -41,10 +41,10 @@ public class ModItems {
     public static final LightningStick LIGHTNING_STICK = register(new LightningStick(new FabricItemSettings()), "lightning_stick");
 
     // Armor
-    public static final ArmorItem GUIDITE_HELMET = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings()), "guidite_helmet");
-    public static final ArmorItem GUIDITE_CHESTPLATE = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings()), "guidite_chestplate");
-    public static final ArmorItem GUIDITE_LEGGINGS = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings()), "guidite_leggings");
-    public static final ArmorItem GUIDITE_BOOTS = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings()), "guidite_boots");
+    public static final ArmorItem GUIDITE_HELMET = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, ArmorItem.Type.HELMET, new Item.Settings()), "guidite_helmet");
+    public static final ArmorItem GUIDITE_CHESTPLATE = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, ArmorItem.Type.CHESTPLATE, new Item.Settings()), "guidite_chestplate");
+    public static final ArmorItem GUIDITE_LEGGINGS = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, ArmorItem.Type.LEGGINGS, new Item.Settings()), "guidite_leggings");
+    public static final ArmorItem GUIDITE_BOOTS = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, ArmorItem.Type.BOOTS, new Item.Settings()), "guidite_boots");
 
     public static final ItemGroup MY_MOD_ITEMGROUP = FabricItemGroup.builder(new Identifier("my_mod", "item_group"))
             .icon(() -> new ItemStack(ModItems.GUIDITE_SWORD))
