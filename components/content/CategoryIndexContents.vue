@@ -7,7 +7,7 @@
       </template>
       <template #description>
         {{ page.description }}
-        <br /><br />
+        <br><br>
         <ButtonLink :href="page._path.replace('/_dir', '')">
           Read More →
         </ButtonLink>
@@ -33,13 +33,33 @@ export default {
   async beforeMount() {
     const navigation = await fetchContentNavigation();
     const { page } = useContent();
-    const nav = navigation.filter((nav) => nav._path === page.value._path)[0];
+    
+    const path = page.value._path.split("/");
 
+    path.splice(0, 1);
+
+    const isArchive = path.length > 1;
+
+    console.log(path)
+
+    let nav;
+    if(isArchive) {
+      const v = path[0];
+      console.log(navigation, path); 
+      nav = navigation.filter((nav) => nav._path === "/" + v)[0];
+      console.log(nav);
+      nav = nav.children.filter((nav) => nav._path === page.value._path)[0];
+      console.log(nav);
+    } else {
+      nav = navigation.filter((nav) => nav._path === page.value._path)[0];
+    }
+
+    console.log(nav);
     nav.children.forEach(async (page) => {
       const article = await queryContent(nav._path.replace("/", ""))
         .where({ _path: page._path })
         .findOne();
-      if (!article.hide) {
+      if (!article.hide && !article.navigation) {
         this.articles.push(article);
       }
     });

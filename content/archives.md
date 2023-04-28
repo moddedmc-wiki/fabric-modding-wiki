@@ -23,7 +23,11 @@ We do not support old versions of the wiki. Use them at your own risk.
 
 ## Versions
 ::alert{type="info"}
-The current front-facing wiki. is currently for Minecraft version `1.19.3`
+The current front-facing wiki. is currently for Minecraft version `1.19.4`
 ::
 
-- [1.19.3](/1.19.3/)
+To access these versions, you must prepend the version before the URL path. Eg: `/items/food/` -> `/1.19.3/items/food`
+
+Navigation is not available for archived pages.
+
+- 1.19.3

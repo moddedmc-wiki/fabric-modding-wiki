@@ -14,12 +14,12 @@
     <template #title />
     <Card v-for="article in orderedArticles" :key="article.title">
       <template #title>
-        {{ article.title }}
+        {{ article._dir.title }}
       </template>
       <template #description>
-        {{ article.description }}
+        {{ article._dir.description }}
         <br><br>
-        <ButtonLink :href="article._path.replace('/_dir', '')">
+        <ButtonLink :href="`${version === latest ? '' : '/' + version}` + article._path.replace('/_dir', '')">
           Read More →
         </ButtonLink>
       </template>
@@ -35,6 +35,7 @@ export default {
   props: ["version"],
   data: () => {
     return {
+      latest: "1.19.4",
       articles: [],
     };
   },
@@ -47,7 +48,8 @@ export default {
     const navigation = await fetchContentNavigation();
 
     navigation.forEach(async (page) => {
-      const article = await queryContent("/" + this.version.replace("1.19.4", ''))
+      const url = this.version === this.latest ? '/' : `/${this.version}/`;
+      const article = await queryContent(url)
         .where({ _path: page._path })
         .findOne();
       if (!article.hide) {
