@@ -1,9 +1,9 @@
 ---
 layout: page
-index: 2
+index: 3
 navigation: false
-title: Adding Items
-description: Learn how to register your own custom items; food, tools, armor and weapons.
+title: Adding Blocks
+description: Learn how to register your own custom blocks; block entities, blockstates, containers and more.
 ---
 
 ::block-hero
@@ -17,10 +17,10 @@ secondary:
 ---
 
 #title
-Adding Items
+Adding Blocks
 
 #description
-Learn how to register your own custom items; food, tools, armor and weapons.
+Learn how to register your own custom blocks; block entities, blockstates, containers and more.
 ::
 
 :category-index-contents

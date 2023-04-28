@@ -1,6 +1,6 @@
 ---
 layout: page
-index: 0
+index: 1
 navigation: false
 title: Creating Your First Mod
 description: Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.
