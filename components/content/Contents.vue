@@ -4,6 +4,7 @@
     <ProseH2 id="jump-right-in">
       Jump right in!
     </ProseH2>
+    <ProseP>You're currently looking at content for <ProseCodeInline>{{ version }}</ProseCodeInline>  If you wish to view previous versions, <ProseA href="/archives">see this page here.</ProseA></ProseP>
   </div>
   <CardGrid>
     <template #title />
@@ -32,6 +33,7 @@ export default {
       articles: [],
     };
   },
+  props: ["version"],
   computed: {
     orderedArticles: function() {
       return _.orderBy(this.articles, 'index');
@@ -41,7 +43,7 @@ export default {
     const navigation = await fetchContentNavigation();
 
     navigation.forEach(async (page) => {
-      const article = await queryContent("/")
+      const article = await queryContent("/" + this.version.replace("1.19.3", ''))
         .where({ _path: page._path })
         .findOne();
       if (!article.hide) {
