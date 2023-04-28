@@ -1,8 +1,8 @@
 ---
-title: Creating Your First Mod
 navigation: false
 layout: page
-description: These pages will introduce you to the Fabric toolchain, and modding as a whole.
+title: Creating Your First Mod
+description: Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.
 ---
 
 ::block-hero
