@@ -3,8 +3,10 @@
     Contributors
   </ProseH1>
   <ProseP>These amazing people contributed to the wiki:</ProseP>
-  <List icon="-" v-for="contributor in contributors" :key="contributor">
-      <ProseA :href="`https://github.com/${contributor}`" target="_blank">{{ contributor }}</ProseA>
+  <List v-for="contributor in contributors" :key="contributor" icon="-">
+    <ProseA :href="`https://github.com/${contributor}`" target="_blank">
+      {{ contributor }}
+    </ProseA>
   </List>
 </template>
 

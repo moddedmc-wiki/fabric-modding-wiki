@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   css: [
     "@/assets/app.css"
   ],
+  nitro: {
+    preset: 'service-worker'
+  },
   content: {
     sources: {
       '1.19.3': {
