@@ -35,10 +35,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: nuxt
       - name: Install dependencies
         run: npm i
       - name: Static HTML export with Nuxt
