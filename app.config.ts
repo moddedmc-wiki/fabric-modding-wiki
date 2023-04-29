@@ -2,7 +2,6 @@ export default defineAppConfig({
   docus: {
     title: 'Fabric Community Wiki',
     description: 'An open source guide-book for creating mods using Fabric.',
-    image: '/logo.png',
     url: 'https://fabric.mineblock11.dev/',
     socials: {
       discord: {
@@ -12,12 +11,24 @@ export default defineAppConfig({
       },
       github: 'mineblock11/fabric-community-wiki'
     },
+    github: {
+      dir: 'content',
+      edit: true,
+      branch: 'docus',
+      contributors: true,
+      repo: 'fabric-community-wiki',
+      owner: 'mineblock11',
+    },
     aside: {
       level: 0,
       exclude: []
     },
     header: {
       fluid: true,
+    },
+    main: {
+      padded: true,
+      fluid: true
     },
     footer: {
       credits: false,

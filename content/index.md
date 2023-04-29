@@ -38,7 +38,7 @@ Jump Right In!
   Creating Your First Mod
   #description
   Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.<br><br>
-  ::button-link{href=/introduction}
+  ::button-link{href=/introduction/introduction_to_modding}
   Read More →
   ::
   ::
@@ -47,7 +47,7 @@ Jump Right In!
   Adding Items
   #description
   Learn how to register your own custom items; food, tools, armor and weapons.<br><br>
-  ::button-link{href=/items}
+  ::button-link{href=/items/creating-first-item}
   Read More →
   ::
   ::
@@ -56,7 +56,7 @@ Jump Right In!
   Rendering
   #description
   Learn how to render objects in world-space and screen-space using Minecraft's rendering system and familiarize yourself with general techniques.<br><br>
-  ::button-link{href=/rendering}
+  ::button-link{href=/rendering/basics}
   Read More →
   ::
   ::
@@ -65,7 +65,7 @@ Jump Right In!
   Adding Blocks
   #description
   Learn how to register your own custom blocks; block entities, blockstates, containers and more.<br><br>
-  ::button-link{href=/blocks}
+  ::button-link{href=/blocks/creating-first-block}
   Read More →
   ::
   ::
@@ -74,11 +74,13 @@ Jump Right In!
   Miscelaneous Pages
   #description
   These pages aren't nessecarily in order - they explain how certain features of the game works.<br><br>
-  ::button-link{href=/misc}
+  ::button-link{href=/misc/codecs}
   Read More →
   ::
   ::
 ::
+
+:contributors{repo=fabric-community-wiki user=mineblock11}
 
 ## Maximising your use of this wiki.
 

@@ -6,3 +6,8 @@
     display: block;
     margin: 0 auto !important;
 }
+
+.block-hero {
+    margin-bottom: 0;
+    padding-bottom: 0 !important;
+}
