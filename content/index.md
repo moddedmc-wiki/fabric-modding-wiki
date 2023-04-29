@@ -21,7 +21,64 @@ Fabric Community Wiki
 An open source guide-book for creating mods using Fabric.
 ::
 
-:contents{version="1.19.4"}
+::alert{type="info"}
+This content is for `1.19.4`, to view older versions, [checkout the archives](/archives).
+::
+
+::card-grid
+#title
+Jump Right In!
+
+#root
+:ellipsis
+
+#default
+  ::card
+  #title
+  Creating Your First Mod
+  #description
+  Get started using IntelliJ IDEA and the Minecraft Development plugin to create your first mod.<br><br>
+  ::button-link{href=/introduction}
+  Read More →
+  ::
+  ::
+  ::card
+  #title
+  Adding Items
+  #description
+  Learn how to register your own custom items; food, tools, armor and weapons.<br><br>
+  ::button-link{href=/items}
+  Read More →
+  ::
+  ::
+  ::card
+  #title
+  Rendering
+  #description
+  Learn how to render objects in world-space and screen-space using Minecraft's rendering system and familiarize yourself with general techniques.<br><br>
+  ::button-link{href=/rendering}
+  Read More →
+  ::
+  ::
+  ::card
+  #title
+  Adding Blocks
+  #description
+  Learn how to register your own custom blocks; block entities, blockstates, containers and more.<br><br>
+  ::button-link{href=/blocks}
+  Read More →
+  ::
+  ::
+  ::card
+  #title
+  Miscelaneous Pages
+  #description
+  These pages aren't nessecarily in order - they explain how certain features of the game works.<br><br>
+  ::button-link{href=/misc}
+  Read More →
+  ::
+  ::
+::
 
 ## Maximising your use of this wiki.
 

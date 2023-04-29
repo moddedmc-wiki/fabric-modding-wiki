@@ -3,6 +3,10 @@ title: Codecs
 description: An advanced guide to using Mojang's Codec system for serializing and deserializing java objects.
 ---
 
+::alert{type="warning"}
+This content is for `1.19.3` and may not be supported.
+::
+
 # Codecs
 
 Codec is a system for easily and functionally serializing java objects, and is included in Mojang's DataFixerUpper (DFU)

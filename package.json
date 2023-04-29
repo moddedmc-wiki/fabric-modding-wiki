@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "deploy": "nuxi build && node .output/server/index.mjs",
+    "deploy": "node .output/server/index.mjs",
     "build": "nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview",

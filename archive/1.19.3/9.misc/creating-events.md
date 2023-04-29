@@ -3,6 +3,10 @@ title: Creating Fabric API Events
 description: Learn how to create your own events which allow compatability with other mods.
 ---
 
+::alert{type="warning"}
+This content is for `1.19.3` and may not be supported.
+::
+
 # Creating Fabric API Events
 
 Fabric API exposes it's event classes so you can use them in your own mod.

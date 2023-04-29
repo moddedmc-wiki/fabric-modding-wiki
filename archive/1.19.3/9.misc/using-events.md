@@ -3,6 +3,10 @@ title: Using Fabric API Events
 description: Learn how to use Fabric API's event system.
 ---
 
+::alert{type="warning"}
+This content is for `1.19.3` and may not be supported.
+::
+
 # Using Fabric API Events
 
 Fabric API contains **many** events that you can use instead of creating mixins - if everyone made the same mixin, to do the same task, it would get messy.

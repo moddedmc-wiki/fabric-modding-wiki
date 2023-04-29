@@ -3,6 +3,12 @@ title: Playing Sounds
 description: Learn how to play sound events.
 ---
 
+::alert{type="warning"}
+This content is for `1.19.3` and may not be supported.
+::
+
+# Playing Sounds
+
 Minecraft has a big selection of sounds which you can choose from. Check out the `SoundEvents` class to see all, by the base game already registered, sounds.
 
 ## Using sounds in your mod

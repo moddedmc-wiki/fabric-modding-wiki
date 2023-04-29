@@ -45,16 +45,11 @@ export default {
     let nav;
     if(isArchive) {
       const v = path[0];
-      console.log(navigation, path); 
       nav = navigation.filter((nav) => nav._path === "/" + v)[0];
-      console.log(nav);
       nav = nav.children.filter((nav) => nav._path === page.value._path)[0];
-      console.log(nav);
     } else {
       nav = navigation.filter((nav) => nav._path === page.value._path)[0];
     }
-
-    console.log(nav);
     nav.children.forEach(async (page) => {
       const article = await queryContent(nav._path.replace("/", ""))
         .where({ _path: page._path })
@@ -63,6 +58,20 @@ export default {
         this.articles.push(article);
       }
     });
+
+    this.orderedArticles.forEach(article => {
+      console.log(```
+      ::card
+      #title
+      ${article.title}
+      #description
+      ${article.description}
+      ::button-link{href=${article._path.replace('/_dir', '')}}
+      Read More →
+      ::
+      ::
+      ```)
+    })
   },
 };
 </script>
