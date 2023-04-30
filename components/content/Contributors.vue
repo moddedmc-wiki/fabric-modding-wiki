@@ -1,7 +1,7 @@
 <template>
-  <ProseH1 id="contributors">
+  <ProseH2 id="contributors">
     Contributors
-  </ProseH1>
+  </ProseH2>
   <ProseP>These amazing people contributed to the wiki:</ProseP>
   <List v-for="contributor in contributors" :key="contributor" icon="-">
     <ProseA :href="`https://github.com/${contributor}`" target="_blank">
