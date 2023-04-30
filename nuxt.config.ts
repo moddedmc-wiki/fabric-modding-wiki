@@ -8,7 +8,10 @@ export default defineNuxtConfig({
     "@/assets/app.css"
   ],
   nitro: {
-    preset: 'service-worker'
+    preset: 'service-worker',
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   },
   content: {
     sources: {
