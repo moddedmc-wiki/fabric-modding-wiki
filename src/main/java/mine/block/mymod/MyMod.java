@@ -15,8 +15,11 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.HoverEvent;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
@@ -116,6 +119,14 @@ public class MyMod implements ModInitializer {
             RenderSystem.depthFunc(GL11.GL_LEQUAL);
             RenderSystem.enableCull();
         });
+
+        Text translatable = Text.translatable("my_mod.text.hello");
+        MutableText mutable = Text.translatable("my_mod.text.bye");
+
+        String jsonString = Text.Serializer.toJson(mutable);
+        MutableText result = Text.Serializer.fromJson(jsonString);
+
+        result = Text.literal("Hello World!").formatted(Formatting.AQUA, Formatting.BOLD, Formatting.UNDERLINE);
 
         AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
             var playerName = player.getDisplayName().copy();
