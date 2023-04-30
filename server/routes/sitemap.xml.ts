@@ -18,7 +18,11 @@ export default defineEventHandler(async (event) => {
     })
 
     if(arch) continue;
-    console.log(doc);
+
+    if(doc._file?.endsWith(".yml")) continue;
+
+    console.log(doc._file)
+
     sitemap.write({
       url: doc._path,
       changefreq: 'monthly'
