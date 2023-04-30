@@ -8,11 +8,21 @@ export default defineEventHandler(async (event) => {
     hostname: 'https://fabric.mineblock11.dev/'
   })
 
+  const archived = ["1.19.3"]
+
   for (const doc of docs) {
+    let arch = false;
+
+    archived.forEach(vers => {
+      if(doc._path?.includes(vers)) arch = true;
+    })
+
+    if(arch) continue;
+    console.log(doc);
     sitemap.write({
       url: doc._path,
       changefreq: 'monthly'
-    })
+    });
   }
   sitemap.end()
 
