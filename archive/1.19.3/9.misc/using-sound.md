@@ -1,6 +1,7 @@
 ---
 title: Playing Sounds
 description: Learn how to play sound events.
+navigation: false
 ---
 
 ::alert{type="warning"}

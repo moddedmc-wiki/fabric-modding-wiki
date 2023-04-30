@@ -1,6 +1,7 @@
 ---
 title: Creating Fabric API Events
 description: Learn how to create your own events which allow compatability with other mods.
+navigation: false
 ---
 
 ::alert{type="warning"}

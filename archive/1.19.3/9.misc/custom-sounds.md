@@ -1,6 +1,7 @@
 ---
 title: Creating Custom Sounds
 description: Learn how to add and use a new sound with the registry.
+navigation: false
 ---
 
 ::alert{type="warning"}

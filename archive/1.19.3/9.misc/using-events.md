@@ -1,6 +1,7 @@
 ---
 title: Using Fabric API Events
 description: Learn how to use Fabric API's event system.
+navigation: false
 ---
 
 ::alert{type="warning"}
