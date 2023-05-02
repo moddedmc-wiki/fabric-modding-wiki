@@ -1,16 +1,19 @@
 import { createResolver } from '@nuxt/kit'
 const { resolve } = createResolver(import.meta.url)
-
-
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   css: [
     "@/assets/app.css"
   ],
+  app: {
+    head: {
+      script: [{ src: "/og_image.js" },]
+    }
+  },
   nitro: {
     preset: 'service-worker',
     prerender: {
-      routes: ['/sitemap.xml']
+      routes: ['/sitemap.xml'],
     }
   },
   content: {
@@ -19,7 +22,6 @@ export default defineNuxtConfig({
         driver: 'fs',
         prefix: '/1.19.3',
         base: resolve('./archive/1.19.3'),
-        
       }
     },
     documentDriven: true,
