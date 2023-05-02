@@ -5,11 +5,6 @@ export default defineNuxtConfig({
   css: [
     "@/assets/app.css"
   ],
-  app: {
-    head: {
-      script: [{ src: "/og_image.js" },]
-    }
-  },
   nitro: {
     preset: 'service-worker',
     prerender: {

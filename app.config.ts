@@ -3,7 +3,7 @@ export default defineAppConfig({
     title: 'Fabric Community Wiki',
     description: 'An open source guide-book for creating mods using Fabric.',
     url: 'https://fabric.mineblock11.dev/',
-    image: '',
+    image: 'https://og.mineblock11.dev/fabric-community-wiki',
     socials: {
       discord: {
         label: 'Discord',
