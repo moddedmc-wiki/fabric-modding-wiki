@@ -26,11 +26,19 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.apache.commons.lang3.text.WordUtils;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 
 public class MyMod implements ModInitializer {
+
+    public static String generateHumanReadable(Identifier identifier) {
+        String identifier_path = identifier.getPath();
+        String lowercase = identifier_path.replace("_", " ");
+        String capitalized = WordUtils.capitalize(lowercase);
+        return capitalized;
+    }
 
     @Override
     public void onInitialize() {
