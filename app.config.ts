@@ -1,7 +1,7 @@
 export default defineAppConfig({
   docus: {
     title: 'Fabric Community Wiki',
-    description: 'An open source guide-book for creating mods using Fabric.',
+    description: 'An open source guidebook and wiki for creating Minecraft Mods using the Fabric Loader.',
     url: 'https://fabric.mineblock11.dev/',
     image: 'https://og.mineblock11.dev/fabric-community-wiki',
     socials: {
