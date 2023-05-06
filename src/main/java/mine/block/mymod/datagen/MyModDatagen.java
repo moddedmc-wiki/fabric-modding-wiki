@@ -11,5 +11,6 @@ public class MyModDatagen implements DataGeneratorEntrypoint {
             // ...
 
             pack.addProvider(EnglishTranslationProvider::new);
+            pack.addProvider(MyBlockTagProvider::new);
     }
 }

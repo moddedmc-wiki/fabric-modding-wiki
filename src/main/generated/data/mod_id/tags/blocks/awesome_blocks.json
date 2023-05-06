@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:diamond_block",
+    "mod_id:condensed_oak_log",
+    {
+      "id": "#minecraft:dirt",
+      "required": false
+    },
+    {
+      "id": "create:cogwheel",
+      "required": false
+    },
+    "#minecraft:buttons"
+  ]
+}

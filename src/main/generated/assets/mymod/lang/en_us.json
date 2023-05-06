@@ -1,0 +1,16 @@
+{
+  "block.mod_id.condensed_dirt": "Condensed Dirt",
+  "block.mod_id.prismarine_lamp": "Prismarine Lamp",
+  "item.mod_id.guidite_axe": "Guidite Axe",
+  "item.mod_id.guidite_boots": "Guidite Boots",
+  "item.mod_id.guidite_chestplate": "Guidite Chestplate",
+  "item.mod_id.guidite_helmet": "Guidite Helmet",
+  "item.mod_id.guidite_hoe": "Guidite Hoe",
+  "item.mod_id.guidite_leggings": "Guidite Leggings",
+  "item.mod_id.guidite_pickaxe": "Guidite Pickaxe",
+  "item.mod_id.guidite_shovel": "Guidite Shovel",
+  "item.mod_id.guidite_sword": "Guidite Sword",
+  "item.mod_id.lightning_stick": "Lightning Stick",
+  "item.mod_id.poop": "Poop",
+  "itemGroup.my_mod.item_group": "Fabric Community Wiki Items"
+}

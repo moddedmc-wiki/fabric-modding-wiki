@@ -15,6 +15,9 @@
     ],
     "main": [
       "mine.block.mymod.MyMod"
+    ],
+    "fabric-datagen": [
+      "mine.block.mymod.datagen.MyModDatagen"
     ]
   },
   "mixins": [
@@ -23,6 +26,6 @@
   "depends": {
     "fabricloader": ">=0.14.14",
     "fabric": "*",
-    "minecraft": "1.19.3"
+    "minecraft": "1.19.4"
   }
 }

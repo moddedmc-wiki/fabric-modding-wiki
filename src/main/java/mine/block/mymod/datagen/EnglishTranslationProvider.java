@@ -21,9 +21,9 @@ public class EnglishTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.PRISMARINE_LAMP, "Prismarine Lamp");
 
         try {
-            Optional<Path> path = dataOutput.getModContainer().findPath("assets/my_mod/lang/en_us.unmerged.json");
+            Optional<Path> path = dataOutput.getModContainer().findPath("assets/mod_id/lang/en_us.unmerged.json");
             translationBuilder.add(path.get());
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.info("Failed to merge language file: " + e);
         }
     }
