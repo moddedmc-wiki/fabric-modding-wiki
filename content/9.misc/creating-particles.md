@@ -1,5 +1,5 @@
 ---
-title: Creating Custom Particle
+title: Creating Custom Particles
 description: Learn how to add and use a new particle with the registry.
 ---
 
@@ -29,7 +29,7 @@ The "my_particle" in lowercase letters is the json path for the particle's textu
 
 ## Client-side registration
 
-After you have registered the particle in the `ModInitializer` entrypoint, you will also need to register the particle in the `ModInitializerClient` entrypoint.
+After you have registered the particle in the `ModInitializer` entrypoint, you will also need to register the particle in the `ClientModInitializer` entrypoint.
 
 ```java
 public class ExampleModClient implements ClientModInitializer {
@@ -41,7 +41,7 @@ public class ExampleModClient implements ClientModInitializer {
 }
 ```
 
-In this example, we are registering our particle client-side. We are then giving it some life with the end rod particle's factory. This means that the particle will behave exactly like the end rod particle would. You can replace the particle's factory with another particle's factory, or even your own!
+In this example, we are registering our particle client-side. We are then giving it some life with the end rod particle's factory. This means that the particle will behave exactly like the end rod particle would. You can replace the particle's factory with another particle's factory, or even your own particle factory!
 
 ## Creating a json file and adding textures
 
@@ -86,7 +86,7 @@ You can add more textures to animate the particle as well!
 
 Once you have completed the json file and saved your work, you are good to go! Load up minecraft and test everything out! 
 
-You can see if everything has worked by typing the command `/particle <mod id here>:my_particle ~ ~1 ~`. You may need to go into third person to get a good look at it. You can also use a command block to summon the particle with the exact same command!
+You can see if everything has worked by typing the command `/particle <mod id here>:my_particle ~ ~1 ~`. The particle will spawn inside the player with this command, so you may need to walk backwards to actually see it. You can also use a command block to summon the particle with the exact same command!
 
 ![](/misc/creating_particles_1.png)
 
