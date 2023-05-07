@@ -46,7 +46,14 @@ Let's begin with creating the folders necessary for the particle's texture(s). A
 
 For this example, we will only be adding one texture, named "myparticletexture.png". It'll be a simple pixel art smiley face.
 
-ADD SMILEY FACE HERE
+![](/misc/creating_particles_0.png)
+
+<div align="center">
+    <a target="_blank" href="/misc/creating_particles_0_small.png">Download Texture</a>
+</div>
+<br>
+
+edited it has been edited look it has been edited look look
 
 Next, add the new `resources/assets/<mod id here>/particles` folder to your directory. Notice the "s" in "particles" for this folder's name. In this new `particles` folder, create a new json file named "my_particle.json" This is the lowercase "my_particle" from the inital registration.
 
@@ -74,4 +81,9 @@ You can add more textures to animate the particle as well!
 
 ## Testing the new particle
 
-Once you have completed the json file and saved your work, you are good to go! Load up minecraft and test everything out! You can see if everything has worked by typing the command `/particle <mod id here>:my_particle ~ ~1 ~`. You may need to go into third person to get a good look at it. You can also use a command block to summon the particle with the exact same command!
+Once you have completed the json file and saved your work, you are good to go! Load up minecraft and test everything out! 
+
+You can see if everything has worked by typing the command `/particle <mod id here>:my_particle ~ ~1 ~`. You may need to go into third person to get a good look at it. You can also use a command block to summon the particle with the exact same command!
+
+![](/misc/creating_particles_1.png)
+
