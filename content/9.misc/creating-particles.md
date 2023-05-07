@@ -53,9 +53,7 @@ For this example, we will only be adding one texture, named "myparticletexture.p
 </div>
 <br>
 
-edited it has been edited look it has been edited look look
-
-Next, add the new `resources/assets/<mod id here>/particles` folder to your directory. Notice the "s" in "particles" for this folder's name. In this new `particles` folder, create a new json file named "my_particle.json" This is the lowercase "my_particle" from the inital registration.
+Next, add the new `resources/assets/<mod id here>/particles` folder to your directory. Notice the "s" in "particles" for this folder's name. In this new `particles` folder, create a new json file named "my_particle.json" This is the lowercase "my_particle" from the initial registration.
 
 In this file, you will need some code to help Minecraft know which texture(s) to put onto your particle.
 
