@@ -3,7 +3,12 @@ title: Creating Custom Particle
 description: Learn how to add and use a new particle with the registry.
 ---
 
+# Creating Custom Particles
+
+Particles are a powerful tool if used correctly. It can add ambience to a beautiful scene, or add tension to an edge of your seat boss battle. Let's add one!
+
 ## Register a custom particle
+
 
 To add a custom particle to your mod, you first need to register a ParticleType in your mod initializer class. 
 
@@ -36,7 +41,7 @@ public class ExampleModClient implements ClientModInitializer {
 }
 ```
 
-In this example, we are registering our particle. We are then giving it some life with the end rod particle's factory. This means that the particle will behave exactly like the end rod particle would. You can replace the particle's factory with another particle's factory, or even your own!
+In this example, we are registering our particle client-side. We are then giving it some life with the end rod particle's factory. This means that the particle will behave exactly like the end rod particle would. You can replace the particle's factory with another particle's factory, or even your own!
 
 ## Creating a json file and adding textures
 
