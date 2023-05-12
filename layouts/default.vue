@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+import DocsPageLayout from '~/components/DocsPageLayout.vue';
 const { page } = useContent();
 
 const pageImageURL = `https://og.mineblock11.dev/fabric-community-wiki?title=${encodeURIComponent(
@@ -18,22 +19,10 @@ useHead({
   meta: [
     { property: "og:image", content: pageImageURL },
     { property: "twitter:image", content: pageImageURL },
-    { property: "twitter:title", content: page.value.title},
-    { property: "twitter:description", content: page.value.description}
+    { property: "twitter:title", content: page.value.title },
+    { property: "twitter:description", content: page.value.description },
   ],
 });
-
-// export default {
-//   head() {
-
-//     return {
-//       meta: [
-//         {
-//           property: "og:image",
-//           content: ,
-//         },
-//       ],
-//     };
-//   },
-// };
 </script>
+
+<style scoped></style>
