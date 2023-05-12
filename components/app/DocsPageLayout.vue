@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import DocsPageBottom from '~/components/DocsPageBottom.vue'
 const { page } = useContent()
 const { config, tree } = useDocus()
 const route = useRoute()
@@ -75,12 +74,7 @@ onBeforeUnmount(() => {
     <!-- Page Body -->
     <article class="page-body">
       <slot v-if="hasBody" />
-      <Alert
-        v-else
-        type="info"
-      >
-        Start writing in <ProseCodeInline>content/{{ page._file }}</ProseCodeInline> to see this page taking shape.
-      </Alert>
+      <DocumentDrivenNotFound v-else />
       <template v-if="hasBody && page && bottom">
         <DocsPrevNext />
         <DocsPageBottom />
