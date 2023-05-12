@@ -16,12 +16,10 @@ const { config } = useDocus();
     </div>
 
     <!-- Need to be supported by @nuxt/content -->
-    <span v-if="page?.mtime"
-      >Updated on
+    <span v-if="page?.mtime">Updated on
       <b>{{
         new Intl.DateTimeFormat("en-US").format(Date.parse(page.mtime))
-      }}</b></span
-    >
+      }}</b></span>
   </div>
   <Giscus
     id="comments"
@@ -37,6 +35,7 @@ const { config } = useDocus();
     theme="transparent_dark"
     lang="en"
     loading="lazy"
+    host="https://giscus.app"
   />
 </template>
 

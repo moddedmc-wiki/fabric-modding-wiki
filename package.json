@@ -21,6 +21,7 @@
   "dependencies": {
     "@giscus/vue": "^2.2.8",
     "canvas": "^2.11.2",
+    "iframe-resizer": "^4.3.6",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21"
   }
