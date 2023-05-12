@@ -11,5 +11,5 @@
 </template>
 
 <script setup>
-const contributors = ref(['JR1811', '0x3C50', 'Friendly-Banana', 'enjarai', 'mineblock11']);
+const contributors = ref(['JR1811', '0x3C50', 'Friendly-Banana', 'enjarai', 'mineblock11', 'Superkat32']);
 </script>
