@@ -19,6 +19,7 @@
     "sitemap": "^7.1.1"
   },
   "dependencies": {
+    "@giscus/vue": "^2.2.8",
     "canvas": "^2.11.2",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21"
