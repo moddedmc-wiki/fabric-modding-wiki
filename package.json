@@ -11,10 +11,10 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@nuxt-themes/docus": "^1.9.0",
+    "@nuxt-themes/docus": "^1.12.0",
     "@nuxt/eslint-config": "^0.1.1",
     "@types/lodash-es": "^4.17.7",
-    "eslint": "^8.35.0",
+    "eslint": "^8.40.0",
     "nuxt": "3.3.3",
     "sitemap": "^7.1.1"
   },
