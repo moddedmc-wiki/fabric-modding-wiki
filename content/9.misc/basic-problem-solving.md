@@ -105,7 +105,7 @@ When working with Breakpoints, the Instance needs to be executed using the `Debu
     <small>Use the green bug icon to start the software in the Debug mode</small>
 </div>
 
-Lets use a custom Item as an example again. The Item is supposed to increase its efficiency level, whenever it has been used. But whenever this happens all the remaining enchantments get removed. How can this issue be resolved?
+Let's use a custom Item as an example again. The Item is supposed to increase its efficiency level, whenever it has been used. But whenever this happens all the remaining enchantments get removed. How can this issue be resolved?
 
 ```java
 // problematic example code:
@@ -138,21 +138,21 @@ public class TestItem extends Item {
 }
 ```
 
-Place a Breakpoint by clicking right next to the line number. You can place more then one at once, if needed.
+Place a Breakpoint by clicking right next to the line number. You can place more than one at once if needed.
 
 ![basic breakpoint](/misc/basic_problem_solving_04.png)
 
-Then let the instance execute this part of the code. In this case the custom Item needs to be used on a Block. The Instance should freeze and in IntelliJ a yellow arrow right next to the Breakpoint appears. This indicates at which point the Debugger is currently at. In the `Debug` window the controls can be used to move the current execution point using the blue arrow icons. This way the code can be processed step by step.
+Then let the instance execute this part of the code. In this case, the custom Item needs to be used on a Block. The Instance should freeze and in IntelliJ a yellow arrow right next to the Breakpoint appears. This indicates at which point the Debugger is currently. In the `Debug` window the controls can be used to move the current execution point using the blue arrow icons. This way the code can be processed step by step.
 
 ![move execution point](/misc/basic_problem_solving_05.png)
 
 <div align="center">
-    <small>The "Step over" function is the most common one so try to get used to its Keybind <i>(F8)</i></small>
+    <small>The "Step over" function is the most common one so try to get used to its Keybind <i>(F8)</I></small>
 </div>
 
 If you are done with the current inspection you can press the `Resume Program` button at the left side of the `Debug` window. This will un-freeze the Minecraft instance and further testing can be done.
 
-Currently loaded values and objects are listed on the right side of this window, while a complete Stacktrace is on the left side. You can also hover, with the Mouse Cursor, over the values in the code. If they are in scope and are still loaded a window will show their specific values too.
+Currently, loaded values and objects are listed on the right side of this window, while a complete Stacktrace is on the left side. You can also hover, with the Mouse Cursor, over the values in the code. If they are in scope and are still loaded a window will show their specific values too.
 
 ![loaded values](/misc/basic_problem_solving_06.png)
 
@@ -178,10 +178,10 @@ public ActionResult useOnBlock(ItemUsageContext context) {
     int levelOfEfficiency = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, itemStack);
 
 
-    // get a list of the itemStack's enchantments
+    // Get a list of the itemStack's enchantments
     var enchantments = EnchantmentHelper.fromNbt(itemStack.getOrCreateNbt().getList("Enchantments", NbtElement.COMPOUND_TYPE));
     var filteredEnchantments = enchantments.entrySet().stream()
-            // keep only enchantments which aren't EFFICIENCY
+            // Keep only enchantments which aren't EFFICIENCY
             .filter(entry -> !(entry.getKey().equals(Enchantments.EFFICIENCY)))
             // collect the entries of the stream for the final itemStack's enchantments Map
             .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
@@ -207,17 +207,17 @@ public ActionResult useOnBlock(ItemUsageContext context) {
 
 ### Breakpoints with conditions
 
-Sometimes its necessary to only halt the code when certain conditions are met. Create a basic Breakpoint and right click it to open the Breakpoint's settings. In there you can use boolean statements for the condition.
+Sometimes it is necessary to only halt the code when certain conditions are met. Create a basic Breakpoint and right-click it to open the Breakpoint's settings. In there, you can use boolean statements for the condition.
 
 ![Breakpoint with conditions](/misc/basic_problem_solving_08.png)
 
 ### Reloading an active Instance
 
-It is possible to make limited changes to the code, while a Minecraft instance is running. Method bodies can be rewritten at run-time using the `Debug` option instead of the `Run` option. This way, the Minecraft instance doesn't need to be restarted again. This makes e.g. testing Screen element allignment and other feature balancing faster.
+It is possible to make limited changes to the code, while a Minecraft instance is running. Method bodies can be rewritten at run-time using the `Debug` option instead of the `Run` option. This way, the Minecraft instance doesn't need to be restarted again. This makes e.g. testing Screen element alignment and other feature balancing faster.
 
 ![Debugging](/misc/basic_problem_solving_03.png)
 
-When the instance is running and changes to the code have been made, use `Build Project` to reload the changes. This process is also known as "Hotswap". If the changes were applied to the current Instance, a green notification will be shown.
+When the instance is running and changes to the code have been made, use `Build Project` to reload the changes. This process is also known as "Hotswap". If the changes were applied to the current instance, a green notification will be shown.
 
 ![build project](/misc/basic_problem_solving_09.png)
 
@@ -227,22 +227,22 @@ When the instance is running and changes to the code have been made, use `Build 
     <small>Correct Hotswap vs. failed Hotswap</small>
 </div>
 
-Other changes can be reloaded ingame.
+Other changes can be reloaded in-game.
 
 - changes to the `assets/` folder -> press `[F3 + T]`
 - changes to the `data/` folder -> use the `/reload` command
 
 ## Server testing
 
-The mod is done, everything seems to run smoothly and you just shipped the `.jar` file to the users. But suddenly you get complains about crashes and other problems, when the users try to play on a multiplayer server. What went wrong?
+The mod is done, everything seems to run smoothly and you just shipped the `.jar` file to the users. But suddenly you get complaints about crashes and other problems when the users try to play on a multiplayer server. What went wrong?
 
-This is most likely an issue with the client and server interaction. Things which run in singleplayer still can cause problems in a server environment. To test this you can repeat the steps from above in a server running on your (private) localhost.
+This is most likely an issue with the client and server interaction. Things which run in single-player still can cause problems in a server environment. To test this you can repeat the steps from above in a server running on your (private) localhost.
 
 Keep in mind that you will run a server and the clients at the same time. This may be taxing on your computer's performance.
 
 ### Set up the server
 
-Open up the `Gradle` window at the right side and run the `Tasks > fabric > runServer` Gradle task for the first time.
+Open up the `Gradle` window on the right side and run the `Tasks > fabric > runServer` Gradle task for the first time.
 
 ![runServer Gradle Task](/misc/basic_problem_solving_11.png)
 
@@ -250,7 +250,7 @@ Open up the `Gradle` window at the right side and run the `Tasks > fabric > runS
     <small>If the Gradle window is missing you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></small>
 </div>
 
-New files are generated in your project's `run` folder. However an error should appear in your console. When launching the server for the first time you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the eula value to `true` in this file.
+New files are generated in your project's `run` folder. However, an error should appear in your console. When launching the server for the first time you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the EULA value to `true` in this file.
 
 ```
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
@@ -260,7 +260,7 @@ eula=true
 
 Run the `runServer` Task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
 
-In the development environment the clients usually aren't logged in to any online accounts.
+In the development environment, the clients usually aren't logged in to any online accounts.
 
 ![client 401 error status](/misc/basic_problem_solving_12.png)
 
@@ -268,7 +268,7 @@ In the development environment the clients usually aren't logged in to any onlin
     <small>The client error of doom... or not...</small>
 </div>
 
-Therefor changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it _(CTRL / CMD + F)_.
+Therefore changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it _(CTRL / CMD + F)_.
 
 ```
 # ...
