@@ -3,6 +3,8 @@ title: Creating Custom Sounds
 description: Learn how to add and use a new sound with the registry.
 ---
 
+# Creating Custom Sounds
+
 ## Preparing the audio file
 
 Your audio files need to be formatted in a specific way. OGG Vorbis is an open container format for multimedia data, such as audio, and is used in case of Minecraft's sound files. To avoid problems with how Minecraft handles distance of sound the audio data needs to have only a single channel (Mono).

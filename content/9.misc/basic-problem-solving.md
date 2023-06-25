@@ -1,0 +1,316 @@
+---
+title: Basic Problem Solving
+description: Learn how to solve simple issues and mistakes on your own.
+---
+
+# Basic Problem Solving
+
+Issues, mistakes and bugs can happen even to the best programmer. You can develop a basic set of steps to potentially identify and resolve those issues without the help of others. Problems solved on your own can teach you many things and also feel rewarding. However, if you are stuck without being able to fix the problems by yourself, there is no shame in asking others for help.
+
+This page focuses mostly on functionality which is provided by IntelliJ (and many other IDEs) such as Logging and how to use the Debugger.
+
+## Console and LOGGER
+
+The most basic but also fastest tool to identify problems is the console. Values can be printed there at "run-time" which can inform the developer about the current state of the code and makes it easy to analyze changes and potential mistakes.
+
+In the `ModInitializer` implementing entry point class of the mod, a `LOGGER` is used by default, to print the desired output to the console.
+
+```java
+public class MyMod implements ModInitializer {
+    public static final String MOD_ID = "mod_id";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    @Override
+    public void onInitialize() {
+        // ...
+    }
+}
+```
+
+Whenever you need to know a value for something at a specific point in the code, use this `LOGGER` by passing the `String` value to its `info(...)` method.
+
+```java
+public class TestItem extends Item {
+    
+    public TestItem(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
+        // Values are used in a String to provide more information
+        TestMod.LOGGER.info("Is Client World: " + user.getWorld().isClient()
+                + " | Health: " + entity.getHealth() + " / " +  entity.getMaxHealth()
+                + " | The item was used with the " + hand.name()
+        );
+
+        return ActionResult.SUCCESS;
+    }
+}
+```
+
+When, in this case, the `TestItem` is used on an Entity it will provide the values at this current state of the mod in the console of the currently used instance. If your `Run` window for the console is missing, you can open a new one in the toolbar at the top (`View > Tool Windows > Run`), if you are working with IntelliJ.
+
+![LOGGER output](/misc/basic_problem_solving_01.png)
+
+### Keeping the console clean
+
+Keep in mind that this will also be printed if the mod is used in any other environment. This is completely optional, but I like to create a custom `LOGGER` method and use that, instead of the `LOGGER` itself to prevent printing data, which is only needed in a development environment.
+
+```java
+public class MyMod implements ModInitializer {
+    public static final String MOD_ID = "mod_id";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    @Override
+    public void onInitialize() {
+        // ...
+    }
+
+    public static void devLogger(String loggerInput) {
+        // prevent usage if the Instance is not run in a development environment
+        if (!FabricLoader.getInstance().isDevelopmentEnvironment()) return;
+        
+        // customize that message however you want...
+        TestMod.LOGGER.info("DEV - [" + loggerInput + "]");
+    }
+}
+```
+
+Otherwise clean up the `LOGGER` usage as much as you can, to prevent causing a headache for Modpack developers and curious users.
+
+### Locating the issues
+
+The Logger prints the `MOD-ID` in front of the line. The Search function _(CTRL / CMD + F)_ can be used to highlight it, making it easier to spot the problem. Missing assets, such as the Purple & Black placeholder when a texture is missing, also print their errors in the console and mention their missing files. You can also use the Search function here and look for the asset name in question.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Minecraft_missing_texture_block.svg/1024px-Minecraft_missing_texture_block.svg.png"  width="150" height="150">
+
+![missing assets](/misc/basic_problem_solving_02.png)
+
+<div align="center">
+    <small>Missing assets in a mod called "Acanthus Pocket"</small>
+</div>
+
+## Debugging
+
+### Breakpoint
+
+A more "sophisticated" way of debugging is the usage of Breakpoints in an IDE. As their name suggests, they are used to halt the executed code at specific locations and make it possible to inspect and modify the state of the software with a variety of tools.
+
+When working with Breakpoints, the Instance needs to be executed using the `Debug` option instead of the `Run` option.
+
+![Debugging](/misc/basic_problem_solving_03.png)
+
+<div align="center">
+    <small>Use the green bug icon to start the software in the Debug mode</small>
+</div>
+
+Let's use a custom Item as an example again. The Item is supposed to increase its efficiency level, whenever it has been used. But whenever this happens all the remaining enchantments get removed. How can this issue be resolved?
+
+```java
+// problematic example code:
+
+public class TestItem extends Item {
+    
+    public TestItem(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        ItemStack itemStack = context.getStack();
+        World world = context.getWorld();
+        BlockPos pos = context.getBlockPos();
+
+        if (world.isClient()) return super.useOnBlock(context);
+
+        int levelOfEfficiency = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, itemStack);
+
+        itemStack.removeSubNbt("Enchantments");
+        itemStack.addEnchantment(Enchantments.EFFICIENCY, levelOfEfficiency + 1);
+
+        if (levelOfEfficiency > 10) {
+            world.createExplosion(context.getPlayer(), pos.getX(), pos.getY(), pos.getZ(), 2, true, World.ExplosionSourceType.MOB);
+        }
+
+        return ActionResult.SUCCESS;
+    }
+}
+```
+
+Place a Breakpoint by clicking right next to the line number. You can place more than one at once if needed.
+
+![basic breakpoint](/misc/basic_problem_solving_04.png)
+
+Then let the instance execute this part of the code. In this case, the custom Item needs to be used on a Block. The Instance should freeze and in IntelliJ a yellow arrow right next to the Breakpoint appears. This indicates at which point the Debugger is currently. In the `Debug` window the controls can be used to move the current execution point using the blue arrow icons. This way the code can be processed step by step.
+
+![move execution point](/misc/basic_problem_solving_05.png)
+
+<div align="center">
+    <small>The "Step over" function is the most common one so try to get used to its Keybind <i>(F8)</I></small>
+</div>
+
+If you are done with the current inspection you can press the `Resume Program` button at the left side of the `Debug` window. This will un-freeze the Minecraft instance and further testing can be done.
+
+Currently, loaded values and objects are listed on the right side of this window, while a complete Stacktrace is on the left side. You can also hover, with the Mouse Cursor, over the values in the code. If they are in scope and are still loaded a window will show their specific values too.
+
+![loaded values](/misc/basic_problem_solving_06.png)
+
+<div align="center">
+    <small>Not loaded Integer vs. loaded Integer</small>
+</div>
+
+If we inspect the `ItemStack` object we can see that the enchantments are stored as NBT values. The `removeSubNbt()` method removes all SubNbt values with the "Enchantments" key.
+
+![itemstack](/misc/basic_problem_solving_07.png)
+
+To avoid that, only the specific enchantment needs to be removed. This can be done using the `EnchantmentHelper` in combination with filtering a `Stream`.
+
+```java
+@Override
+public ActionResult useOnBlock(ItemUsageContext context) {
+    ItemStack itemStack = context.getStack();
+    World world = context.getWorld();
+    BlockPos pos = context.getBlockPos();
+
+    if (world.isClient()) return super.useOnBlock(context);
+
+    int levelOfEfficiency = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, itemStack);
+
+
+    // Get a list of the itemStack's enchantments
+    var enchantments = EnchantmentHelper.fromNbt(itemStack.getOrCreateNbt().getList("Enchantments", NbtElement.COMPOUND_TYPE));
+    var filteredEnchantments = enchantments.entrySet().stream()
+            // Keep only enchantments which aren't EFFICIENCY
+            .filter(entry -> !(entry.getKey().equals(Enchantments.EFFICIENCY)))
+            // collect the entries of the stream for the final itemStack's enchantments Map
+            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+    // put the changed enchantments Map (without the efficiency) back on the itemStack
+    EnchantmentHelper.set(filteredEnchantments, itemStack);
+
+    // add the efficiency enchantment back with the new level
+    itemStack.addEnchantment(Enchantments.EFFICIENCY, levelOfEfficiency + 1);
+
+    if (levelOfEfficiency > 10) {
+        world.createExplosion(context.getPlayer(), pos.getX(), pos.getY(), pos.getZ(),
+                2, true, World.ExplosionSourceType.MOB);
+    }
+
+    return ActionResult.SUCCESS;
+}
+```
+
+<div align="center">
+    <small>Probably the most roundabout way of increasing an enchantment level...</small>
+</div>
+
+### Breakpoints with conditions
+
+Sometimes it is necessary to only halt the code when certain conditions are met. Create a basic Breakpoint and right-click it to open the Breakpoint's settings. In there, you can use boolean statements for the condition.
+
+![Breakpoint with conditions](/misc/basic_problem_solving_08.png)
+
+### Reloading an active Instance
+
+It is possible to make limited changes to the code, while a Minecraft instance is running. Method bodies can be rewritten at run-time using the `Debug` option instead of the `Run` option. This way, the Minecraft instance doesn't need to be restarted again. This makes e.g. testing Screen element alignment and other feature balancing faster.
+
+![Debugging](/misc/basic_problem_solving_03.png)
+
+When the instance is running and changes to the code have been made, use `Build Project` to reload the changes. This process is also known as "Hotswap". If the changes were applied to the current instance, a green notification will be shown.
+
+![build project](/misc/basic_problem_solving_09.png)
+
+![hotswap](/misc/basic_problem_solving_10.png)
+
+<div align="center">
+    <small>Correct Hotswap vs. failed Hotswap</small>
+</div>
+
+Other changes can be reloaded in-game.
+
+- changes to the `assets/` folder -> press `[F3 + T]`
+- changes to the `data/` folder -> use the `/reload` command
+
+## Server testing
+
+The mod is done, everything seems to run smoothly and you just shipped the `.jar` file to the users. But suddenly you get complaints about crashes and other problems when the users try to play on a multiplayer server. What went wrong?
+
+This is most likely an issue with the client and server interaction. Things which run in single-player still can cause problems in a server environment. To test this you can repeat the steps from above in a server running on your (private) localhost.
+
+Keep in mind that you will run a server and the clients at the same time. This may be taxing on your computer's performance.
+
+### Set up the server
+
+Open up the `Gradle` window on the right side and run the `Tasks > fabric > runServer` Gradle task for the first time.
+
+![runServer Gradle Task](/misc/basic_problem_solving_11.png)
+
+<div align="center">
+    <small>If the Gradle window is missing you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></small>
+</div>
+
+New files are generated in your project's `run` folder. However, an error should appear in your console. When launching the server for the first time you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the EULA value to `true` in this file.
+
+```
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
+#Sat Sep 03 12:03:44 CEST 2022
+eula=true
+```
+
+Run the `runServer` Task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
+
+In the development environment, the clients usually aren't logged in to any online accounts.
+
+![client 401 error status](/misc/basic_problem_solving_12.png)
+
+<div align="center">
+    <small>The client error of doom... or not...</small>
+</div>
+
+Therefore changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it _(CTRL / CMD + F)_.
+
+```
+# ...
+require-resource-pack=false
+use-native-transport=true
+max-players=20
+online-mode=false
+# ...
+```
+
+Now the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `runServer` Gradle task is used to launch the server and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
+
+![server prompts](/misc/basic_problem_solving_13.png)
+
+To join the server, use `localhost` as the `Server address` in-game.
+
+### Set up the Client profile
+
+Some testing requires multiple clients to interact in a multiplayer environment. Edit the `Minecraft Client` run configuration by pressing the white arrow. And modify the options to run multiple instances of this profile at the same time.
+
+![edit client configuration](/misc/basic_problem_solving_14.png)
+
+![allow multiple instances](/misc/basic_problem_solving_15.png)
+
+Now you can launch your client profile as many times as you want and connect multiple clients to your server. To check out all the instances and their consoles for logging and other purposes, switch the consoles with the tabs at the top of the console window.
+
+![consoles](/misc/basic_problem_solving_16.png)
+
+## Logs and crash report files
+
+The console of a previously executed instance helps with finding the issues. They are exported into the log files, located in the Minecraft instance's `logs` directory. The newest log is usually called `latest.log`. Users can send this file, for further inspection, to the mod developer or host the file content on code-hosting websites.
+
+In the development environment you can find the logs in the project's `run > logs` folder and the crash reports in the `run > crash-reports` folder.
+
+<!-- add: how to read stacktraces -->
+
+---
+
+## Still didn't solve the problem?
+
+Join the community and ask for help!
+
+- [Official Fabric Wiki](https://fabricmc.net/wiki/start) and their [Discord server](https://discord.com/invite/v6v4pMv)
+
+<!-- list of active communities ??? -->

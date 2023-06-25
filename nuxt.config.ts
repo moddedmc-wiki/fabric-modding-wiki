@@ -11,6 +11,13 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml'],
     }
   },
+  components: [
+    {
+      prefix: '',
+      path: resolve('./components/app'),
+      global: true
+    },
+  ],
   content: {
     sources: {
       '1.19.3': {

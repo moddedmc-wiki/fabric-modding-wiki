@@ -3,6 +3,8 @@ title: Playing Sounds
 description: Learn how to play sound events.
 ---
 
+# Playing Sounds
+
 Minecraft has a big selection of sounds which you can choose from. Check out the `SoundEvents` class to see all, by the base game already registered, sounds.
 
 ## Using sounds in your mod
