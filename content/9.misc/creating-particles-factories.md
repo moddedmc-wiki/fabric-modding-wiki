@@ -8,11 +8,11 @@ Custom particle factories allow for the already powerful particles to become sup
 
 ## Creating The Factory's Class
 You can think of a particle factory as the particle's code. In this example, we are going to make our smiley faced texture from the Creating Custom Particles tutorial fall slowly, spin, and change size, then stop all movement and fade away upon hitting the ground.  
-To use a custom particle factory, you'll need to create a class to contain all of the code. If you plan on making multiple factories, or just want to keep your packages organized, then you will probably want to create a new package called `particles`(this package would be placed in the same package as your "ClientModInitializer" package). This package will contain all of your particle factories.  
+To use a custom particle factory, you'll need to create a class to contain all of the code. If you plan on making multiple factories, or just want to keep your packages organized, then you will probably want to create a new package called `particles`(this package would be placed in the same package as your "ClientModInitializer" class). This package will contain all of your particle factories.  
 Next up, create a new class with the name of your particle. For this example, we will be calling it `MyParticle.class`. We have a particle already named "myparticle", however, if you had a particle named "fireball", you could name the class "FireballParticle.class". 
 
 ## Adding Code
-Your particle needs code! A lot of code. Let's begin by adding the bare minimum to get the particle working. First thing first, your class needs to extend the `SpriteBillboardParticle` class, and needs to have the `@Environment(EnvType.CLIENT)` line above it. 
+Your particle needs code! A lot of code. Let's begin by adding the constructor and tick methods. Your class needs to extend the `SpriteBillboardParticle` class, and needs to have the `@Environment(EnvType.CLIENT)` line above it. 
 
 ```java
 @Environment(EnvType.CLIENT)
@@ -200,7 +200,13 @@ ParticleFactoryRegistry.getInstance().register(<mod id here>.MY_PARTICLE, MyPart
 Now that your particle factory is being used in the particle registry, you may load up your game and test out the particle!
 ## The Most Beautiful Particle You Will Ever See
 Try spawning the particle a block in the air, 5 blocks in the air, and 10 whole blocks in the air!  
-INSERT IMAGES OF PARTICLE HERE
+A single block in the air.  
+![](/misc/creating_particle_factories_1.png)  
+5 blocks in the air.  
+![](/misc/creating_particle_factories_2.png)  
+10 whole blocks in the air!  
+![](/misc/creating_particle_factories_3.png)  
+![](/misc/creating_particle_factories_4.png)  
 
 ## Full Example
 ```java
