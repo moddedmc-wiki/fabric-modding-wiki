@@ -4,7 +4,7 @@ description: Learn how to enhance particles with custom particle factories.
 ---
 
 # Creating Particle Factories
-Custom particle factories allow for the already powerful particles to become super powerful. You can add small rotating leaves to a beautiful scene, or huge powerful explosions to an intense boss battle. Let's learn about them and make one!
+Custom particle factories allow for the already powerful particles to become super powerful. You can add small rotating leaves to a beautiful scene, or huge, powerful explosions to an intense boss battle. Let's learn about them and make one!
 
 ## Creating The Factory's Class
 You can think of a particle factory as the particle's code. In this example, we are going to make our smiley faced texture from the Creating Custom Particles tutorial fall slowly, spin, and change size, then stop all movement and fade away upon hitting the ground.  
@@ -48,7 +48,7 @@ public class MyParticle extends SpriteBillboardParticle {
 ```
 
 *Depending on your IDE of choice, the ParticleTextureSheet may have automatically been added and returned a value of "null". If that is the case, then let it be for now.*  
-The code above is for some of the methods required to make your particle have motion. There are still more methods to come however. But first, let's add some code to the stuff we already have.
+The code above is for some of the methods required to make your particle have motion. There are still more methods to come, however. But first, let's add some code to the stuff we already have.
 
 ## Determining What Variables To Add
 In the particle's constructor, there are many variables you can choose to edit to your liking. Here is a list of some of the most common variables you may want to edit.
@@ -56,7 +56,7 @@ In the particle's constructor, there are many variables you can choose to edit t
 - `maxAge`: Typically the total amount of ticks the particle has in the world.
 - `scale`: The size of the particle.
 - `angle`: The angle of the particle.
-- `alpha`: The opacity, or transparency of the particle.
+- `alpha`: The opacity, or transparency, of the particle.
 - `collidesWithWorld`: A boolean which determines if the particle should collide with the world or not.  
 
 *The following are typically determined by the method caller.*
@@ -72,7 +72,7 @@ Once you have figured out which variables you want to adjust, and which ones you
 ## Adding Code to The Constructor
 Back to your particle's constructor, it is finally time to add some code! At this point, you should have some variables in mind for what you want to add. However, if there is a variable you missed, you can always come back and add them!  
 As mentioned earlier, our goal is to make a particle which falls slowly, spins, and changes size, then stop all movement and fade away upon hitting the ground. This means we're going to want to have some variables to allow for this, like the `angle`, `alpha`, and `collidesWithWorld` boolean.  
-There are also variables we'd just want in general, like the `age` and `scale`, as well as the variables related to positisioing.  
+There are also variables we'd just want in general, like the `age` and `scale`, as well as the variables related to positioning.  
 ```java
 @Environment(EnvType.CLIENT)
 public class MyParticle extends SpriteBillboardParticle {
@@ -98,7 +98,7 @@ public class MyParticle extends SpriteBillboardParticle {
 }
 ```
 
-Now that's a lot of code! Let's go over it a little bit more. Firstly, we need to make sure to set the `this.x`, `this.y`, and `this.z` variables to constructor's respective variables(`x`, `y`, `z`), to ensure the particle spawns at the right posisiton.  
+Now, that's a lot of code! Let's go over it a little bit more. Firstly, we need to make sure to set the `this.x`, `this.y`, and `this.z` variables to constructor's respective variables(`x`, `y`, `z`), to ensure the particle spawns at the right position.  
 What about the `velocityY` variable? Why did we set that to a predetermined number? Well, our goal is to make it so that our particle falls at the same rate every time. Setting the `velocityY` variable ahead of time helps reduce repeated code. However, if you think you may want to change the `velocityY` variable depending on when you call it, then it wouldn't be a bad idea to change the variable to be determined by the constructor's parameter.
 
 ## Adding Code to The Tick Method
@@ -150,12 +150,12 @@ Next, let's add some life to our particle!
   }
 ```
 Woah, what's going on here? A lot of simple checks, actually! Let's break down the code.  
-First, we are detecting if the particle is off the ground with the `if(!this.onGround)` statement. If the particle *isn't* on the ground, it will continue the statement. The statement continues by slightly changing the particle's angle. Then it asks if the particle has progressed through a third of its age with the `if(this.age >= this.maxAge / 3)` code. If so, then it starts to shrink the particle. Otherwise it'll continue to grow the particle.  
+First, we are detecting if the particle is off the ground with the `if(!this.onGround)` statement. If the particle *isn't* on the ground, it will continue the statement. The statement continues by slightly changing the particle's angle. Then it asks if the particle has progressed through a third of its age with the `if(this.age >= this.maxAge / 3)` code. If so, then it starts to shrink the particle. Otherwise, it'll continue to grow the particle.  
 What if the particle *is* on the ground? If the particle is on the ground, the particle losses *most* velocity. It still has the velocityY, because we never set it to 0. We don't need to. The reason why we set it to something in the first place is to let it hit the ground. And now that it is on the ground, and because the particle collides with the world, the particle stops the "y" velocity automatically!  
 We also begin to reduce the particle's alpha, until it eventually despawns whenever the alpha hits 0, thanks to the `if(this.age++ >= this.maxAge || this.scale <= 0 || this.alpha <= 0)` statement from earlier.
 
 ## Texture Sheet
-We are getting very close to completeing our beautiful new particle factory. But, we need to figure out which TextureSheet is best for us. Let's go with `PARTICLE_SHEET_TRANSLUCENT`, as it allows for our particle to have some transparency. An alternative is `PARTICLE_SHEET_OPAQUE`, which does not allow for any transparency.
+We are getting very close to completing our beautiful new particle factory. But, we need to figure out which TextureSheet is best for us. Let's go with `PARTICLE_SHEET_TRANSLUCENT`, as it allows for our particle to have some transparency. An alternative is `PARTICLE_SHEET_OPAQUE`, which does not allow for any transparency.
 
 ```java
   @Override
@@ -180,7 +180,7 @@ There is one last method we need to add before testing our particle. It is the m
 ```
 Once you are done adding that, your particle code is complete! **But wait!** Don't load up your game yet, as you still need to register your particle using this new particle factory.
 ## Using The New Factory
-In your `ClientModInitializer` class, edit your particle register to something like the following.
+In your `ClientModInitializer` class, edit your particle register to include our new particle factory.
 ```java
 ParticleFactoryRegistry.getInstance().register(<mod id here>.MY_PARTICLE, MyParticle.Factory::new);
 ```
