@@ -1,0 +1,1 @@
+/* empty css                        */import{a as c,o as r,b as e,e as t}from"./entry.88598ecb.js";const a={props:["color"]};function s(l,n,o,p,_,i){return r(),e("div",{class:"color-swatch",style:t(`background-color: ${o.color}`)},null,4)}const m=c(a,[["render",s]]);export{m as default};
