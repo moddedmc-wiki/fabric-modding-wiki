@@ -19,13 +19,6 @@ export default defineNuxtConfig({
     },
   ],
   content: {
-    sources: {
-      '1.19.3': {
-        driver: 'fs',
-        prefix: '/1.19.3',
-        base: resolve('./archive/1.19.3'),
-      }
-    },
     documentDriven: true,
     highlight: {
       theme: {
