@@ -3,7 +3,6 @@ package mine.block.mymod;
 import mine.block.mymod.block.PrismarineLampBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -16,12 +15,12 @@ public class ModBlocks {
 
     public static final Block CONDENSED_DIRT = register(
             new Block(
-                AbstractBlock.Settings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS)
+                AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS)
             ), "condensed_dirt", true);
 
     public static final PillarBlock CONDENSED_OAK_LOG = register(
             new PillarBlock(
-                    AbstractBlock.Settings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)
+                    AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD)
             ), "condensed_oak_log", true);
 
     public static final PrismarineLampBlock PRISMARINE_LAMP = register(
