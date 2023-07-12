@@ -34,15 +34,17 @@ function mapChildren(children, index) {
   });
 }
 
-navigation.value.forEach(async (navItem) => {
-  dynamicLinks.push({
-    title: navItem.title,
-    icon: navItem.icon,
-    link: navItem._path,
-    index: navItem.children ? 0 : -1,
-    children: mapChildren(navItem.children, 0),
+if (navigation.value != null) {
+  navigation.value.forEach(async (navItem) => {
+    dynamicLinks.push({
+      title: navItem.title,
+      icon: navItem.icon,
+      link: navItem._path,
+      index: navItem.children ? 0 : -1,
+      children: mapChildren(navItem.children, 0),
+    });
   });
-});
+}
 
 const { page } = useContent();
 

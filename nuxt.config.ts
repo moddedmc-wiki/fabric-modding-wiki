@@ -7,7 +7,6 @@ export default defineNuxtConfig({
       plugins: [tailwindTypography],
     }
   },
-  ssr: false,
   content: {
     highlight: {
       theme: {

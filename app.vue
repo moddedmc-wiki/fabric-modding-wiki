@@ -4,9 +4,28 @@
       <NuxtPage />
     </NuxtLayout>
   </div>
+  <template v-if="!isMounted">
+    <NuxtLink v-for="route in routes" :to="route" />
+  </template>
 </template>
 
-<script setup></script>
+<script lang="ts">
+const useIsMounted = () => {
+  const isMounted = ref(false);
+  onMounted(() => {
+    isMounted.value = true;
+  });
+  return isMounted;
+};
+
+export default defineNuxtComponent({
+  setup() {
+    const routes = useRouter().getRoutes();
+    const isMounted = useIsMounted();
+    return { routes, isMounted };
+  },
+});
+</script>
 
 <style>
 .prose :where(code):not(:where([class~="not-prose"] *))::before,
