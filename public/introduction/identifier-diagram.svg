@@ -1,0 +1,253 @@
+<svg aria-roledescription="flowchart-v2" viewBox="-8 -8 224.46665954589844 192" style="max-width: 100%;"
+    xmlns="http://www.w3.org/2000/svg" width="100%" id="graph-div" height="100%">
+    <style>
+        #graph-div {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            font-size: 16px;
+            fill: black;
+        }
+
+        #graph-div .error-icon {
+            fill: #fff;
+        }
+
+        #graph-div .error-text {
+            fill: #000000;
+            stroke: #000000;
+        }
+
+        #graph-div .edge-thickness-normal {
+            stroke-width: 2px;
+        }
+
+        #graph-div .edge-thickness-thick {
+            stroke-width: 3.5px;
+        }
+
+        #graph-div .edge-pattern-solid {
+            stroke-dasharray: 0;
+        }
+
+        #graph-div .edge-pattern-dashed {
+            stroke-dasharray: 3;
+        }
+
+        #graph-div .edge-pattern-dotted {
+            stroke-dasharray: 2;
+        }
+
+        #graph-div .marker {
+            fill: white;
+            stroke: white;
+        }
+
+        #graph-div .marker.cross {
+            stroke: white;
+        }
+
+        #graph-div svg {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            font-size: 16px;
+        }
+
+        #graph-div .label {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            color: black;
+        }
+
+        #graph-div .cluster-label text {
+            fill: #000000;
+        }
+
+        #graph-div .cluster-label span {
+            color: #000000;
+        }
+
+        #graph-div .label text,
+        #graph-div span {
+            fill: black;
+            color: black;
+        }
+
+        #graph-div .node rect,
+        #graph-div .node circle,
+        #graph-div .node ellipse,
+        #graph-div .node polygon,
+        #graph-div .node path {
+            fill: white;
+            stroke: hsl(0, 0%, 90%);
+            stroke-width: 1px;
+        }
+
+        #graph-div .node .label {
+            text-align: center;
+        }
+
+        #graph-div .node.clickable {
+            cursor: pointer;
+        }
+
+        #graph-div .arrowheadPath {
+            fill: undefined;
+        }
+
+        #graph-div .edgePath .path {
+            stroke: white;
+            stroke-width: 2.0px;
+        }
+
+        #graph-div .flowchart-link {
+            stroke: white;
+            fill: none;
+        }
+
+        #graph-div .edgeLabel {
+            background-color: #006100;
+            text-align: center;
+        }
+
+        #graph-div .edgeLabel rect {
+            opacity: 0.5;
+            background-color: #006100;
+            fill: #006100;
+        }
+
+        #graph-div .cluster rect {
+            fill: #fff;
+            stroke: hsl(0, 0%, 90%);
+            stroke-width: 1px;
+        }
+
+        #graph-div .cluster text {
+            fill: #000000;
+        }
+
+        #graph-div .cluster span {
+            color: #000000;
+        }
+
+        #graph-div div.mermaidTooltip {
+            position: absolute;
+            text-align: center;
+            max-width: 200px;
+            padding: 2px;
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            font-size: 12px;
+            background: #fff;
+            border: 1px solid undefined;
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        #graph-div .flowchartTitleText {
+            text-anchor: middle;
+            font-size: 18px;
+            fill: black;
+        }
+
+        #graph-div :root {
+            --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
+        }
+    </style>
+    <g>
+        <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="10"
+            viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd">
+            <path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 0 0 L 10 5 L 0 10 z"></path>
+        </marker>
+        <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="0"
+            viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart">
+            <path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 0 5 L 10 10 L 10 0 z"></path>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11"
+            viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd">
+            <circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5">
+            </circle>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1"
+            viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart">
+            <circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5">
+            </circle>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12"
+            viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd">
+            <path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 1,1 l 9,9 M 10,1 l -9,9"></path>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1"
+            viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart">
+            <path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 1,1 l 9,9 M 10,1 l -9,9"></path>
+        </marker>
+        <g class="root">
+            <g class="clusters"></g>
+            <g class="edgePaths">
+                <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0"
+                    d="M48.041664123535156,63L48.041664123535156,67.16666666666667C48.041664123535156,71.33333333333333,48.041664123535156,79.66666666666667,52.806904896873995,88C57.57214567021283,96.33333333333333,67.1026272168905,104.66666666666667,71.86786799022934,108.83333333333333L76.63310876356817,113">
+                </path>
+                <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-B" id="L-C-B-0"
+                    d="M177.27499389648438,63L177.27499389648438,67.16666666666667C177.27499389648438,71.33333333333333,177.27499389648438,79.66666666666667,172.50975312314554,88C167.74451234980668,96.33333333333333,158.21403080312902,104.66666666666667,153.4487900297902,108.83333333333333L148.68354925645136,113">
+                </path>
+            </g>
+            <g class="edgeLabels">
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+            </g>
+            <g class="nodes">
+                <g transform="translate(48.041664123535156, 31.5)" id="flowchart-A-52" class="node default default">
+                    <rect height="63" width="96.08332824707031" y="-31.5" x="-48.041664123535156" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-40.541664123535156, -24)" style="" class="label">
+                        <foreignObject height="48" width="81.08332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="nodeLabel">Namespace<br />'minecraft'</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(112.65832901000977, 144.5)" id="flowchart-B-53" class="node default default">
+                    <rect height="63" width="138.39999389648438" y="-31.5" x="-69.19999694824219" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-61.69999694824219, -24)" style="" class="label">
+                        <foreignObject height="48" width="123.39999389648438">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="nodeLabel">Identifier<br />'minecraft:forest'</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(177.27499389648438, 31.5)" id="flowchart-C-54" class="node default default">
+                    <rect height="63" width="62.383331298828125" y="-31.5" x="-31.191665649414062" ry="0" rx="0"
+                        style="" class="basic label-container"></rect>
+                    <g transform="translate(-23.691665649414062, -24)" style="" class="label">
+                        <foreignObject height="48" width="47.383331298828125">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="nodeLabel">Path<br />'forest'</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

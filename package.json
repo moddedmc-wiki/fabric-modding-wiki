@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.7.0",
+    "@nuxthq/ui": "^2.5.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2",
+    "sitemap": "^7.1.1"
+  },
+  "dependencies": {
+    "@iconify-json/mdi": "^1.1.53",
+    "clipboard": "^2.0.11",
+    "prismjs": "^1.29.0"
+  }
+}
