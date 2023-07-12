@@ -1,42 +1,50 @@
-# Content v2 Minimal Starter
+---
+title: Fabric Community Wiki
+navigation: 
+  title: Homepage
+  icon: i-mdi-home
+---
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+# Fabric Community Wiki
 
-## Setup
+An open source guide-book for creating mods using Fabric.
 
-Make sure to install the dependencies:
+## Jump Right In!
 
-```bash
-# yarn
-yarn install
+Whether you're new to modding or an experienced developer, the Fabric Community Wiki is a great resource for anyone looking to create Minecraft mods using the Fabric Loader. 
 
-# npm
-npm install
+From step-by-step tutorials on creating your first mod to in-depth guides on adding items, blocks, and advanced rendering techniques, this comprehensive wiki has everything you need to get started and take your mods to the next level.
 
-# pnpm
-pnpm install
-```
+The sidebar contains all the pages that are on the wiki - if you do not see a topic that you seek help with, [create an issue on the GitHub](https://github.com/mineblock11/fabric-community-wiki/issues) or [join the discord for support.](https://discord.gg/UzHtJKqHny)
 
-## Development Server
+## Before you jump in...
 
-Start the development server on http://localhost:3000
+This wiki assumes you already have a general knowledge of key java concepts, such as generics and object oriented programming.
 
-```bash
-npm run dev
-```
+If you are completely new to programming with Java, you should first take some Java lessons:
 
-## Production
+- [Codecademy: Learn Java](https://www.codecademy.com/learn/learn-java)
+- [W3Schools: Java Tutorial](https://www.w3schools.com/java/)
+- [learnjavaonline.com](https://www.learnjavaonline.org/)
 
-Build the application for production:
+All content on this wiki uses Yarn mappings - if you aren't using Yarn mappings, you can use [Linkie](https://linkie.shedaniel.me/mappings) to convert between all mappings (mojmap/parchment etc.)
 
-```bash
-npm run build
-```
+## Coming from Forge?
 
-Locally preview production build:
+We currently do not have a page that lists the key differences between Forge and Fabric - however, you'll likely see some similarities to modding with Forge when reading through the pages on this wiki.
 
-```bash
-npm run preview
-```
+A page that lists the key differences is planned for the future.
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+## Extra Support
+
+If you need extra help or certain concepts further clarified, you can ask in the `#mod-dev` channels in the Fabric Discord - these channels are places where users give and ask for help with modding, please respect the Fabric Discord's rules.
+
+- [Fabric Discord](https://discord.gg/v6v4pMv)
+
+## Thank You
+
+Thank you for using the wiki! It means alot to me (mineblock11) and any contributors that have made significant contributions to the wiki.
+
+## Legal
+
+All legal notices [can be found here.](/legal)
