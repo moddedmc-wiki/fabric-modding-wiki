@@ -202,8 +202,8 @@ public class MyParticle extends SpriteBillboardParticle {
   MyParticle(ClientWorld world, double x, double y, double z, double velX, double velY, double velZ, SpriteProvider spriteProvider) {
     super(world, x, y, z);
     this.spriteProvider = spriteProvider; //Sets the sprite provider from above to the sprite provider in the constructor method
-    this.maxAge = 200; //200 ticks = 10 seconds
-    this.scale = 0.1f; //About a block big
+    this.maxAge = 200; //20 ticks = 1 second
+    this.scale = 0.1f;
     this.velocityX = velX; //The velX from the constructor parameters
     this.velocityY = -0.07f; //Allows the particle to slowly fall
     this.velocityZ = velZ;

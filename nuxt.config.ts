@@ -10,12 +10,13 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: {
-        dark: 'github-dark'
+        dark: 'github-dark',
+        light: 'github-light'
       }
     },
     documentDriven: true
   },
   ui: {
-    icons: ['mdi']
+    icons: ['mdi', 'heroicons']
   },
 })

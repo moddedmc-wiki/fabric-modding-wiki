@@ -27,7 +27,20 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style>
+<style lang="scss">
+.alert-title {
+  margin: 0 !important;
+  font-size: larger;
+}
+
+.alert-content {
+  margin-bottom: auto !important;
+  margin-top: auto !important;
+}
+
+@tailwind base;
+@tailwind components;
+
 .prose :where(code):not(:where([class~="not-prose"] *))::before,
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
   content: "" !important;
@@ -40,6 +53,12 @@ export default defineNuxtComponent({
 .prose > p > img {
   margin-left: auto;
   margin-right: auto;
+}
+
+html.light {
+  .prose :where(pre):not(:where([class~="not-prose"] *)) {
+    background-color: #e2e2e2 !important;
+  }
 }
 
 ::-webkit-scrollbar-track {

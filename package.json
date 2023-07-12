@@ -17,6 +17,8 @@
   "dependencies": {
     "@iconify-json/mdi": "^1.1.53",
     "clipboard": "^2.0.11",
-    "prismjs": "^1.29.0"
+    "postcss": "^8.4.25",
+    "prismjs": "^1.29.0",
+    "sass": "^1.63.6"
   }
 }
