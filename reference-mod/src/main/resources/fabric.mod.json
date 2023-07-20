@@ -1,37 +1,31 @@
 {
-	"schemaVersion": 1,
-	"id": "referencemod",
-	"version": "${version}",
-	"name": "ReferenceMod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/referencemod/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.mineblock11.referencemod.ExampleMod"
-		],
-		"fabric-datagen": [
-			"com.mineblock11.referencemod.ExampleModDataGenerator"
-		]
-	},
-	"mixins": [
-		"referencemod.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "referencemod",
+  "version": "${version}",
+  "name": "Reference Mod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/referencemod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.mineblock11.fabric.referencemod.client.MyModClient"
+    ],
+    "main": [
+      "dev.mineblock11.fabric.referencemod.MyMod"
+    ],
+    "fabric-datagen": [
+      "dev.mineblock11.fabric.referencemod.datagen.MyModDatagen"
+    ]
+  },
+  "mixins": [
+    "MyMod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric": "*",
+    "minecraft": "1.20.1"
+  }
 }

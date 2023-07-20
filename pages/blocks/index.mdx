@@ -1,0 +1,230 @@
+---
+title: Creating Your First Block
+description: Learn how to register a simple block and block item, texture and model it.
+---
+
+import { Download } from "components/ImageAnnotations"
+
+# Creating Your First Block
+
+If you have not already noticed, the Minecraft world consists of blocks - this page will guide you through the registration, texturing and modeling of a basic block.
+
+## Preparing your Blocks class.
+
+Similarly to items, you can create a method that automatically registers a block and it's block item.
+
+You should put this method in a class called `ModBlocks` (or whatever you want to name it)
+
+Mojang does this with their own blocks, see the `Blocks` class to see how they do it.
+
+```java
+public class ModBlocks {
+    public static <T extends Block> T register(T block, String name, boolean shouldRegisterItem) {
+        Identifier id = new Identifier("mod_id", name);
+
+        if(shouldRegisterItem) {
+            BlockItem blockItem = new BlockItem(block, new Item.Settings());
+            Registry.register(Registries.ITEM, id, blockItem);
+        }
+
+        return Registry.register(Registries.BLOCK, id, block);
+    }
+}
+```
+
+The registering of a block item has been togglable, as sometimes you don't want players to be able to get the item in their inventory - for example: `minecraft:air` does not have a block item.
+
+You should also create an empty method that can be used to statically initialize the blocks class - which causes all final fields to be evaluated, this will be called from your `ModInitializer` class:
+
+```java
+public class ModBlocks {
+    // ...
+
+    public static void initialize() {}
+}
+```
+
+```java
+public class MyMod implements ModInitializer {
+    @Override
+    public void onInitialize() {
+        // Statically initialize the blocks class.
+        ModBlocks.initialize();
+    }
+}
+```
+
+## Creating and registering a block.
+
+Similarly to items, blocks take in a `Blocks.Settings` class in their constructor which tells the game certain properties about the block - from it's sound effects to mining level.
+
+I will not touch on all of the options here - you can view the class yourself to see all the different options, the methods should be self explanatory.
+
+This example will be for a condensed dirt block.
+
+```java
+public static final Block CONDENSED_DIRT = register(
+            new Block(
+                AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS)
+            ), "condensed_dirt", true);
+```
+
+To automatically create the block item, we can pass `true` to the `shouldRegisterItem` parameter.
+
+### Item Group
+
+Since the `BlockItem` is automatically created and registered, to add it to an item group, you must use the `Block.asItem()` method to get the `BlockItem` instance:
+
+```java
+ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register((itemGroup) -> {  
+    itemGroup.add(ModBlocks.CONDENSED_DIRT.asItem());              
+});
+```
+
+<hr />
+
+When you go in-game, you should see that your block exists in the creative menu, and is placeable.
+
+![](/blocks/first_block_0.png)
+
+However, some things are missing that will need to be created:
+
+- Translation (Block name)
+- Model
+- Texture
+
+## Naming the block.
+
+To add a translation, you must create a translation key in your translation file - `assets/<mod id here>/lang/en_us.json`
+
+```json
+{
+    "block.mod_id.condensed_dirt": "Condensed Dirt"
+}
+```
+
+You can either restart the game or build your mod and press <kbd>F3</kbd> + <kbd>T</kbd> to apply changes - and you should see that the block has a name in the creative inventory and other places such as the statistics screen.
+
+## Modeling and texturing the block.
+
+All block textures can be found in the `assets/<mod id here>/textures/block` folder - an example texture for the "Condensed Dirt" block is free to use.
+
+![](/blocks/first_block_1.png)
+
+<Download type="Texture" href="/blocks/first_block_1_small.png" />
+
+To make the texture show up in-game, you must create a block and item model which can be found in the respective locations for the "Condensed Dirt" block:
+
+- `assets/mod_id/models/block/condensed_dirt.json`
+- `assets/mod_id/models/item/condensed_dirt.json`
+
+The item model is pretty simple, it can just use the block model as a parent - since most block models have support for being rendered in a GUI:
+
+```json
+{
+    "parent": "mod_id:block/condensed_dirt"
+}
+```
+
+The block model however, in our case, must parent the `block/cube_all` model:
+
+```jsonc
+{
+    "parent": "block/cube_all",
+    "textures": {
+        // A reference to the actual texture.
+        "all": "mod_id:block/condensed_dirt"
+    }
+}
+```
+
+When you load into the game though, you may see that the texture still isn't present - this is because you will need to add a blockstate definition.
+
+## Creating the blockstate definition.
+
+The blockstate definition is used to tell the game what model should be rendered depending on the current state of the block.
+
+Since the example block does not have a complex blockstate, only one entry is required in the definition which can be found in the `assets/mod_id/blockstates` folder - the name of the file should correspond to the name of the block you used to register your block in your `ModBlocks` class: `condensed_dirt.json`
+
+```json
+{
+    "variants": {
+    "": { "model": "mod_id:block/condensed_dirt" }
+    }
+}
+```
+
+Blockstates are really complex, which is why they are addressed in an upcoming page: [Block States](/blocks/blockstates)
+
+Restarting the game, or reloading via <kbd>F3</kbd> + <kbd>T</kbd> to apply changes - you should be able to see the block texture in the inventory and physically in the world:
+
+![](/blocks/first_block_4.png)
+
+## Adding block drops.
+
+When breaking the block in survival, you may see that the block does not drop - you might want this functionality, however to make your block drop as an item on break you must implement it's loot table - the loot table file should be placed in the `data/mod_id/loot_tables/blocks/condensed_dirt.json`
+
+```json
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tutorial:example_block"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This will be explained more in-depth in a future page.
+
+## Setting the recommended harvesting tool and level.
+
+Your block will be really slow to break, regardless of what tool is used - to make it quicker, you must place your block in the suitable block tag for the harvesting tool, and what level of tool should be used:
+
+### Harvesting Tool
+
+All the tool tags should be placed in the `data/minecraft/tags/blocks/mineable/` folder - where the name of the file depends on the type of tool used, one of the following:
+
+- `hoe.json`
+- `axe.json`
+- `pickaxe.json`
+- `shovel.json`
+
+The contents of the file are quite simple - it is a list of items that should be added to the tag.
+
+This example adds the "Condensed Dirt" block to the `shovel` tag.
+
+```json
+{
+  "replace": false,
+  "values": [
+    "mod_id:condensed_dirt"
+  ]
+}
+```
+
+### Mining Level
+
+Similarly, the mining level tag can be found in the same folder, and respects the following format:
+
+- `needs_stone_tool.json` - A minimum level of stone tools
+- `needs_iron_tool.json` - A minimum level of iron tools
+- `needs_diamond_tool.json` - A minimum level of diamond tools.
+
+The file has the same format as the harvesting tool file - a list of items to be added to the tag.
+
+## Next Steps
+
+- Can you create another block that can be crafted from a [custom item you have created](/items)?
+- Why don't you try add an inventory to your block using [block entities](/blocks/block-inventory)?

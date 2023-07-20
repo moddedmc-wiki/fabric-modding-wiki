@@ -1,6 +1,10 @@
 {
   "getting-started": "Getting Started",
   "items": "Items",
+  "blocks": "Blocks",
+  "data-generation": "Data Generation",
+  "events": "Events",
+  "codecs": "Codecs",
   "index": {
     "display": "hidden",
     "theme": {

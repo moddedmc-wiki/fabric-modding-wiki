@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "mod_id:block/condensed_dirt"
+  }
+}
