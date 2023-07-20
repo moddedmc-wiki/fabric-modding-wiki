@@ -1,0 +1,33 @@
+{
+  "getting-started": "Getting Started",
+  "items": "Items",
+  "index": {
+    "display": "hidden",
+    "theme": {
+      "layout": "raw",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "contributing": {
+    "title": "Contributing",
+    "type": "page",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "reference": {
+    "title": "Reference Mod",
+    "type": "page",
+    "href": "https://github.com/mineblock11/fabric-community-wiki/blob/main/reference-mod",
+    "newWindow": true
+  }
+}

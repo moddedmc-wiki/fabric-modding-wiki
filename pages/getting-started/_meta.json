@@ -1,0 +1,14 @@
+{
+  "index": "Prerequisites",
+  "creating-project": {
+    "title": "Creating a Project",
+    "theme": {
+      "toc": false
+    }
+  },
+  "launching-the-game": {
+    "title": "Launching The Game"
+  },
+  "access-wideners": "Access Wideners",
+  "mixins": "Mixins"
+}

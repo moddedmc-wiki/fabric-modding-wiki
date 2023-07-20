@@ -1,0 +1,62 @@
+---
+title: Creating a project
+description: Learn how to create a project by either using the Fabric CLI or using MCDev's project wizard.
+---
+
+import { Tabs, Tab, Steps, Callout} from "nextra/components";
+
+# Creating A Project
+
+There are many ways to create a mod project, however we recommend you either use the Fabric CLI or the built-in MCDev Plugin project wizard.
+
+<Tabs items={["Fabric CLI", "MCDev"]}>
+  <Tab>
+  <Steps>
+### Installing Deno
+
+The Fabric CLI uses Deno - you will need to install Deno to use Fabric CLI.
+
+<Tabs items={["Windows", "MacOS/Linux"]}>
+  <Tab>
+  Run the following command in a powershell terminal.
+  ```sh
+  irm https://deno.land/install.ps1 | iex
+  ```
+  </Tab>
+  <Tab>
+  Run the following command in a shell terminal.
+  ```sh
+  curl -fsSL https://deno.land/x/install/install.sh | sh
+  ```
+  </Tab>
+</Tabs>
+
+### Installing Fabric CLI
+
+Once you have installed Deno, you can install the Fabric CLI through the `deno install` command:
+
+```sh
+deno install -A -n fabric https://fabricmc.net/cli
+```
+
+### Using Fabric CLI
+
+When you're ready, run the `fabric init` command to create your mod project.
+
+It will ask you various questions, such as your mod name, mod ID and package name.
+
+<Callout type="warning" emoji="⚠️">When asked about "Advanced Options" make sure to disable "Split client and common sources" as this will overcomplicate tutorials on this wiki. You can leave it enabled **if you know what you're doing.**</Callout>
+</Steps>
+</Tab>
+<Tab>
+To create a project using the MCDev project wizard, press "New Project" on the "Welcome to IntelliJ IDEA" window.
+
+You'll want to select the "Minecraft" generator in the left sidebar.
+
+Make sure that you have selected "Mod" for the Platform Type toggle, "Fabric" for the loader toggle, and that a Java 17 JDK is selected at the bottom:
+
+![](/getting-started/creating-a-project_0.png)
+
+Click "Create" to start the project creation process - this may take a few minutes, don't close the IDE or cancel during this process or you will have to delete the folder your project was created in and restart!
+</Tab>
+</Tabs>

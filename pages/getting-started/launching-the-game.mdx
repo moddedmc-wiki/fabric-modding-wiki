@@ -1,0 +1,54 @@
+---
+title: Launching the Game
+description: Learn how to launch a development version of Minecraft to debug your mods with.
+---
+
+# Launching the Game
+
+To launch Minecraft with your mod installed, you can choose the "Minecraft Client" task in your Run Configurations list - it's recommended you launch in "Debug" mode as this will allow you to hotswap methods and create breakpoints where possible.
+
+![](/getting-started/launching-the-game_0.png)
+
+If the run configurations don't exist, reload the project. If they still dont exist, you can alternatively use the `gradlew runClient` command instead. This is not recommended though as hotswapping and various debug tools are not available.
+
+You should see the game launch in development mode - you are unauthenticated and cannot join any online servers in this mode:
+
+![](/getting-started/launching-the-game_1.png)
+
+## Caveats
+
+### Authentication
+
+If you need to log into an actual account instead of being stuck in offline mode, you can utilize the ["DevLogin" library by PlanetTeamSpeakk](https://github.com/PlanetTeamSpeakk/DevLogin)
+
+Simply add the following to the `build.gradle` file found in the root of your mod project:
+
+```groovy
+repositories {
+  mavenCentral()
+
+  // ...
+}
+
+dependencies {
+  modImplementation "com.ptsmods:devlogin:3.3"
+
+  // ...
+}
+```
+
+Next, you'll need to add the `--msa-nostore` argument to your "Minecraft Client" run configuration:
+
+![](/getting-started/launching-the-game_2.png)
+
+Now, when launching the game, you will be prompted to authenticate with Microsoft.
+
+If you wish to store the authentication token, simply replace `--msa-nostore` with the `--msa` argument. This is not recommended though.
+
+### Hot Swapping
+
+Hot Swapping is only available when the run configurations are ran in "Debug" mode - even then, you're still quite limited:
+
+- You cannot hot-swap entire classes.
+- You cannot hot swap anything inside of a Mixin class.
+- You can hotswap the instructions of methods (including lambda functions)
