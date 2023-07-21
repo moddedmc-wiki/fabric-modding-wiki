@@ -3,6 +3,7 @@ title: Homepage
 ---
 
 import { Callout } from "nextra/components";
+import { Contributors } from "components/Contributors";
 
 export function Card(props) {
   const { title, url, description, hideURL } = props;
@@ -130,6 +131,14 @@ export function Card(props) {
       <br /><br />
       Any legal requests must be directed to mineblock11 via <a className="text-cyan-700 hover:text-cyan-800 dark:text-amber-600 dark:hover:text-amber-700" target="_blank" href="mailto:contact@mineblock11.dev">contact@mineblock11.dev</a>
     </p>
+
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
+      Special Thanks
+    </h2>
+    <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
+      These people have contributed to the wiki.
+      <Contributors list={["JR1811", "0x3C50", "Friendly-Banana", "enjarai", "mineblock11", "Superkat32", "oliviathevampire"]} />
+</p>
 
   </div>
 </section>
