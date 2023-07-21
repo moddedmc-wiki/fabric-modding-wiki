@@ -35,6 +35,8 @@ public class MyMod implements ModInitializer {
         ModBlocks.initialize();
         ModBlockEntities.registerBlockEntityTypes();
         ModItems.initialize();
+        ModSounds.initializeSounds();
+        ModParticles.initialize();
 
         PlayerDiedCallback.EVENT.register((player, deathMessage) -> {
             MinecraftClient client = MinecraftClient.getInstance();
@@ -55,7 +57,7 @@ public class MyMod implements ModInitializer {
             buffer.vertex(positionMatrix, 60, 20, 0).color(0f, 0f, 1f, 1f).texture(1f, 0f).next();
 
             RenderSystem.setShader(GameRenderer::getPositionColorTexProgram);
-            RenderSystem.setShaderTexture(0, new Identifier("examplemod", "icon.png"));
+            RenderSystem.setShaderTexture(0, new Identifier(MyMod.MOD_ID, "icon.png"));
             RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
 
             tessellator.draw();
@@ -80,7 +82,7 @@ public class MyMod implements ModInitializer {
             buffer.vertex(positionMatrix, 60, 20, 0).color(0f, 0f, 1f, 1f).texture(1f, 0f).next();
 
             RenderSystem.setShader(GameRenderer::getPositionColorTexProgram);
-            RenderSystem.setShaderTexture(0, new Identifier("examplemod", "icon.png"));
+            RenderSystem.setShaderTexture(0, new Identifier(MyMod.MOD_ID, "icon.png"));
             RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
 
             tessellator.draw();
@@ -109,7 +111,7 @@ public class MyMod implements ModInitializer {
             buffer.vertex(positionMatrix, 1, 1, 0).color(0f, 0f, 1f, 1f).texture(1f, 0f).next();
 
             RenderSystem.setShader(GameRenderer::getPositionColorTexProgram);
-            RenderSystem.setShaderTexture(0, new Identifier("examplemod", "icon.png"));
+            RenderSystem.setShaderTexture(0, new Identifier(MyMod.MOD_ID, "icon.png"));
             RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
             RenderSystem.disableCull();
             RenderSystem.depthFunc(GL11.GL_ALWAYS);

@@ -6,3 +6,12 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+.color-swatch {
+  width: 100%;
+  padding: 50%;
+  margin: auto;
+  border-radius: 0.25rem;
+  border-color: grey;
+  border-width: 1px;
+}

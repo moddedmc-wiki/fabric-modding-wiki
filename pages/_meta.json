@@ -4,7 +4,10 @@
   "blocks": "Blocks",
   "data-generation": "Data Generation",
   "events": "Events",
+  "rendering": "Rendering",
+  "sounds": "Sound",
   "codecs": "Codecs",
+  "text-and-translations": "Text and Translations",
   "index": {
     "display": "hidden",
     "theme": {
