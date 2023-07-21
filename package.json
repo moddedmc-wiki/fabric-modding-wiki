@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "export": "next build && next export"
+  },
 	"dependencies": {
 		"next": "^13.4.10",
 		"nextra": "^2.10.0",
