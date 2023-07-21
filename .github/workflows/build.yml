@@ -31,12 +31,12 @@ jobs:
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         if: ${{ runner.os != 'Windows' }}
-        run: chmod +x ./gradlew
+        run: chmod +x ./reference-mod/gradlew
       - name: build
-        run: ./gradlew build
+        run: ./reference-mod/gradlew build
       - name: capture build artifacts
         if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from latest java on one OS
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: build/libs/
+          path: ./reference-mod/build/libs/
