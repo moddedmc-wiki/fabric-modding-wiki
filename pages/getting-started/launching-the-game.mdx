@@ -3,6 +3,8 @@ title: Launching the Game
 description: Learn how to launch a development version of Minecraft to debug your mods with.
 ---
 
+import { Steps } from "nextra/components"
+
 # Launching the Game
 
 To launch Minecraft with your mod installed, you can choose the "Minecraft Client" task in your Run Configurations list - it's recommended you launch in "Debug" mode as this will allow you to hotswap methods and create breakpoints where possible.
@@ -15,9 +17,7 @@ You should see the game launch in development mode - you are unauthenticated and
 
 ![](/getting-started/launching-the-game_1.png)
 
-## Caveats
-
-### Authentication
+## Authentication
 
 If you need to log into an actual account instead of being stuck in offline mode, you can utilize the ["DevLogin" library by PlanetTeamSpeakk](https://github.com/PlanetTeamSpeakk/DevLogin)
 
@@ -45,10 +45,37 @@ Now, when launching the game, you will be prompted to authenticate with Microsof
 
 If you wish to store the authentication token, simply replace `--msa-nostore` with the `--msa` argument. This is not recommended though.
 
-### Hot Swapping
+## Hot Swapping
 
 Hot Swapping is only available when the run configurations are ran in "Debug" mode - even then, you're still quite limited:
 
-- You cannot hot-swap entire classes.
-- You cannot hot swap anything inside of a Mixin class.
-- You can hotswap the instructions of methods (including lambda functions)
+- You can't add or remove methods
+- You can't change method parameters
+- You can't add or remove fields
+
+## Hot Swapping Mixins
+
+If you wish to hot-swap mixins, you need to mark the mixin jar library as a java agent.
+
+<Steps>
+### Locate the Mixin library jar.
+
+In IntelliJ IDEA, you can find the mixin library jar in the "External Libraries" section of the "Project" section:
+
+![](/getting-started/launching-the-game_3.png)
+
+You will need to copy the jar's "Absolute Path" 
+
+### Add the `-javaagent` VM argument.
+
+In your "Minecraft Client" and or "Minecraft Server" run configuration, add the following to the VM Arguments option:
+
+```
+-javaagent:"path to mixin library jar here"
+```
+
+![](/getting-started/launching-the-game_4.png)
+
+</Steps>
+
+Now, you should be able to modify the contents of your mixin methods.
