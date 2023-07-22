@@ -75,7 +75,7 @@ export default {
         Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International{" "}
         {new Date().getFullYear()} ©{" "}
         <a href="https://nextra.site" target="_blank">
-          mineblock11
+          Calum H. (mineblock11)
         </a>
       </span>
     ),
