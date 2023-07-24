@@ -5,13 +5,13 @@ import { useConfig } from "nextra-theme-docs";
 export default {
   logo: <span>Fabric Community Wiki</span>,
   project: {
-    link: "https://github.com/mineblock11/fabric-community-wiki",
+    link: "https://github.com/moddedmc-wiki/fabric-modding-wiki",
   },
   chat: {
     link: "https://discord.gg/5tmestARuU",
   },
   docsRepositoryBase:
-    "https://github.com/mineblock11/fabric-community-wiki/blob/latest/",
+    "https://github.com/moddedmc-wiki/fabric-modding-wiki/blob/main/",
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,9 +26,9 @@ export default {
     let seoProps = {};
 
     if (route !== "/" || !frontMatter.title) {
-      seoProps.title = `${frontMatter.title} - Fabric Community Wiki`;
+      seoProps.title = `${frontMatter.title} - Fabric Modding Wiki`;
     } else {
-      seoProps.title = "Fabric Community Wiki";
+      seoProps.title = "Fabric Modding Wiki";
     }
 
     seoProps.description =
@@ -41,7 +41,7 @@ export default {
           type: "image/png",
           alt: "Cover Image",
           url: `https://og.mineblock11.dev/fabric-community-wiki?title=${encodeURIComponent(
-            frontMatter.title || "Fabric Community Wiki"
+            frontMatter.title || "Fabric Modding Wiki"
           )}&description=${encodeURIComponent(
             frontMatter.description ||
               "An open source guide-book for creating mods using Fabric."
@@ -74,9 +74,9 @@ export default {
       <span>
         Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International{" "}
         {new Date().getFullYear()} ©{" "}
-        <a href="https://nextra.site" target="_blank">
+        <a href="https://mineblock11.dev/" target="_blank">
           Calum H. (mineblock11)
-        </a>
+        </a><br />Not affliated with Mojang or the Fabric Project.
       </span>
     ),
   },
