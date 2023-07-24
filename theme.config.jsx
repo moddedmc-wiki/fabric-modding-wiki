@@ -3,7 +3,7 @@ import { useConfig } from "nextra-theme-docs";
 
 /** @type {import("nextra-theme-docs/.").DocsThemeConfig} */
 export default {
-  logo: <span>Fabric Community Wiki</span>,
+  logo: <span>Fabric Modding Wiki</span>,
   project: {
     link: "https://github.com/moddedmc-wiki/fabric-modding-wiki",
   },
