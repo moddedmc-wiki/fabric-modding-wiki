@@ -40,7 +40,7 @@ export default {
         {
           type: "image/png",
           alt: "Cover Image",
-          url: `https://og.mineblock11.dev/fabric-community-wiki?title=${encodeURIComponent(
+          url: `https://og.mineblock11.dev/fabric-modding-wiki?title=${encodeURIComponent(
             frontMatter.title || "Fabric Modding Wiki"
           )}&description=${encodeURIComponent(
             frontMatter.description ||
