@@ -16,10 +16,10 @@ export function Contributor({ username }) {
 
 export function Contributors({ list }) {
   return (
-    <div class="flex flex-row flex-wrap gap-4 pt-5">
+    <span class="flex flex-row flex-wrap gap-4 pt-5">
       {list.map((username) => {
         return <Contributor username={username}/>;
       })}
-    </div>
+    </span>
   );
 }

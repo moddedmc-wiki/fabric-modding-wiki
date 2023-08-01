@@ -3,7 +3,17 @@ import { useConfig } from "nextra-theme-docs";
 
 /** @type {import("nextra-theme-docs/.").DocsThemeConfig} */
 export default {
-  logo: <span>Fabric Modding Wiki</span>,
+  logo: (
+    <span class="flex flex-row gap-4">
+      <img
+        class="align-baseline"
+        width="21"
+        height="21"
+        src="/icon.svg"
+      />
+      <span class="hide-logo-text">Fabric Modding Wiki</span>
+    </span>
+  ),
   project: {
     link: "https://github.com/moddedmc-wiki/fabric-modding-wiki",
   },
@@ -15,7 +25,7 @@ export default {
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/fabric.png" />
+      <link rel="icon" type="image/png" href="/icon_full.png" />
     </>
   ),
   useNextSeoProps: () => {
@@ -40,7 +50,7 @@ export default {
         {
           type: "image/png",
           alt: "Cover Image",
-          url: `/fabric.png`,
+          url: `/icon_full.png`,
         },
       ],
     };
@@ -71,7 +81,9 @@ export default {
         {new Date().getFullYear()} ©{" "}
         <a href="https://mineblock11.dev/" target="_blank">
           Calum H. (mineblock11)
-        </a><br />Not affliated with Mojang or the Fabric Project.
+        </a>
+        <br />
+        Not affliated with Mojang or the Fabric Project.
       </span>
     ),
   },

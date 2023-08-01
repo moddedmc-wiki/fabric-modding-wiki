@@ -15,3 +15,9 @@ img {
   border-color: grey;
   border-width: 1px;
 }
+
+@media screen and (max-width: 400px) {
+  .hide-logo-text {
+    display: none;
+  }
+}
