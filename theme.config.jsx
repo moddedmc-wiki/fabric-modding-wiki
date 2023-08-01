@@ -40,18 +40,13 @@ export default {
         {
           type: "image/png",
           alt: "Cover Image",
-          url: `https://og.mineblock11.dev/fabric-modding-wiki?title=${encodeURIComponent(
-            frontMatter.title || "Fabric Modding Wiki"
-          )}&description=${encodeURIComponent(
-            frontMatter.description ||
-              "An open source guide-book for creating mods using Fabric."
-          )}&path=${route || "/"}`,
+          url: `/fabric.png`,
         },
       ],
     };
 
     seoProps.twitter = {
-      cardType: "summary_large_image",
+      cardType: "app",
     };
 
     return seoProps;
