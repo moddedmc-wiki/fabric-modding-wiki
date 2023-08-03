@@ -1,4 +1,4 @@
-package dev.mineblock11.fabric.referencemod.tools;
+package dev.mineblock11.fabric.referencemod.item.custom;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;

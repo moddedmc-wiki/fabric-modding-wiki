@@ -1,5 +1,6 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.sound;
 
+import dev.mineblock11.fabric.referencemod.MyMod;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;

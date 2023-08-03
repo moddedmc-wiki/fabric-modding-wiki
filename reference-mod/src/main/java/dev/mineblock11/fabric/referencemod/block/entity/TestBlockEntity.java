@@ -1,6 +1,5 @@
-package dev.mineblock11.fabric.referencemod.block;
+package dev.mineblock11.fabric.referencemod.block.entity;
 
-import dev.mineblock11.fabric.referencemod.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;

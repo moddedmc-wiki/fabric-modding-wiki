@@ -1,12 +1,11 @@
-package dev.mineblock11.fabric.referencemod.client;
+package dev.mineblock11.fabric.referencemod;
 
-import dev.mineblock11.fabric.referencemod.ModParticles;
-import dev.mineblock11.fabric.referencemod.MyParticle;
+import dev.mineblock11.fabric.referencemod.particle.ModParticles;
+import dev.mineblock11.fabric.referencemod.particle.custom.MyParticle;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.minecraft.client.particle.EndRodParticle;
 
 @Environment(EnvType.CLIENT)
 public class MyModClient implements ClientModInitializer {

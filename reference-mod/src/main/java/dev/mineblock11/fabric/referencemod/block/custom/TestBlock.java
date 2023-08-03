@@ -1,5 +1,6 @@
-package dev.mineblock11.fabric.referencemod.block;
+package dev.mineblock11.fabric.referencemod.block.custom;
 
+import dev.mineblock11.fabric.referencemod.block.entity.TestBlockEntity;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;

@@ -1,12 +1,12 @@
-package dev.mineblock11.fabric.referencemod.tools;
+package dev.mineblock11.fabric.referencemod.item.material;
 
-import dev.mineblock11.fabric.referencemod.ModItems;
+import dev.mineblock11.fabric.referencemod.item.ModItems;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class GuiditeMaterial implements ToolMaterial {
+public class GuiditeToolMaterial implements ToolMaterial {
 
-    public static final GuiditeMaterial INSTANCE = new GuiditeMaterial();
+    public static final GuiditeToolMaterial INSTANCE = new GuiditeToolMaterial();
 
     @Override
     public int getDurability() {

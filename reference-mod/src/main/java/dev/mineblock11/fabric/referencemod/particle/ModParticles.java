@@ -1,5 +1,6 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.particle;
 
+import dev.mineblock11.fabric.referencemod.MyMod;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;

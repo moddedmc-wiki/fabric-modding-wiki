@@ -1,7 +1,8 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.block;
 
-import dev.mineblock11.fabric.referencemod.block.PrismarineLampBlock;
-import dev.mineblock11.fabric.referencemod.block.TestBlock;
+import dev.mineblock11.fabric.referencemod.MyMod;
+import dev.mineblock11.fabric.referencemod.block.custom.PrismarineLampBlock;
+import dev.mineblock11.fabric.referencemod.block.custom.TestBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;

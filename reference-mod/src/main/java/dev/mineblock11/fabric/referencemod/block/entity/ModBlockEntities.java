@@ -1,6 +1,7 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.block.entity;
 
-import dev.mineblock11.fabric.referencemod.block.TestBlockEntity;
+import dev.mineblock11.fabric.referencemod.MyMod;
+import dev.mineblock11.fabric.referencemod.block.ModBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
