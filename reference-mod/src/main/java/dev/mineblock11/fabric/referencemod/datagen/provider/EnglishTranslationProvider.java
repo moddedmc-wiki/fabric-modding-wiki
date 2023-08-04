@@ -1,4 +1,4 @@
-package dev.mineblock11.fabric.referencemod.datagen;
+package dev.mineblock11.fabric.referencemod.datagen.provider;
 
 import dev.mineblock11.fabric.referencemod.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.util.Optional;
 
 public class EnglishTranslationProvider extends FabricLanguageProvider {
-    protected EnglishTranslationProvider(FabricDataOutput dataOutput) {
+    public EnglishTranslationProvider(FabricDataOutput dataOutput) {
         // Specifying the language code is optional in this case!
         // 'en_us' is always the default.
         super(dataOutput, "en_us");

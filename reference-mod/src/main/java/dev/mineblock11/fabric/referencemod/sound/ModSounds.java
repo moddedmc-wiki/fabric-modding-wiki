@@ -16,5 +16,6 @@ public class ModSounds {
         SoundEvent sound = SoundEvent.of(new Identifier(MyMod.MOD_ID, id));
         return Registry.register(Registries.SOUND_EVENT, new Identifier(MyMod.MOD_ID, id), sound);
     }
-    public static void initializeSounds() {}
+    public static void initializeSounds() {
+    }
 }

@@ -71,7 +71,6 @@ public class ModItems {
     public static void initialize() {
         Registry.register(Registries.ITEM_GROUP, new Identifier(MyMod.MOD_ID, "item_group"), MY_MOD_ITEMGROUP);
 
-
         ItemGroupEvents
                 // Register a "modify" event for the Ingredients item group.
                 .modifyEntriesEvent(RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(MyMod.MOD_ID, "item_group")))
