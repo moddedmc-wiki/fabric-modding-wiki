@@ -6,57 +6,6 @@ import { Callout } from "nextra/components";
 import { Contributors } from "components/Contributors";
 import { motion } from "framer-motion";
 
-export function Card(props) {
-  const { title, url, description, hideURL } = props;
-  return (
-    <div class="max-w-sm p-6 bg-white border border-neutral-200 rounded-lg shadow dark:bg-neutral-800 dark:border-neutral-700 flex flex-col justify-between">
-      <div>
-        {hideURL ? (
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {title}
-          </h5>
-        ) : (
-          <a href={url}>
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {title}
-            </h5>
-          </a>
-        )}
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          {description}
-        </p>
-      </div>
-      <div>
-        {hideURL ? (
-          <></>
-        ) : (
-          <a
-            href={url}
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-lg hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
-          >
-            Read more
-            <svg
-              class="w-3.5 h-3.5 ml-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLineCap="round"
-                strokeLineJoin="round"
-                strokeWidth="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function Motioner({ index, children }) {
   return (
     <motion.div
