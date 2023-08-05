@@ -4,6 +4,7 @@ title: Homepage
 
 import { Callout } from "nextra/components";
 import { Contributors } from "components/Contributors";
+import { motion } from "framer-motion";
 
 export function Card(props) {
   const { title, url, description, hideURL } = props;
@@ -56,50 +57,72 @@ export function Card(props) {
   );
 }
 
+export function Motioner({ index, children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: Math.min(0.25 + index * 0.2, 0.8) }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function Link({ title, url, description, index }) {
+  return (
+    <Motioner index={index}>
+      <a href={url}>
+        <div className="h-full text-white max-w-xs my-auto rounded-xl transition-all duration-500 bg-gradient-to-tl dark:from-orange-400 dark:via-orange-500 dark:to-orange-800 from-cyan-400 via-cyan-500 to-cyan-800 bg-size-200 bg-pos-0 hover:bg-pos-100 p-4 py-5 px-5">
+          <h3 className="text-md font-bold">{title}</h3>
+          <p>{description}</p>
+          <svg
+            width="2rem"
+            className="ml-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </a>
+    </Motioner>
+  );
+}
+
 {
 
-<section className="bg-white dark:bg-neutral-900">
-  <div className="py-8 px-auto mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 !pb-0">
-    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-      Fabric Modding Wiki
-    </h1>
-    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-      An open source guide-book for creating mods using Fabric.
-    </p>
-    <div className="max-sm:px-4 my-5 text-left max-w-sm mx-auto justify-center">
-      <Callout type="info">
-        Content on this wiki is targeted for <strong>1.20.1</strong>
-      </Callout>
-    </div>
-    <div className="max-sm:px-4 flex flex-wrap gap-4 justify-center">
-      <Card
-        title="Get Started"
-        description="Learn how to create your first mod using the Fabric modloader."
-        url="/getting-started"
-      />
-      <Card
-        title="Adding Items"
-        description="Learn how to create your first item and add interactivity to it."
-        url="/items"
-      />
-      <Card
-        title="Adding Blocks"
-        description="Find out how to create your first block, and how to utilize Minecraft's existing blockstate and block entity systems."
-        url="/blocks"
-      />
-      <Card
-        title="Data Generation"
-        description="Discover how to utilize data generation to reduce the amount of JSON files you have to manually write."
-        url="/data-generation"
-      />
-      <Card
-        title="Rendering"
-        description="Learn how to create GUIs and render directly into the world."
-        url="/rendering"
-      />
+<section>
+<div className="min-[900px]:m-20 m-5 bg flex flex-col">
+  <div className="flex flex-row pb-2">
+    <div className="md:basis-1/2">
+      <Motioner index={0}><h1 className="pb-1.5 leading-relaxed bg-clip-text font-extrabold text-transparent md:text-5xl text-3xl bg-gradient-to-r dark:from-orange-500 dark:to-orange-300 from-cyan-500 to-cyan-300">
+        A wide variety of expertly crafted guides and tutorials.
+      </h1></Motioner>
+      <Motioner index={1}>
+      <p className="pt-5 font-medium lg:text-lg dark:text-neutral-200 text-slate-700">
+        Whether you're new to modding or a seasoned developer, the Fabric Community
+        Wiki offers step-by-step tutorials and detailed guides to help you create
+        mods that enhance the Minecraft experience.
+      </p>
+      </Motioner>
     </div>
   </div>
-  <div className="px-16 py-8 px-auto mx-auto max-w-screen-xl lg:py-16 lg:px-12">
+  <div className="grid md:grid-cols-4 grid-cols-1 gap-4 p-10 mx-auto">
+      <Link index={2} url="/getting-started" title="Getting Started" description="Learn how to set up a development environment for creating mods using the Fabric toolchain."/>
+      <Link index={3} url="/items" title="Adding Items" description="Discover how to register a simple item and how to texture, model and name it."/>
+      <Link index={4} url="/blocks" title="Adding Blocks" description="Figure out how to register a simple block and block item, texture and model it."/>
+      <Link index={5} url="/rendering" title="Basic Rendering" description="Wrap your head around Minecraft's complex rendering system to render in the world, screen and GUIs."/>
+  </div>
+</div>
+
+  <div className="px-16 pb-8 px-auto mx-auto max-w-screen-xl lg:pb-16 lg:px-12">
     <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
       About
     </h2>
@@ -138,6 +161,7 @@ export function Card(props) {
     <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
       These people have contributed to the wiki.
       <Contributors list={["JR1811", "0x3C50", "Friendly-Banana", "enjarai", "mineblock11", "Superkat32", "oliviathevampire"]} />
+
 </p>
 
   </div>
