@@ -61,9 +61,12 @@ export default {
 
     return seoProps;
   },
+  darkMode: false,
+  nextThemes: {
+    forcedTheme: "dark"
+  },
   primaryHue: {
-    dark: 24,
-    light: 205,
+    dark: 24
   },
   sidebar: {
     toggleButton: true,

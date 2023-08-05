@@ -23,7 +23,7 @@ export function Link({ title, url, description, index }) {
   return (
     <Motioner index={index}>
       <a href={url}>
-        <div className="h-full text-white max-w-xs my-auto rounded-xl transition-all duration-500 bg-gradient-to-tl dark:from-orange-400 dark:via-orange-500 dark:to-orange-800 from-cyan-400 via-cyan-500 to-cyan-800 bg-size-200 bg-pos-0 hover:bg-pos-100 p-4 py-5 px-5">
+        <div className="h-full text-white max-w-xs my-auto rounded-xl transition-all duration-500 bg-gradient-to-tl from-orange-400 via-orange-500 to-orange-800 bg-size-200 bg-pos-0 hover:bg-pos-100 p-4 py-5 px-5">
           <h3 className="text-md font-bold">{title}</h3>
           <p>{description}</p>
           <svg
@@ -51,7 +51,7 @@ export function Link({ title, url, description, index }) {
 <div className="min-[900px]:m-20 m-5 bg flex flex-col">
   <div className="flex flex-row pb-2">
     <div className="md:basis-1/2">
-      <Motioner index={0}><h1 className="pb-1.5 leading-relaxed bg-clip-text font-extrabold text-transparent md:text-5xl text-3xl bg-gradient-to-r dark:from-orange-500 dark:to-orange-300 from-cyan-500 to-cyan-300">
+      <Motioner index={0}><h1 className="pb-1.5 leading-relaxed bg-clip-text font-extrabold text-transparent md:text-5xl text-3xl bg-gradient-to-r from-orange-500 to-orange-300">
         A wide variety of expertly crafted guides and tutorials.
       </h1></Motioner>
       <Motioner index={1}>
@@ -72,10 +72,10 @@ export function Link({ title, url, description, index }) {
 </div>
 
   <div className="px-16 pb-8 px-auto mx-auto max-w-screen-xl lg:pb-16 lg:px-12">
-    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-nonemd:text-2xl lg:text-3xl text-white">
       About
     </h2>
-    <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
+    <p className="text-lg font-normal my-2 lg:text-xl text-gray-400">
       Whether you're new to modding or an experienced developer, the Fabric
       Community Wiki is a great resource for anyone looking to create Minecraft
       mods using the Fabric Loader.<br /> <br />From step-by-step tutorials on creating your
@@ -84,10 +84,10 @@ export function Link({ title, url, description, index }) {
       get started and take your mods to the next level.
     </p>
 
-    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none md:text-2xl lg:text-3xl text-white">
       Contributing
     </h2>
-    <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
+    <p className="text-lg font-normal my-2lg:text-xl dark:text-gray-400">
       Anyone can contribute to the Fabric Community Wiki - as long as you follow our <a className="text-cyan-700 hover:text-cyan-800 dark:text-amber-600 dark:hover:text-amber-700" href="/contributing">contribution guidelines.</a>
       <br /><br />
       Once you've made sure your contribution is fit for the wiki, simply open a pull request to the GitHub repository.
