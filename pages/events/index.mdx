@@ -3,6 +3,8 @@ title: Using Fabric API Events
 description: Learn how to use Fabric API's event system.
 ---
 
+import {Callout} from "nextra/components";
+
 # Using Fabric API Events
 
 Fabric API contains **many** events that you can use instead of creating mixins - if everyone made the same mixin, to do the same task, it would get messy.
@@ -27,11 +29,15 @@ Different events will provide different data - some even ask for data back, such
 
 In the case of our example, the event requires an `ActionResult`, the javadoc states the following `ActionResult` types can be used:
 
-|Type|Affect|
-|----|---------------|
-|`ActionResult.SUCCESS`|Cancels all other listeners, cancels the attack as well.|
-|`ActionResult.PASS`|Do not do anything else.|
-|`ActionResult.FAIL`|Cancel all other listeners, but don't cancel the attack.|
+| Type                   | Affect                                                               |
+|------------------------|----------------------------------------------------------------------|
+| `ActionResult.SUCCESS` | Cancels further processing and sends a packet to the server.         |
+| `ActionResult.PASS`    | Falls back to further processing.                                    |
+| `ActionResult.FAIL`    | Cancels further processing and does not send a packet to the server. |
+
+<Callout type="info">
+    When `ActionResult.FAIL` is returned, the server will not be informed about the Event, and as a result, the server will not process it.
+</Callout>
 
 Since we don't actually care why the player is attacking, we'll simply return a pass result.
 
