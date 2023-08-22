@@ -36,6 +36,18 @@ Make sure to replace `<mod-id-here>` with your mod's ID!
 </Callout>
 
 ```groovy
+// Add the datagen output to the jar resources.
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    'src/main/generated'
+            ]
+        }
+    }
+}
+
+// Create the datagen runs.
 loom {
     // ...
     runs {
