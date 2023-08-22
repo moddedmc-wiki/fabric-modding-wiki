@@ -15,13 +15,13 @@ This is where block entities come in.
 
 A `BlockEntity` is used to store custom data for blocks. Unlike normal blocks, they are bound to a world and have their own instantiated entity for each of their block positions. Data about the block entity is stored as NBT, using `readNbt` and `writeNbt` to ensure persistence when the world saves.
 
-Block entities are also used for custom block rendering and can [handle ticks on the server side](/blocks/blockentities#implementing-blockentity-ticking) instead of the `Block`'s client-sided random ticks.
+Block entities are also used for custom block rendering and can [handle ticks on the server side](/blocks/block-entities#implementing-blockentity-ticking) instead of the `Block`'s client-sided random ticks.
 
 ## Custom BlockEntity class
 
 Create a new `TestBlockEntity` class which extends from `BlockEntity`, and implement the constructor.
 
-The constructor of the `BlockEntity` class comes with three parameters by default: `type`, `pos` and `state`. Make sure to remove the type parameter otherwise the registration of the [BlockEntityType](/blocks/blockentities#registering-the-blockentity-with-a-blockentitytype) later on (with the class constructor reference `TestBlockEntity::new`) won't work.
+The constructor of the `BlockEntity` class comes with three parameters by default: `type`, `pos` and `state`. Make sure to remove the type parameter otherwise the registration of the [BlockEntityType](/blocks/block-entities#registering-the-blockentity-with-a-blockentitytype) later on (with the class constructor reference `TestBlockEntity::new`) won't work.
 
 ```java
 public class TestBlockEntity extends BlockEntity {
