@@ -9,10 +9,10 @@ import { Subtitle } from "components/ImageAnnotations"
 
 # About Clients and Servers
 
-The mod is done, everything seems to run smoothly and you just shipped the `.jar` file to the users. But suddenly you get complaints about crashes and other problems when the users try to play on a multiplayer server. What went wrong?
+The mod is done, everything seems to run smoothly, and you just shipped the `.jar` file to the users. But suddenly you get complaints about crashes and other problems when the users try to play on a multiplayer server. What went wrong?
 
 This is most likely an issue with the client and server interaction. Things which run in single-player still can cause problems in a server environment.
-Therefor you can [debug and test](/basic-problem-solving#reloading-an-active-instance) your mod with a server running on your (private) localhost.
+Therefor, you can [debug and test](/basic-problem-solving#reloading-an-active-instance) your mod with a server running on your (private) localhost.
 
 Keep in mind that you will run a server and the clients at the same time. This may be taxing on your computer's performance.
 
@@ -25,13 +25,13 @@ Open up the `Gradle` window on the right side and run the `Tasks > fabric > runS
 
 ![runServer Gradle Task](/getting-started/clients-and-servers_1.png)
 
-<Subtitle>If the Gradle window is missing you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></Subtitle>
+<Subtitle>If the Gradle window is missing, you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></Subtitle>
 
 New files are generated in your project's `run` folder. However, an error should appear in your console.
 
 ### Agree to EULA
 
-When launching the server for the first time you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the EULA value to `true` in this file.
+When launching the server for the first time, you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the EULA value to `true` in this file.
 
 ```
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
@@ -39,7 +39,7 @@ When launching the server for the first time you need to agree to [Mojang's EULA
 eula=true
 ```
 
-Run the `runServer` Task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
+Run the `runServer` task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
 
 ### Disable Server Online Mode
 
@@ -49,7 +49,7 @@ In the development environment, the clients usually aren't logged in to any onli
 
 <Subtitle>The client error of doom... or not...</Subtitle>
 
-Therefore changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it <kbd>CTRL / CMD + F</kbd>.
+Therefore, changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it <kbd>CTRL / CMD + F</kbd>.
 
 ```
 # ...
@@ -60,7 +60,7 @@ online-mode=false
 # ...
 ```
 
-Now the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `runServer` Gradle task is used to launch the server and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
+Now, the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `runServer` Gradle task is used to launch the server, and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
 
 ![server prompts](/getting-started/clients-and-servers_3.png)
 
@@ -94,7 +94,7 @@ To avoid this issue, you will have to create additional `Run Configuration` entr
 
 <Callout type="info">This topic is a continuation of the [Launching the Game](/getting-started/launching-the-game) page.</Callout>
 
-In this case we will use the `Run Configuration` entries instead of the `Gradle Tasks` in the `Select Run/Debug` dropdown element at the top right of your IDE.
+In this case, we will use the `Run Configuration` entries instead of the `Gradle Tasks` in the `Select Run/Debug` dropdown element at the top right of your IDE.
 If they are missing, they can be generated when running the corresponding `Gradle Task` once and the project (or the IDE) has been restarted.
 
 ![Run Configurations](/getting-started/clients-and-servers_7.png)
@@ -122,8 +122,25 @@ Name them properly, and make sure to change their `Working Directory` to their n
 Start the new `Run Confgiurations` and they will populate their necessary files by themselves. If you want to keep your data from the original instance,
 copy the files from the original `run` directory to keep things like the world saves, options, Ressourcepacks and other instance related data.
 
+### Change the .gitignore file
+
+Add the new directories to the repository's `.gitignore` file. This will prevent commits which contain files from those local instances.
+
+```sh
+# ...
+
+# Common working directories
+run/
+runClientPrimary/
+runClientSecondary/
+runServer/
+
+# ...
+```
+
 </Steps>
 
 Now you can start multiple instances at the same time with running the seperate `Run Configuration` entries.
 
-<Callout type="warning">Keep in mind that all instances have their own directory now! You will have to install the same mods and change the same settings serveral times now.</Callout>
+<Callout type="warning">Keep in mind that all instances have their own directory now! You will have to install the same mods and change the same settings serveral times.</Callout>
+
