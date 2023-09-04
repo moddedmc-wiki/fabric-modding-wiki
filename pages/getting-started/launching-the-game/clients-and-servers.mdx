@@ -1,0 +1,129 @@
+---
+title: Launching Clients and a Server
+description: Learn how to launch multiple clients and a server instance of the development version of Minecraft.
+---
+
+import { Steps, Callout } from "nextra/components"
+import { Subtitle } from "components/ImageAnnotations"
+
+
+# About Clients and Servers
+
+The mod is done, everything seems to run smoothly and you just shipped the `.jar` file to the users. But suddenly you get complaints about crashes and other problems when the users try to play on a multiplayer server. What went wrong?
+
+This is most likely an issue with the client and server interaction. Things which run in single-player still can cause problems in a server environment.
+Therefor you can [debug and test](/basic-problem-solving#reloading-an-active-instance) your mod with a server running on your (private) localhost.
+
+Keep in mind that you will run a server and the clients at the same time. This may be taxing on your computer's performance.
+
+## Setup
+
+<Steps>
+### Set up the server
+
+Open up the `Gradle` window on the right side and run the `Tasks > fabric > runServer` Gradle task for the first time.
+
+![runServer Gradle Task](/getting-started/clients-and-servers_1.png)
+
+<Subtitle>If the Gradle window is missing you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></Subtitle>
+
+New files are generated in your project's `run` folder. However, an error should appear in your console.
+
+### Agree to EULA
+
+When launching the server for the first time you need to agree to [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula). A file called `eula.txt` has been created for that in the project's `run` folder. Change the EULA value to `true` in this file.
+
+```
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
+#Sat Sep 03 12:03:44 CEST 2022
+eula=true
+```
+
+Run the `runServer` Task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
+
+### Disable Server Online Mode
+
+In the development environment, the clients usually aren't logged in to any online accounts.
+
+![client 401 error status](/getting-started/clients-and-servers_2.png)
+
+<Subtitle>The client error of doom... or not...</Subtitle>
+
+Therefore changes to the newly generated `server.properties` file in your project's `run` folder have to be made. The value for `online-mode` needs to be set to `false`. If you can't find it, use the `Search` tool to locate it <kbd>CTRL / CMD + F</kbd>.
+
+```
+# ...
+require-resource-pack=false
+use-native-transport=true
+max-players=20
+online-mode=false
+# ...
+```
+
+Now the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `runServer` Gradle task is used to launch the server and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
+
+![server prompts](/getting-started/clients-and-servers_3.png)
+
+To join the server, use `localhost` as the `Server address` in-game.
+
+### Set up the Client profile
+
+Some testing requires multiple clients to interact in a multiplayer environment. Edit the `Minecraft Client` run configuration by pressing the white arrow. And modify the options to run multiple instances of this profile at the same time.
+
+![edit client configuration](/getting-started/clients-and-servers_4.png)
+
+![allow multiple instances](/getting-started/clients-and-servers_5.png)
+
+Now you can launch your client profile as many times as you want and connect multiple clients to your server. To check out all the instances and their consoles for logging and other purposes, switch the consoles with the tabs at the top of the console window.
+
+![consoles](/getting-started/clients-and-servers_6.png)
+</Steps>
+
+## Avoiding file issues
+
+When installing external mods, which are not listed in the `build.gradle` file, using the `/run` directory, the following error may prevent multiple instances from starting.
+
+```
+java.nio.file.FileSystemException: ... : The process cannot access the file because it is being used by another process.
+```
+
+To avoid this issue, you will have to create additional `Run Configuration` entries.
+
+<Steps>
+### Check your `Run Configurations`
+
+<Callout type="info">This topic is a continuation of the [Launching the Game](/getting-started/launching-the-game) page.</Callout>
+
+In this case we will use the `Run Configuration` entries instead of the `Gradle Tasks` in the `Select Run/Debug` dropdown element at the top right of your IDE.
+If they are missing, they can be generated when running the corresponding `Gradle Task` once and the project (or the IDE) has been restarted.
+
+![Run Configurations](/getting-started/clients-and-servers_7.png)
+
+### Prepare new directories
+
+Create new folders for the new entries in your repository and name them. In this case it will be `runClientPrimary`, `runClientSecondary` and `runServer`, 
+but create as many as you need and name them properly. You will need their file paths later on.
+
+![New Directories](/getting-started/clients-and-servers_8.png)
+
+<Subtitle>Get the file paths with (Right Click > Copy Path/Reference > Absolute Path) or find them in your file explorer of choice.</Subtitle>
+
+### Copy the original `Run Configuration`
+
+Go into the `Configuration Settings` and create copies of the existing `Run Configuration` entries.
+Name them properly, and make sure to change their `Working Directory` to their new file paths.
+
+![Run Config Settings](/getting-started/clients-and-servers_9.png)
+
+![Settings overview](/getting-started/clients-and-servers_10.png)
+
+### Populate the directories
+
+Start the new `Run Confgiurations` and they will populate their necessary files by themselves. If you want to keep your data from the original instance,
+copy the files from the original `run` directory to keep things like the world saves, options, Ressourcepacks and other instance related data.
+
+</Steps>
+
+Now you can start multiple instances at the same time with running the seperate `Run Configuration` entries.
+
+<Callout type="warning">Keep in mind that all instances have their own directory now! You will have to install the same mods and change the same settings serveral times now.</Callout>
