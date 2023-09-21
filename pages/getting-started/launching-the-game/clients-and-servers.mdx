@@ -1,5 +1,5 @@
 ---
-title: Launching Clients and a Server
+title: Launching Multiple Clients and Servers
 description: Learn how to launch multiple clients and a server instance of the development version of Minecraft.
 ---
 
@@ -21,11 +21,9 @@ Keep in mind that you will run a server and the clients at the same time. This m
 <Steps>
 ### Set up the server
 
-Open up the `Gradle` window on the right side and run the `Tasks > fabric > runServer` Gradle task for the first time.
+Use the `Minecraft Server` Run Configuration for the first time.
 
 ![runServer Gradle Task](/getting-started/clients-and-servers_1.png)
-
-<Subtitle>If the Gradle window is missing, you can open a new one in your Toolbar at the top <i>(View > Tool Windows > Gradle)</i></Subtitle>
 
 New files are generated in your project's `run` folder. However, an error should appear in your console.
 
@@ -81,6 +79,8 @@ Now you can launch your client profile as many times as you want and connect mul
 
 ## Avoiding file issues
 
+<Callout type="info">This section is optional since in many cases the metnioned error won't occur.</Callout>
+
 When installing external mods, which are not listed in the `build.gradle` file, using the `/run` directory, the following error may prevent multiple instances from starting.
 
 ```
@@ -91,8 +91,6 @@ To avoid this issue, you will have to create additional `Run Configuration` entr
 
 <Steps>
 ### Check your `Run Configurations`
-
-<Callout type="info">This topic is a continuation of the [Launching the Game](/getting-started/launching-the-game) page.</Callout>
 
 In this case, we will use the `Run Configuration` entries instead of the `Gradle Tasks` in the `Select Run/Debug` dropdown element at the top right of your IDE.
 If they are missing, they can be generated when running the corresponding `Gradle Task` once and the project (or the IDE) has been restarted.
