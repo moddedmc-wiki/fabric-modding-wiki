@@ -102,6 +102,7 @@ $RECYCLE.BIN/
 
 .gradle
 build/
+bin/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -111,8 +112,11 @@ gradle-app.setting
 
 **/build/
 
-# Common working directory
+# Common working directories
 run/
+runClientPrimary/
+runClientSecondary/
+runServer/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
