@@ -1,0 +1,159 @@
+---
+title: Using the IDE to the fullest
+description: Useful information to handle and traverse your Project using the IDE.
+---
+
+import { Subtitle } from "components/ImageAnnotations"
+import { Callout } from "nextra/components"
+
+
+# Using the IDE to the fullest
+
+This page gives useful bits of information, to speed up and ease the workflow of developers. Incorporate them into yours, to your liking.
+
+<Callout type="info">It may take some time to learn and get used to the shortcuts and other options. Use this page as a reference as long as needed.</Callout>
+
+## Traversing projects
+
+### Manually
+
+IntelliJ has many different ways of traversing projects. If you have generated Sources using the `./gradleW genSources` command in the terminal
+or used the `Tasks > fabric > genSources` Gradle Task in the Gradle Window, you can manually go trough the source files of Minecraft in the
+Project Window's External Libraries. 
+
+![Gradle Task and terminal command](/useful-ide/useful-ide_01.png)
+
+<Subtitle>Generate Sources using the terminal or the Gradle Task</Subtitle>
+
+
+![External Library](/useful-ide/useful-ide_02.png)
+
+<Subtitle>To search in the Project Window, just focus it and start typing</Subtitle>
+
+The Minecraft Source code can be found if you look for `net.minecraft`, but also other sources of projects, which are imported using the `build.gradle` file
+are located in there. This method is often used when browsing for assets, tags and other files.
+
+### Search
+
+Pressing `Shift` twice opens up a Search window. In there you can search for your project's files and classes. When Activating the checkbox `include non-project items`
+or by pressing `Shift` four times instead, the search will look not only in your own project, but also in other's, such as the External Libraries.
+
+![Search Window](/useful-ide/useful-ide_03.png)
+
+## Traversing code
+
+### Jump to Definition / Usage
+
+If you need to check out either the definition or the usage of variables, methods, classes, and other things, you can press `CTRL + Left Click`
+or use `Middle Mouse Button` (pressing Mouse wheel) on their name. This way you can avoid long scrolling sessions or a manual
+search for a definition which is located in another file.
+
+## Analyzing classes
+
+### Structure of a class
+
+By opening the `Structure` window (`Alt + 7`) you will get an overview of your currently active class. You can see which Classes and Enums
+are located in that file, which methods have been implemented and which fields / variables are declared.
+
+Sometimes it can be helpful,
+to activate the `Inherited` option at the top as well, when looking for potential methods to `@Override`.
+
+![Structure window](/useful-ide/useful-ide_04.png)
+
+### Type Hierarchy of a class
+
+By placing the cursor on a class name and pressing `CTRL + H` you can open a new Type Hierarchy window, which shows all parent and child classes.
+
+![Type Hierarchy window](/useful-ide/useful-ide_05.png)
+
+## Code utility
+
+### Code completion 
+
+Code completion should be activated by default. You will automatically get the recommendations while writing your code. If you closed it by
+accident or just moved your cursor to a new place, you can use `CTRL + Space` to open them up again.
+
+For example, when using Lambdas, you can write them quickly using this method.
+
+![Lambda with many parameters](/useful-ide/useful-ide_06.png)
+
+### Displaying parameters
+
+Displaying parameters should be activated by default. You will automatically get the types and names of the parameters while writing your code.
+If you closed them by accident or just moved your cursor to a new place, you can use `CTRL + P` to open them up again.
+
+Methods and classes can have multiple implementations with different parameters (also known as Overloading). This way you can decide on which
+implementation you want to use, while writing method call.
+
+![Displaying method parameters](/useful-ide/useful-ide_07.png)
+
+## Comments
+
+### Line Comment and Block Comment
+
+Good code should be easily readable and [self-documenting](https://bytedev.medium.com/code-comment-anti-patterns-and-why-the-comment-you-just-wrote-is-probably-not-needed-919a92cf6758). Picking expressive names for variables, classes and methods can help a lot, but sometimes
+comments are neccessary to leave notes and <b>temporarily</b> disable code for testing.
+
+To comment out code faster, open IntelliJ's Settings, look for the `Comment with Line Comment`
+and the `Comment with Block Comment` entries, and set their Keybinds to your preferences.
+
+![Keymap settings](/useful-ide/useful-ide_08.png)
+
+<Subtitle>Open IntelliJ Settings (`File > Setings > Keymap`)</Subtitle>
+
+### Region
+
+Right next to the lines in your IDE you can have small [+] and [-] icons. Those can be used to temporarily collapse methods, if-statements, classes and many other things
+if you are not actively working on them. To create a custom block which can be collapsed, use the `// region` and `// endregion` comments.
+
+```java
+// region collapse block name
+    ModBlocks.initialize();
+    ModBlockEntities.registerBlockEntityTypes();
+    ModItems.initialize();
+    ModSounds.initializeSounds();
+    ModParticles.initialize();
+// endregion
+
+```
+
+![Keymap settings](/useful-ide/useful-ide_09.png)
+
+<Subtitle>Region comment block collapsing</Subtitle>
+
+<Callout type="warning">This feature may not be supported in other editors and IDEs.
+If you notice that you are using too many of them, consider refactoring your code to make it more readable!</Callout>
+
+## TODO and FIXME
+
+[WIP]
+
+### Javadocs
+
+A great way of documenting your code is the usage of JavaDoc. JavaDocs not only provide useful infomration for implementation of methods and classes, but are also
+deeply integrated into IntelliJ.
+
+When hovering over method or class names, which have JavaDoc comments added to them, they will display this information in their information window.
+
+![JavaDoc](/useful-ide/useful-ide_10.png)
+
+<Subtitle>Example JavaDocs information</Subtitle>
+
+To get started, simply write `/**` above the method or class definition and press enter. IntelliJ will automatically generate lines for the return value
+and the parameters but you can change them however you want. There are many custom functionalities available and you can also use HTML if needed.
+
+Minecraft's `ScreenHandler` class has some examples. To toggle the render view, use the pen button near the line numbers.
+
+![JavaDoc editing](/useful-ide/useful-ide_11.png)
+
+## Refactoring Tools
+
+[WIP]
+
+### SHIFT + F6
+
+[WIP]
+
+### CTRL + SHIFT + R
+
+[WIP]
