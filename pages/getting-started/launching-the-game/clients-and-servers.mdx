@@ -37,7 +37,7 @@ When launching the server for the first time, you need to agree to [Mojang's EUL
 eula=true
 ```
 
-Run the `runServer` task for the second time. Now it also should be added to the `Select Run/Debug` dropdown element at the top right of your IDE, right next to the run button, for easier access.
+Run the `runServer` task for the second time.
 
 ### Disable Server Online Mode
 
@@ -58,7 +58,7 @@ online-mode=false
 # ...
 ```
 
-Now, the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `runServer` Gradle task is used to launch the server, and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
+Now, the server won't try to authenticate the client accounts who are joining the server. The set-up of the server is finished. The `Minecraft Server` Run Configuration is used to launch the server, and the usual server files are located in the project's `run` folder. You can interact with the server by using the server console.
 
 ![server prompts](/getting-started/clients-and-servers_3.png)
 
@@ -66,7 +66,7 @@ To join the server, use `localhost` as the `Server address` in-game.
 
 ### Set up the Client profile
 
-Some testing requires multiple clients to interact in a multiplayer environment. Edit the `Minecraft Client` run configuration by pressing the white arrow. And modify the options to run multiple instances of this profile at the same time.
+Some testing requires multiple clients to interact in a multiplayer environment. Edit the `Minecraft Client` Run Configuration by pressing the white arrow. And modify the options to run multiple instances of this profile at the same time.
 
 ![edit client configuration](/getting-started/clients-and-servers_4.png)
 
@@ -79,7 +79,7 @@ Now you can launch your client profile as many times as you want and connect mul
 
 ## Avoiding file issues
 
-<Callout type="info">This section is optional since in many cases the metnioned error won't occur.</Callout>
+<Callout type="info">This section is optional since in many cases the mentioned error won't occur.</Callout>
 
 When installing external mods, which are not listed in the `build.gradle` file, using the `/run` directory, the following error may prevent multiple instances from starting.
 
