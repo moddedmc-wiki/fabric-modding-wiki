@@ -5,6 +5,7 @@ import dev.mineblock11.fabric.referencemod.MyMod;
 import dev.mineblock11.fabric.referencemod.item.material.GuiditeArmorMaterial;
 import dev.mineblock11.fabric.referencemod.item.material.GuiditeToolMaterial;
 import dev.mineblock11.fabric.referencemod.item.custom.LightningStick;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -69,8 +70,9 @@ public class ModItems {
     }
 
     public static void initialize() {
-        Registry.register(Registries.ITEM_GROUP, new Identifier(MyMod.MOD_ID, "item_group"), MY_MOD_ITEMGROUP);
+        LoggerUtil.devLogger("Initializing Items");
 
+        Registry.register(Registries.ITEM_GROUP, new Identifier(MyMod.MOD_ID, "item_group"), MY_MOD_ITEMGROUP);
         ItemGroupEvents
                 // Register a "modify" event for the Ingredients item group.
                 .modifyEntriesEvent(RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(MyMod.MOD_ID, "item_group")))

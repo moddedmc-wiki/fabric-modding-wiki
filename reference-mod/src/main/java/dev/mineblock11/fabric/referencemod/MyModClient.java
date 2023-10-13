@@ -2,6 +2,7 @@ package dev.mineblock11.fabric.referencemod;
 
 import dev.mineblock11.fabric.referencemod.particle.ModParticles;
 import dev.mineblock11.fabric.referencemod.particle.custom.MyParticle;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,5 +13,7 @@ public class MyModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ParticleFactoryRegistry.getInstance().register(ModParticles.MY_PARTICLE, MyParticle.Factory::new);
+
+        LoggerUtil.devLogger("All client classes have been initialized");
     }
 }

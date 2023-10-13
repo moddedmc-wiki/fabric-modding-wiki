@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.mineblock11.fabric.referencemod.MyMod;
 import dev.mineblock11.fabric.referencemod.event.callback.PlayerDiedCallback;
 import dev.mineblock11.fabric.referencemod.mixin.DeathScreenMixin;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
@@ -22,6 +23,8 @@ import org.lwjgl.opengl.GL11;
 public class ModEvents {
 
     public static void registerAllEvents() {
+        LoggerUtil.devLogger("Initializing Events");
+
         attackedEntityEvent();
         playerDiedEvent();
         simpleHudRenderEvent();

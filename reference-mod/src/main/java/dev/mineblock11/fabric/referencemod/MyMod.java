@@ -6,11 +6,9 @@ import dev.mineblock11.fabric.referencemod.event.ModEvents;
 import dev.mineblock11.fabric.referencemod.item.ModItems;
 import dev.mineblock11.fabric.referencemod.particle.ModParticles;
 import dev.mineblock11.fabric.referencemod.sound.ModSounds;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
+import dev.mineblock11.fabric.referencemod.util.helper.TextUtil;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
@@ -28,14 +26,9 @@ public class MyMod implements ModInitializer {
         ModSounds.initializeSounds();
         ModEvents.registerAllEvents();
         ModParticles.initialize();
+        TextUtil.initializeAllTextFunctions();
 
-        Text translatable = Text.translatable("my_mod.text.hello");
-        MutableText mutable = Text.translatable("my_mod.text.bye");
-
-        String jsonString = Text.Serializer.toJson(mutable);
-        MutableText result = Text.Serializer.fromJson(jsonString);
-
-        result = Text.literal("Hello World!").formatted(Formatting.AQUA, Formatting.BOLD, Formatting.UNDERLINE);
+        LoggerUtil.devLogger("All classes have been initialized");
     }
 
     public static String generateHumanReadable(Identifier identifier) {
@@ -43,10 +36,5 @@ public class MyMod implements ModInitializer {
         String lowercase = identifier_path.replace("_", " ");
         String capitalized = WordUtils.capitalize(lowercase);
         return capitalized;
-    }
-
-    public static void devLogger(String input) {
-        if (!FabricLoader.getInstance().isDevelopmentEnvironment()) return;
-        LOGGER.info("DEV - [" + input + "]");
     }
 }

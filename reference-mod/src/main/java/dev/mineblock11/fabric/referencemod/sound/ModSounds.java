@@ -1,6 +1,7 @@
 package dev.mineblock11.fabric.referencemod.sound;
 
 import dev.mineblock11.fabric.referencemod.MyMod;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -17,5 +18,6 @@ public class ModSounds {
         return Registry.register(Registries.SOUND_EVENT, new Identifier(MyMod.MOD_ID, id), sound);
     }
     public static void initializeSounds() {
+        LoggerUtil.devLogger("Initializing SoundEvents");
     }
 }

@@ -3,6 +3,7 @@ package dev.mineblock11.fabric.referencemod.block;
 import dev.mineblock11.fabric.referencemod.MyMod;
 import dev.mineblock11.fabric.referencemod.block.custom.PrismarineLampBlock;
 import dev.mineblock11.fabric.referencemod.block.custom.TestBlock;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;
@@ -45,6 +46,6 @@ public class ModBlocks {
     }
 
     public static void initialize() {
-
+        LoggerUtil.devLogger("Initializing Blocks");
     }
 }
