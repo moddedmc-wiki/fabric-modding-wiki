@@ -22,10 +22,15 @@ public class MyMod implements ModInitializer {
         ModBlockEntities.registerBlockEntityTypes();
         ModItems.initialize();
         ModSounds.initializeSounds();
-        ModEvents.registerCommon();
+        ModEvents.registerAllEvents();
         ModParticles.initialize();
         TextUtil.initializeAllTextFunctions();
 
-        LoggerUtil.devLogger("All common classes have been initialized");
+        LoggerUtil.devLogger("All classes have been initialized");
+
+        /*
+        I'm just an example comment. FIXME: I am here to show off my functionality in IntelliJ!
+        This is it...
+        */
     }
 }

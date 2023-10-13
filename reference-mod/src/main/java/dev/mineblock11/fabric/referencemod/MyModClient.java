@@ -17,5 +17,7 @@ public class MyModClient implements ClientModInitializer {
         ModParticles.initializeClient();
 
         LoggerUtil.devLogger("All client classes have been initialized");
+
+        // TODO: I'm just an example "TODO" comment. I am here to show off my functionality in IntelliJ!
     }
 }
