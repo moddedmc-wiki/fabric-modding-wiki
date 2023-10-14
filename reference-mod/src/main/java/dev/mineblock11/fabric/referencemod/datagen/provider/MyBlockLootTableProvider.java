@@ -1,7 +1,7 @@
-package dev.mineblock11.fabric.referencemod.datagen;
+package dev.mineblock11.fabric.referencemod.datagen.provider;
 
-import dev.mineblock11.fabric.referencemod.ModBlocks;
-import dev.mineblock11.fabric.referencemod.ModItems;
+import dev.mineblock11.fabric.referencemod.block.ModBlocks;
+import dev.mineblock11.fabric.referencemod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.enchantment.Enchantments;
@@ -18,7 +18,7 @@ import net.minecraft.predicate.item.EnchantmentPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 
 public class MyBlockLootTableProvider extends FabricBlockLootTableProvider {
-    MyBlockLootTableProvider(FabricDataOutput output) {
+    public MyBlockLootTableProvider(FabricDataOutput output) {
         super(output);
     }
 

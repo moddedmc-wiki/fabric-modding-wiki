@@ -1,6 +1,6 @@
-package dev.mineblock11.fabric.referencemod.armor;
+package dev.mineblock11.fabric.referencemod.item.material;
 
-import dev.mineblock11.fabric.referencemod.ModItems;
+import dev.mineblock11.fabric.referencemod.item.ModItems;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;

@@ -1,6 +1,6 @@
 package dev.mineblock11.fabric.referencemod.mixin;
 
-import dev.mineblock11.fabric.referencemod.PlayerDiedCallback;
+import dev.mineblock11.fabric.referencemod.event.callback.PlayerDiedCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.DeathScreen;
 import net.minecraft.client.network.ClientPlayerEntity;

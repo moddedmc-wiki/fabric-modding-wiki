@@ -1,4 +1,4 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.particle.custom;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;

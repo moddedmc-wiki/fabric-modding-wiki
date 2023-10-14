@@ -1,8 +1,11 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.item;
 
-import dev.mineblock11.fabric.referencemod.armor.GuiditeArmorMaterial;
-import dev.mineblock11.fabric.referencemod.tools.GuiditeMaterial;
-import dev.mineblock11.fabric.referencemod.tools.LightningStick;
+import dev.mineblock11.fabric.referencemod.block.ModBlocks;
+import dev.mineblock11.fabric.referencemod.MyMod;
+import dev.mineblock11.fabric.referencemod.item.material.GuiditeArmorMaterial;
+import dev.mineblock11.fabric.referencemod.item.material.GuiditeToolMaterial;
+import dev.mineblock11.fabric.referencemod.item.custom.LightningStick;
+import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -32,11 +35,11 @@ public class ModItems {
     );
 
     // Tools
-    public static final Item GUIDITE_SWORD = register(new SwordItem(GuiditeMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_sword");
-    public static final Item GUIDITE_PICKAXE = register(new PickaxeItem(GuiditeMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_pickaxe");
-    public static final Item GUIDITE_AXE = register(new AxeItem(GuiditeMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_axe");
-    public static final Item GUIDITE_SHOVEL = register(new ShovelItem(GuiditeMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_shovel");
-    public static final Item GUIDITE_HOE = register(new HoeItem(GuiditeMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_hoe");
+    public static final Item GUIDITE_SWORD = register(new SwordItem(GuiditeToolMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_sword");
+    public static final Item GUIDITE_PICKAXE = register(new PickaxeItem(GuiditeToolMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_pickaxe");
+    public static final Item GUIDITE_AXE = register(new AxeItem(GuiditeToolMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_axe");
+    public static final Item GUIDITE_SHOVEL = register(new ShovelItem(GuiditeToolMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_shovel");
+    public static final Item GUIDITE_HOE = register(new HoeItem(GuiditeToolMaterial.INSTANCE, 2, 0.5F, new FabricItemSettings()), "guidite_hoe");
 
     // Interactive Items
     public static final LightningStick LIGHTNING_STICK = register(new LightningStick(new FabricItemSettings()), "lightning_stick");
@@ -67,9 +70,9 @@ public class ModItems {
     }
 
     public static void initialize() {
+        LoggerUtil.devLogger("Initializing Items");
+
         Registry.register(Registries.ITEM_GROUP, new Identifier(MyMod.MOD_ID, "item_group"), MY_MOD_ITEMGROUP);
-
-
         ItemGroupEvents
                 // Register a "modify" event for the Ingredients item group.
                 .modifyEntriesEvent(RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(MyMod.MOD_ID, "item_group")))

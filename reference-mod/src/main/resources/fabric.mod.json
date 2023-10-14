@@ -11,7 +11,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "dev.mineblock11.fabric.referencemod.client.MyModClient"
+      "dev.mineblock11.fabric.referencemod.MyModClient"
     ],
     "main": [
       "dev.mineblock11.fabric.referencemod.MyMod"

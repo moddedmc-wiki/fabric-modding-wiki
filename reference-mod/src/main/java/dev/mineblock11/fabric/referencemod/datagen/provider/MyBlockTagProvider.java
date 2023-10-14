@@ -1,6 +1,6 @@
-package dev.mineblock11.fabric.referencemod.datagen;
+package dev.mineblock11.fabric.referencemod.datagen.provider;
 
-import dev.mineblock11.fabric.referencemod.ModBlocks;
+import dev.mineblock11.fabric.referencemod.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;

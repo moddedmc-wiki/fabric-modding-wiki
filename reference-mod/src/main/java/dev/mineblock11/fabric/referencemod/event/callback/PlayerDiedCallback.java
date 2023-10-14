@@ -1,4 +1,4 @@
-package dev.mineblock11.fabric.referencemod;
+package dev.mineblock11.fabric.referencemod.event.callback;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
