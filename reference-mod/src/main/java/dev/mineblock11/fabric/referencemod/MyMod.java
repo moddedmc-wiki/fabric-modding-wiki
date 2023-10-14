@@ -1,7 +1,7 @@
 package dev.mineblock11.fabric.referencemod;
 
-import dev.mineblock11.fabric.referencemod.block.ModBlocks;
 import dev.mineblock11.fabric.referencemod.block.ModBlockEntities;
+import dev.mineblock11.fabric.referencemod.block.ModBlocks;
 import dev.mineblock11.fabric.referencemod.event.ModEvents;
 import dev.mineblock11.fabric.referencemod.item.ModItems;
 import dev.mineblock11.fabric.referencemod.particle.ModParticles;
@@ -9,8 +9,6 @@ import dev.mineblock11.fabric.referencemod.sound.ModSounds;
 import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
 import dev.mineblock11.fabric.referencemod.util.helper.TextUtil;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.Identifier;
-import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,12 +27,5 @@ public class MyMod implements ModInitializer {
         TextUtil.initializeAllTextFunctions();
 
         LoggerUtil.devLogger("All classes have been initialized");
-    }
-
-    public static String generateHumanReadable(Identifier identifier) {
-        String identifier_path = identifier.getPath();
-        String lowercase = identifier_path.replace("_", " ");
-        String capitalized = WordUtils.capitalize(lowercase);
-        return capitalized;
     }
 }
