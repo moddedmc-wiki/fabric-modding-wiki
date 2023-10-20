@@ -52,7 +52,7 @@ public class ModItems {
 
     public static final ItemGroup MY_MOD_ITEMGROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.GUIDITE_SWORD))
-            .displayName(Text.translatable("itemGroup."))
+            .displayName(Text.translatable("itemGroup.referencemod"))
             .build();
 
 

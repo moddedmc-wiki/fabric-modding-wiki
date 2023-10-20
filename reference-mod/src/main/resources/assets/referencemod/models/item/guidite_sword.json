@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mod_id:item/guidite_sword"
+    "layer0": "referencemod:item/guidite_sword"
   }
 }

@@ -1,3 +1,18 @@
 {
-  "block.referencemod.prismarine_lamp": "Prismarine Lamp"
+  "block.referencemod.condensed_dirt": "Condensed Dirt",
+  "block.referencemod.prismarine_lamp": "Prismarine Lamp",
+  "block.referencemod.test_block": "Test Block",
+  "item.referencemod.guidite_axe": "Guidite Axe",
+  "item.referencemod.guidite_boots": "Guidite Boots",
+  "item.referencemod.guidite_chestplate": "Guidite Chestplate",
+  "item.referencemod.guidite_helmet": "Guidite Helmet",
+  "item.referencemod.guidite_hoe": "Guidite Hoe",
+  "item.referencemod.guidite_leggings": "Guidite Leggings",
+  "item.referencemod.guidite_pickaxe": "Guidite Pickaxe",
+  "item.referencemod.guidite_shovel": "Guidite Shovel",
+  "item.referencemod.guidite_sword": "Guidite Sword",
+  "item.referencemod.lightning_stick": "Lightning Stick",
+  "item.referencemod.poop": "Poop",
+  "itemGroup.referencemod": "Fabric Community Wiki Items",
+  "sound.referencemod.metal_whistle": "Metal Whistle Sound"
 }

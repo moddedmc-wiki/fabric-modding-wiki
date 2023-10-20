@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mod_id:item/poop"
+    "layer0": "referencemod:item/poop"
   }
 }
