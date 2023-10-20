@@ -22,11 +22,16 @@ import org.lwjgl.opengl.GL11;
 
 public class ModEvents {
 
-    public static void registerAllEvents() {
-        LoggerUtil.devLogger("Initializing Events");
+    public static void registerCommonEvents() {
+        LoggerUtil.devLogger("Initializing Common Events");
 
         attackedEntityEvent();
         playerDiedEvent();
+    }
+
+    public static void registerClientEvents() {
+        LoggerUtil.devLogger("Initializing Client Events");
+
         simpleHudRenderEvent();
         advancedHudRenderEvent();
         worldRenderEvent();
