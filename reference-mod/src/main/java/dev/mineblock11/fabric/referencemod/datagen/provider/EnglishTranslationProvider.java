@@ -20,6 +20,15 @@ public class EnglishTranslationProvider extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(ModBlocks.PRISMARINE_LAMP, "Prismarine Lamp");
         translationBuilder.add(ModBlocks.TEST_BLOCK, "Test Block");
+
+        translationBuilder.add(ModBlocks.ADVANCED_TEST_BLOCK, "Advanced Test Block");
+        translationBuilder.add(String.format("%s.subtitle", ModBlocks.ADVANCED_TEST_BLOCK.getTranslationKey()),
+                "§3[SHIFT]§r to expand Tooltip window!");
+        translationBuilder.add(String.format("%s.subtitle.shift_0", ModBlocks.ADVANCED_TEST_BLOCK.getTranslationKey()),
+                "§3[Interact]§r with this block to cycle between arrows");
+        translationBuilder.add(String.format("%s.subtitle.shift_1", ModBlocks.ADVANCED_TEST_BLOCK.getTranslationKey()),
+                "§3[Sneak + Interact]§r with this block to change the VoxelShape");
+
         translationBuilder.add(String.format("sound.%s.metal_whistle", MyMod.MOD_ID), "Metal Whistle Sound");
 
         try {

@@ -1,0 +1,184 @@
+{
+  "variants": {
+    "arrows=0,facing=east,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a0b2",
+      "y": 90
+    },
+    "arrows=0,facing=east,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a0b3",
+      "y": 90
+    },
+    "arrows=0,facing=east,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a0b1",
+      "y": 90
+    },
+    "arrows=0,facing=north,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a0b2"
+    },
+    "arrows=0,facing=north,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a0b3"
+    },
+    "arrows=0,facing=north,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a0b1"
+    },
+    "arrows=0,facing=south,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a0b2",
+      "y": 180
+    },
+    "arrows=0,facing=south,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a0b3",
+      "y": 180
+    },
+    "arrows=0,facing=south,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a0b1",
+      "y": 180
+    },
+    "arrows=0,facing=west,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a0b2",
+      "y": 270
+    },
+    "arrows=0,facing=west,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a0b3",
+      "y": 270
+    },
+    "arrows=0,facing=west,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a0b1",
+      "y": 270
+    },
+    "arrows=1,facing=east,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a1b2",
+      "y": 90
+    },
+    "arrows=1,facing=east,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a1b3",
+      "y": 90
+    },
+    "arrows=1,facing=east,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a1b1",
+      "y": 90
+    },
+    "arrows=1,facing=north,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a1b2"
+    },
+    "arrows=1,facing=north,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a1b3"
+    },
+    "arrows=1,facing=north,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a1b1"
+    },
+    "arrows=1,facing=south,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a1b2",
+      "y": 180
+    },
+    "arrows=1,facing=south,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a1b3",
+      "y": 180
+    },
+    "arrows=1,facing=south,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a1b1",
+      "y": 180
+    },
+    "arrows=1,facing=west,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a1b2",
+      "y": 270
+    },
+    "arrows=1,facing=west,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a1b3",
+      "y": 270
+    },
+    "arrows=1,facing=west,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a1b1",
+      "y": 270
+    },
+    "arrows=2,facing=east,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a2b2",
+      "y": 90
+    },
+    "arrows=2,facing=east,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a2b3",
+      "y": 90
+    },
+    "arrows=2,facing=east,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a2b1",
+      "y": 90
+    },
+    "arrows=2,facing=north,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a2b2"
+    },
+    "arrows=2,facing=north,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a2b3"
+    },
+    "arrows=2,facing=north,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a2b1"
+    },
+    "arrows=2,facing=south,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a2b2",
+      "y": 180
+    },
+    "arrows=2,facing=south,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a2b3",
+      "y": 180
+    },
+    "arrows=2,facing=south,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a2b1",
+      "y": 180
+    },
+    "arrows=2,facing=west,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a2b2",
+      "y": 270
+    },
+    "arrows=2,facing=west,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a2b3",
+      "y": 270
+    },
+    "arrows=2,facing=west,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a2b1",
+      "y": 270
+    },
+    "arrows=3,facing=east,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a3b2",
+      "y": 90
+    },
+    "arrows=3,facing=east,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a3b3",
+      "y": 90
+    },
+    "arrows=3,facing=east,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a3b1",
+      "y": 90
+    },
+    "arrows=3,facing=north,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a3b2"
+    },
+    "arrows=3,facing=north,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a3b3"
+    },
+    "arrows=3,facing=north,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a3b1"
+    },
+    "arrows=3,facing=south,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a3b2",
+      "y": 180
+    },
+    "arrows=3,facing=south,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a3b3",
+      "y": 180
+    },
+    "arrows=3,facing=south,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a3b1",
+      "y": 180
+    },
+    "arrows=3,facing=west,hitbox_size=big": {
+      "model": "referencemod:block/advanced_test_block_a3b2",
+      "y": 270
+    },
+    "arrows=3,facing=west,hitbox_size=full": {
+      "model": "referencemod:block/advanced_test_block_a3b3",
+      "y": 270
+    },
+    "arrows=3,facing=west,hitbox_size=small": {
+      "model": "referencemod:block/advanced_test_block_a3b1",
+      "y": 270
+    }
+  }
+}

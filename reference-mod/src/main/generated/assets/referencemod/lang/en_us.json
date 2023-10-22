@@ -1,4 +1,8 @@
 {
+  "block.referencemod.advanced_test_block": "Advanced Test Block",
+  "block.referencemod.advanced_test_block.subtitle": "§3[SHIFT]§r to expand Tooltip window!",
+  "block.referencemod.advanced_test_block.subtitle.shift_0": "§3[Interact]§r with this block to cycle between arrows",
+  "block.referencemod.advanced_test_block.subtitle.shift_1": "§3[Sneak + Interact]§r with this block to change the VoxelShape",
   "block.referencemod.condensed_dirt": "Condensed Dirt",
   "block.referencemod.prismarine_lamp": "Prismarine Lamp",
   "block.referencemod.test_block": "Test Block",
