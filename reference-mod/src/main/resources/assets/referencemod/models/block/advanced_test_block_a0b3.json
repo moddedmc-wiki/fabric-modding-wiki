@@ -1,0 +1,31 @@
+{
+	"credit": "Made with Blockbench by ShiroJR",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "referencemod:block/advanced_test_block_border",
+		"particle": "referencemod:block/advanced_test_block_arrow"
+	},
+	"elements": [
+		{
+			"name": "step_2",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "base",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

@@ -9,11 +9,11 @@ public class MyModDatagen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         LoggerUtil.devLogger("Initializing Datagen");
+
         final FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        // ...
-
         pack.addProvider(EnglishTranslationProvider::new);
+        pack.addProvider(MyModelProvider::new);
         pack.addProvider(MyBlockTagProvider::new);
         pack.addProvider(MyBlockLootTableProvider::new);
     }

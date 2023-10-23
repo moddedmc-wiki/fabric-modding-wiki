@@ -1,7 +1,9 @@
 package dev.mineblock11.fabric.referencemod.particle;
 
 import dev.mineblock11.fabric.referencemod.MyMod;
+import dev.mineblock11.fabric.referencemod.particle.custom.MyParticle;
 import dev.mineblock11.fabric.referencemod.util.helper.LoggerUtil;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
@@ -13,5 +15,9 @@ public class ModParticles {
     public static void initialize() {
         LoggerUtil.devLogger("Initializing Particles");
         Registry.register(Registries.PARTICLE_TYPE, new Identifier(MyMod.MOD_ID, "my_particle"), MY_PARTICLE);
+    }
+
+    public static void initializeClient() {
+        ParticleFactoryRegistry.getInstance().register(MY_PARTICLE, MyParticle.Factory::new);
     }
 }

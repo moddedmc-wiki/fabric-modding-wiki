@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mod_id:item/lightning_stick"
+    "layer0": "referencemod:item/lightning_stick"
   }
 }

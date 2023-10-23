@@ -1,10 +1,10 @@
 {
   "variants": {
     "activated=false": {
-      "model": "mod_id:block/prismarine_lamp"
+      "model": "referencemod:block/prismarine_lamp"
     },
     "activated=true": {
-      "model": "mod_id:block/prismarine_lamp_activated"
+      "model": "referencemod:block/prismarine_lamp_activated"
     }
   }
 }

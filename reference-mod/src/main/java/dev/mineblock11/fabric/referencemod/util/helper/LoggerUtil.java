@@ -25,6 +25,18 @@ public class LoggerUtil {
     }
 
     /**
+     * This method will print error text to the console.
+     * It uses the {@link MyMod#LOGGER LOGGER} and prints only,
+     * if the instance has been launched in a developer environment.<br><br>
+     * This method is an overload method of {@link #devLogger(String, boolean, Exception)}
+     *
+     * @param input String, which will be displayed in the console
+     */
+    public static void devLogger(String input, Exception exception) {
+        devLogger(input, true, exception);
+    }
+
+    /**
      * This method will print normal text or text with error highlighting to the console.
      * It uses the {@link MyMod#LOGGER LOGGER} and prints only,
      * if the instance has been launched in a developer environment.<br><br>
@@ -38,7 +50,13 @@ public class LoggerUtil {
         String outputText = "DEV - [" + input + "]";
 
         if (!isError) MyMod.LOGGER.info(outputText);
-        if (exception == null) MyMod.LOGGER.error(outputText);
-        else MyMod.LOGGER.error(outputText, exception);
+        else {
+            if (exception == null) {
+                MyMod.LOGGER.error(outputText);
+                return;
+            }
+
+            MyMod.LOGGER.error(outputText, exception);
+        }
     }
 }

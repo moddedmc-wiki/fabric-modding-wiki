@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mod_id:item/guidite_pickaxe"
+    "layer0": "referencemod:item/guidite_pickaxe"
   }
 }

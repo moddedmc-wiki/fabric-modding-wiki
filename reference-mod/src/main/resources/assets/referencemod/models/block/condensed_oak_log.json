@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_column",
   "textures": {
-    "end": "mod_id:block/condensed_oak_log_top",
-    "side": "mod_id:block/condensed_oak_log"
+    "end": "referencemod:block/condensed_oak_log_top",
+    "side": "referencemod:block/condensed_oak_log"
   }
 }
