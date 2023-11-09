@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fabric.moddedmc.wiki/
+
+# Sitemaps
+Sitemap: https://fabric.moddedmc.wiki/sitemap.xml

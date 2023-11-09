@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://fabric.moddedmc.wiki</loc><lastmod>2023-11-07T21:07:22.733Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/basic-problem-solving</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/blocks</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/blocks/block-entities</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/blocks/blockstates</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/codecs</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/contributing</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/data-generation</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/data-generation/loot-tables</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/data-generation/tags</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/data-generation/translations</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/events</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/events/creation</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started/access-wideners</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started/creating-project</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started/launching-the-game</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started/launching-the-game/clients-and-servers</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/getting-started/mixins</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items/armor</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items/food</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items/interactivity</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items/item-groups</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/items/tools</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/rendering</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/rendering/matrices</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/rendering/particles</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/rendering/particles/factories</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/rendering/world</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/sounds</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/sounds/using</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://fabric.moddedmc.wiki/text-and-translations</loc><lastmod>2023-11-07T21:07:22.734Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
