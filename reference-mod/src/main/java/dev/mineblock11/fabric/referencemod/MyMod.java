@@ -22,7 +22,7 @@ public class MyMod implements ModInitializer {
         ModBlockEntities.registerBlockEntityTypes();
         ModItems.initialize();
         ModSounds.initializeSounds();
-        ModEvents.registerAllEvents();
+        ModEvents.registerCommon();
         ModParticles.initialize();
         TextUtil.initializeAllTextFunctions();
 
