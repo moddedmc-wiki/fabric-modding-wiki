@@ -1,0 +1,38 @@
+---
+title: Prerequisites
+description: Learn how to set up a development environment for creating mods using the Fabric toolchain.
+order: 0
+next:
+  text: Creating a project
+  link: "/getting-started/creating-project"
+---
+
+# Prerequisites
+
+Before you can even start programming, you need to check that you have the following:
+
+### Java Knowledge
+
+The majority of pages in this wiki use Java instead of Kotlin, Scala or Groovy - we expect that you have a moderate understanding of Java.
+
+If you do not know what Java is, or how to program in it, you should check out the following guides and tutorials:
+
+- [W3Schools: Java Tutorial](https://www.w3schools.com/java/)
+- [TutorialsPoint: Java](https://www.tutorialspoint.com/java/index.htm)
+- [Java Tutorial For Beginners: Programming With Mosh](https://www.youtube.com/watch?v=eIrMbAQSU34)
+
+You are also expected to know what Gradle is and some terminology about it. You can find [a brief explanation on the official Gradle documentation.](https://docs.gradle.org/current/userguide/userguide.html)
+
+*Obviously, you will need at least Java 17 to be installed.*
+
+### IntelliJ IDEA
+
+Although you are welcome to use Eclipse or Visual Studio Code, all of the Fabric Community Wiki pages use IntellIJ IDEA and the reference mod is set up to utilize IntellIJ IDEA features such as run configurations.
+
+You can download the latest version of [IntellIJ IDEA: Community Edition here.](https://www.jetbrains.com/idea/download/?section=linux)
+
+### Minecraft Development Plugin
+
+The Minecraft Development Plugin, also known as MCDev, provides quality of life improvements to the IntelliJ IDEA IDE when developing Minecraft mods, it is recommended you install the plugin.
+
+You can find more [information on the plugin here.](https://mcdev.io/)
