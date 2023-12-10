@@ -10,7 +10,8 @@ const allCategoriesSection = [
       { text: "Sounds", link: "/sounds/" },
       { text: "Data Generation", link: "/data-generation/" },
       { text: "Events", link: "/events/" },
-      { text: "Rendering", link: "/rendering/" }
+      { text: "Rendering", link: "/rendering/" },
+      { text: "Miscellaneous Topics", link: "/misc-topics/" }
     ]
   }
 ]
@@ -19,6 +20,36 @@ const allCategoriesSection = [
 export default defineConfig({
   title: "Fabric Modding Wiki",
   description: "An open source guide-book for creating mods using Fabric.",
+
+  head: [
+    ['link', { rel: 'icon', href: '/icon.png' }],
+    ['meta', { name: 'theme-color', content: '#f0430e' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'og:image', content: '/icon.png' }]
+  ],
+
+  transformPageData(pageData) {
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push([
+      'meta',
+      {
+        name: 'og:title',
+        content:
+          pageData.frontmatter.layout === 'home'
+            ? `Fabric Modding Wiki`
+            : `${pageData.title} | Fabric Modding Wiki`
+      }
+    ])
+
+    pageData.frontmatter.head.push([
+      'meta',
+      {
+        name: 'og:description',
+        content: pageData.frontmatter.description || "An open source guide-book for creating mods using Fabric."
+      }
+    ])
+  },
+
   sitemap: {
     hostname: 'https://fabric.moddedmc.wiki/'
   },
@@ -129,6 +160,17 @@ export default defineConfig({
           ]
         }
       ],
+      '/misc-topics/': [
+        ...allCategoriesSection,
+        {
+          text: 'Miscellaneous Topics',
+          items: [
+            { text: 'About This Section', link: '/misc-topics/' },
+            { text: 'Codecs', link: '/misc-topics/codecs' },
+            { text: 'Text and Translations', link: '/misc-topics/text-and-translations' },
+          ]
+        }
+      ]
     },
 
     footer: {

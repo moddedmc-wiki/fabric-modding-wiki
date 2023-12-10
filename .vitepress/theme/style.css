@@ -137,6 +137,12 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+.vp-doc table {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 p > img {
   margin-left: auto;
   margin-right: auto;

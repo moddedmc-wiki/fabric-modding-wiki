@@ -2,6 +2,9 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
+title: "Fabric Modding Wiki"
+description: "An open source guide-book for creating mods using Fabric."
+
 hero:
   name: "Fabric Modding Wiki"
   tagline: "An open source guide-book for creating mods using Fabric."
@@ -32,6 +35,9 @@ features:
   - title: Sounds
     details: Learn how to utilize Minecraft's sound systems to add and play your own sounds.
     link: /sounds/
+  - title: Miscellaneous Topics
+    details: "Learn about other topics such as codecs, text and more."
+    link: /misc-topics/
 ---
 
 <style scoped>
