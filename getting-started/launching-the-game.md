@@ -6,7 +6,7 @@ order: 3
 
 # Launching Minecraft
 
-To launch Minecraft with your mod installed, you can choose the "Minecraft Client" task in your Run Configurations list - it's recommended you launch in "Debug" mode as this will allow you to [hotswap](/basic-problem-solving#reloading-an-active-instance) methods and create [breakpoints](/basic-problem-solving#breakpoint) where possible.
+To launch Minecraft with your mod installed, you can choose the "Minecraft Client" task in your Run Configurations list - it's recommended you launch in "Debug" mode as this will allow you to [hotswap](/getting-started/basic-problem-solving#reloading-an-active-instance) methods and create [breakpoints](/getting-started/basic-problem-solving#breakpoint) where possible.
 
 ![](./_assets/launching-the-game_0.png)
 
