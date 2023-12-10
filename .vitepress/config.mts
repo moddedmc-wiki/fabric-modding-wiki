@@ -22,7 +22,7 @@ export default defineConfig({
   description: "An open source guide-book for creating mods using Fabric.",
 
   head: [
-    ['link', { rel: 'icon', href: '/icon.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#f0430e' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'og:image', content: '/icon.png' }]
@@ -54,6 +54,12 @@ export default defineConfig({
     hostname: 'https://fabric.moddedmc.wiki/'
   },
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+
+    logo: "/icon.png",
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
