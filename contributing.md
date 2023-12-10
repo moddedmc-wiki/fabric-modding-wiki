@@ -18,7 +18,7 @@ If you wish to contribute to the wiki, you are more than welcome!
 
 ## Contributing Process
 
-1. **Fork the Repository**: To contribute, start by forking the official Fabric Community Wiki repository on GitHub. This will create a copy of the project in your GitHub account.
+1. **Fork the Repository**: To contribute, start by forking the Fabric Modding Wiki repository on GitHub. This will create a copy of the project in your GitHub account.
 
 2. **Make Changes**: Create a new branch in your forked repository and make the necessary changes to the content. Ensure that your changes adhere to the contribution guidelines mentioned above.
 
@@ -26,9 +26,9 @@ If you wish to contribute to the wiki, you are more than welcome!
 
 4. **Create a Pull Request (PR)**: Once you are satisfied with your changes, open a Pull Request from your branch to the main repository's `master` branch. Provide a clear and concise description of your changes in the PR to help reviewers understand your contribution better.
 
-5. **Review Process**: Your PR will be reviewed by the community members or the maintainers of the Fabric Community Wiki. Be prepared to make further changes based on their feedback or suggestions.
+5. **Review Process**: Your PR will be reviewed by the community members or the maintainers of the Fabric Modding Wiki. Be prepared to make further changes based on their feedback or suggestions.
 
-6. **Merge and Publication**: If your PR meets the contribution guidelines and aligns with the objectives of the Fabric Community Wiki, it will be approved and merged into the main repository.
+6. **Merge and Publication**: If your PR meets the contribution guidelines and aligns with the objectives of the Fabric Modding Wiki, it will be approved and merged into the main repository.
 
 If you have any questions or need further assistance, don't hesitate to reach out to us on GitHub or via Discord.
 
