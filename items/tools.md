@@ -1,12 +1,7 @@
 ---
 title: Tools and Weapons
 description: Learn how to create your own tools and set their durability and mining levels.
-prev:
-  text: "Food Items"
-  link: "/items/food"
-next:
-  text: "Armor"
-  link: "/items/armor"
+order: 2
 ---
 
 # Tools

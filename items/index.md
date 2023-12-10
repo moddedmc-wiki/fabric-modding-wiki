@@ -1,9 +1,7 @@
 ---
 title: Creating Your First Item
 description: Learn how to register a simple item and how to texture, model and name it.
-next:
-  text: "Food Items"
-  link: "/items/food"
+order: 0
 ---
 
 # Creating Your First Item

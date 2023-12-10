@@ -1,6 +1,7 @@
 ---
 title: Using the IDE to the fullest
 description: Useful information to handle and traverse your Project using the IDE.
+order: 7
 ---
 
 # Using the IDE to the fullest
@@ -17,26 +18,15 @@ Refer to the `File > Setings > Keymap` Settings or search for the functionality 
 
 ### Manually
 
-IntelliJ has many different ways of traversing projects. If you have generated sources using the... 
-
-```
-./gradleW genSources
-```
-
-...command in the terminal
-or used the `Tasks > fabric > genSources` Gradle Task in the Gradle Window, you can manually go through the source files of Minecraft in the
+IntelliJ has many different ways of traversing projects. If you have generated sources using the `./gradlew genSources` command in the terminal or used the `Tasks > fabric > genSources` Gradle Task in the Gradle Window, you can manually go through the source files of Minecraft in the
 Project Window's External Libraries. 
 
 ![Gradle Task](./_assets/traversing_01.png)
-
-<Subtitle>Generate Sources using the Gradle Task</Subtitle>
 
 The Minecraft Source code can be found if you look for `net.minecraft`, but also other sources of projects, libraries and dependencies, which are imported using the `build.gradle` file
 are located in there. This method is often used when browsing for assets, tags and other files.
 
 ![External Library](./_assets/traversing_02.png)
-
-<Subtitle>To search in the Project Window, just focus it and start typing</Subtitle>
 
 ### Search
 
@@ -69,14 +59,10 @@ Creating `Mnemonic Bookmarks` enables you to quickly switch back to those bookma
 
 ![set Bookmark](./_assets/traversing_05.png)
 
-<Subtitle>Right-click on a line number to set a Bookmark</Subtitle>
-
 It is possible to create multiple Bookmark lists at the same time if you need to separate or order them, in the `Bookmarks` window.
 [`Breakpoints`](basic-problem-solving#breakpoint) will also be displayed in there.
 
 ![Bookmark window](./_assets/traversing_06.png)
-
-<Subtitle>Get an overview over all Bookmarks using the `Bookmarks` window</Subtitle>
 
 ## Analyzing classes
 
@@ -157,8 +143,6 @@ and the `Comment with Block Comment` entries, and set their Key binds to your pr
 
 ![Keymap settings](./_assets/comments_01.png)
 
-<Subtitle>Open IntelliJ Settings (`File > Setings > Keymap`)</Subtitle>
-
 Now you can highlight the necessary code and use the shortcuts, to comment the section out.
 
 ```java
@@ -197,10 +181,10 @@ if you are not actively working on them. To create a custom block which can be c
 
 ![Keymap settings](./_assets/comments_02.png)
 
-<Subtitle>Region comment block collapsing</Subtitle>
-
-<Callout type="warning">This feature may not be supported in other editors and IDEs.
-If you notice that you are using too many of them, consider refactoring your code to make it more readable!</Callout>
+::: warning
+This feature may not be supported in other editors and IDEs.
+If you notice that you are using too many of them, consider refactoring your code to make it more readable!
+:::
 
 ### TODO and FIXME notes
 
@@ -217,7 +201,9 @@ which uses those type of comments.
 
 ![Commit with TODO](./_assets/comments_05.png)
 
-<Callout type="warning">This feature may not be supported in other editors and IDEs.</Callout>
+::: warning
+This feature may not be supported in other editors and IDEs.
+:::
 
 ### Javadocs
 
@@ -227,8 +213,6 @@ deeply integrated into IntelliJ.
 When hovering over method or class names, which have JavaDoc comments added to them, they will display this information in their information window.
 
 ![JavaDoc](./_assets/comments_06.png)
-
-<Subtitle>Example JavaDocs information</Subtitle>
 
 To get started, simply write `/**` above the method or class definition and press enter. IntelliJ will automatically generate lines for the return value
 and the parameters but you can change them however you want. There are many custom functionalities available and you can also use HTML if needed.

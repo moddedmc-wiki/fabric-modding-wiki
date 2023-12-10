@@ -1,12 +1,7 @@
 ---
 title: Food
 description: Learn how to add a FoodComponent to an item to make it edible, and configure it.
-prev:
-  text: "Creating Your First Item"
-  link: "/items/index"
-next:
-  text: "Tools and Weapons"
-  link: "/items/tools"
+order: 1
 ---
 
 # Food Items

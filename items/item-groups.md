@@ -1,12 +1,7 @@
 ---
 title: Custom Item Groups
 description: Now that you've added many items - they should probably be put together.
-prev:
-  text: "Armor"
-  link: "/items/armor"
-next:
-  text: "Item Interactivity"
-  link: "/items/interactivity"
+order: 4
 ---
 
 # Custom Item Groups

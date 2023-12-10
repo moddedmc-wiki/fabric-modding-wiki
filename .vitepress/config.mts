@@ -73,7 +73,9 @@ export default defineConfig({
             { text: 'Launching the Game', link: '/getting-started/launching-the-game' },
             { text: 'Launching Servers', link: '/getting-started/launching-servers' },
             { text: 'Access Wideners', link: '/getting-started/access-wideners' },
-            { text: 'Mixins', link: '/getting-started/mixins' }
+            { text: 'Mixins', link: '/getting-started/mixins' },
+            { text: 'Basic Problem Solving', link: '/getting-started/basic-problem-solving' },
+            { text: 'Using The IDE Effectively', link: '/getting-started/using-the-ide' }
           ]
         }
       ],

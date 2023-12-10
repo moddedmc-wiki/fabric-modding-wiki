@@ -1,12 +1,7 @@
 ---
 title: Armor
 description: Learn how to create your own armor sets.
-prev:
-  text: "Tools and Weapons"
-  link: "/items/tools"
-next:
-  text: "Item Groups"
-  link: "/items/item-groups"
+order: 3
 ---
 
 # Armor

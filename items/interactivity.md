@@ -1,9 +1,7 @@
 ---
 title: Item Interactivity
 description: Learn how to create an item that uses built-in vanilla events.
-prev:
-  text: "Custom Item Groups"
-  link: "/items/item-groups"
+order: 5
 ---
 
 # Interactivity

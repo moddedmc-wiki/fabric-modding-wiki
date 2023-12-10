@@ -161,7 +161,7 @@ Since the example block does not have a complex blockstate, only one entry is re
 }
 ```
 
-Blockstates are really complex, which is why they are addressed in an upcoming page: [Block States](./_assets/blockstates)
+Blockstates are really complex, which is why they are addressed in an upcoming page: [Block States](/blocks/blockstates)
 
 Restarting the game, or reloading via <kbd>F3</kbd> + <kbd>T</kbd> to apply changes - you should be able to see the block texture in the inventory and physically in the world:
 
