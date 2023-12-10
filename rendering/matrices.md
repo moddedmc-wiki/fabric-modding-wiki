@@ -13,7 +13,7 @@ prev:
 
 Matrices provide an easy way to transform rendered elements. They also allow content to be transformed into world space properly.
 
-Assuming you're coming from the [Introduction To Rendering](/rendering) page, you've already met them. In fact, they're everywhere, which is a good thing, since that means that we can transform about anything.
+Assuming you're coming from the [Introduction To Rendering](/rendering/) page, you've already met them. In fact, they're everywhere, which is a good thing, since that means that we can transform about anything.
 
 ## The Minecraft Implementation
 Minecraft has a wrapper around this entire mechanism, called the `MatrixStack`. It's a stack of matrices, which means that you can `push()` and `pop()` from it. These 2 methods will come in very handy later, since they essentially allow you to back up (`push()`) the current state, and then restore the correct backup later (`pop()`).
@@ -21,7 +21,7 @@ Minecraft has a wrapper around this entire mechanism, called the `MatrixStack`. 
 ## Using a MatrixStack
 When rendering anything, you usually have to pass in a MatrixStack from somewhere else. Since we also have access to the MatrixStack, we can make a backup of it (`push()`), transform it in any way we want, render with it, then restore it before passing it along to the next component (`pop()`).
 
-Let's take our old example from the [Introduction To Rendering](/rendering) page for this example:
+Let's take our old example from the [Introduction To Rendering](/rendering/) page for this example:
 
 ```java
 HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {

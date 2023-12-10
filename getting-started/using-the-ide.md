@@ -37,7 +37,7 @@ or by pressing `Shift` two times again, the search will look not only in your ow
 
 ### Recent Window
 
-Another useful tool in IntelliJ is the `Recent` window. You can open it with the Shortcut `CTRL + E`. In there you can jump to the files, which you have already visited and open tool windows, such as the [`Structure`](useful-ide#structure-of-a-class) or [`Bookmarks`](useful-ide#bookmarks) window.
+Another useful tool in IntelliJ is the `Recent` window. You can open it with the Shortcut `CTRL + E`. In there you can jump to the files, which you have already visited and open tool windows, such as the [`Structure`](#structure-of-a-class) or [`Bookmarks`](#bookmarks) window.
 
 ![Recent window](./_assets/traversing_04.png)
 

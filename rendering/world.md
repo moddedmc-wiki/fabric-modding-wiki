@@ -9,7 +9,7 @@ prev:
 # Worldspace Rendering
 
 ::: warning
-This page assumes you have a basic understanding of [matrices.](./_assets/matrices)
+This page assumes you have a basic understanding of [matrices.](/rendering/matrices)
 :::
 
 ## What's the challenge?
@@ -36,7 +36,7 @@ WorldRenderEvents.END.register(context -> {
 });
 ```
 
-Next, we will re-use the example from the [Introduction To Rendering](/rendering) page:
+Next, we will re-use the example from the [Introduction To Rendering](/rendering/) page:
 
 ```java
 WorldRenderEvents.END.register(context -> {
