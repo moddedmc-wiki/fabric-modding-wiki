@@ -53,6 +53,9 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://fabric.moddedmc.wiki/'
   },
+
+  cleanUrls: true,
+
   themeConfig: {
     search: {
       provider: 'local'
