@@ -58,7 +58,12 @@ export default defineConfig({
 
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: 'local',
+      // options: {
+      //   appId: 'DHC900L06Z',
+      //   apiKey: '31c0bbd55f94c659a48a53a671bb8971',
+      //   indexName: 'fabric'
+      // }
     },
 
     logo: "/icon.png",
