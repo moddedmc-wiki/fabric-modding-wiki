@@ -78,6 +78,14 @@
   background-color: var(--vp-c-bg-alt);
 }
 
+.medium-zoom-overlay {
+  z-index: 10000;
+}
+
+.medium-zoom-image {
+  z-index: 10001;
+}
+
 .VPNavBar:not(.top):not(.has-sidebar) {
   border-bottom: none !important;
   animation: nav-box-shadow 200ms ease-out forwards;
